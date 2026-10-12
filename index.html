@@ -1,782 +1,1751 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mohammed Suhail | Electronics &amp; Communication Engineer</title>
-  <meta name="description" content="Mohammed Suhail — Electronics and Communication Engineering student working on VLSI design, embedded systems, and robotics. Live portfolio and projects.">
-  <meta name="theme-color" content="#050b14">
-  <meta property="og:title" content="Mohammed Suhail | Electronics &amp; Communication Engineer">
-  <meta property="og:description" content="Electronics and Communication Engineering student working on VLSI design, embedded systems, and robotics.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mdxsuhail.github.io/">
-  <meta property="og:image" content="https://mdxsuhail.github.io/photo.jpg">
-  <link rel="canonical" href="https://mdxsuhail.github.io/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mohammed Suhail","url":"https://mdxsuhail.github.io/","jobTitle":"Electronics and Communication Engineering student","knowsLanguage":["English","Hindi","Urdu","Kannada"],"sameAs":["https://github.com/mdxsuhail","https://www.linkedin.com/in/mohammed-suhail03"]}</script>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050b14' stroke='%2300ff9c' stroke-width='2'/%3E%3Cpath d='M5 21h5v-10h6v10h6v-10h5' fill='none' stroke='%2300ff9c' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Special+Elite&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ec-bg: #050b14;
-      --ec-panel: rgba(2, 7, 13, 0.88);
-      --ec-panel-solid: #09121f;
-      --ec-fg: #9bffd6;
-      --ec-dim: #5fb894;
-      --ec-accent: #00ff9c;
-      --ec-line: rgba(0, 255, 156, 0.35);
-      --ec-chip: rgba(0, 255, 156, 0.08);
-      --font-mono: "Courier New", Consolas, monospace;
-      --font-display: "Bricolage Grotesque", system-ui, sans-serif;
-    }
-    [data-theme="light"] {
-      --ec-bg: #eefaf4;
-      --ec-panel: rgba(255, 255, 255, 0.92);
-      --ec-panel-solid: #ffffff;
-      --ec-fg: #0b3d2a;
-      --ec-dim: #237354;
-      --ec-accent: #00a86b;
-      --ec-line: rgba(0, 168, 107, 0.35);
-      --ec-chip: rgba(0, 168, 107, 0.1);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammed Suhail | VLSI and Embedded Systems Engineer</title>
+<meta name="description" content="Mohammed Suhail — Electronics and Communication Engineering student working on VLSI design, analog/digital circuits, embedded firmware, and robotics. Live projects from GitHub.">
+<meta name="theme-color" content="#070d18">
+<meta property="og:title" content="Mohammed Suhail | VLSI and Embedded Systems Engineer">
+<meta property="og:description" content="Electronics and Communication Engineering student working on VLSI design, circuits, embedded firmware, and robotics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mdxsuhail.github.io/">
+<meta property="og:image" content="https://mdxsuhail.github.io/photo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mdxsuhail.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohammed Suhail",
+  "url": "https://mdxsuhail.github.io/",
+  "jobTitle": "Electronics and Communication Engineering student",
+  "alumniOf": "Jyothy Institute of Technology",
+  "knowsLanguage": ["English", "Hindi", "Urdu", "Kannada"],
+  "sameAs": [
+    "https://github.com/mdxsuhail",
+    "https://www.linkedin.com/in/mohammed-suhail03"
+  ]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230284c7'/%3E%3Cpath d='M5 21h5v-10h6v10h6v-10h5' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=Special+Elite&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #070d18;
+  --surface: #0c1527;
+  --surface-hover: #111d35;
+  --ink: #f1f5f9;
+  --mut: #94a3b8;
+  --line: #1e293b;
+  --acc: #38bdf8;
+  --acc2: #2dd4bf;
+  --acc-ink: #04121f;
+  --chip: #132036;
+  --glow: rgba(56, 189, 248, 0.18);
+  --c1: #38bdf8; --c2: #2dd4bf; --c3: #818cf8; --c4: #a78bfa; --c5: #fb923c; --c6: #94a3b8;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Courier New", Consolas, monospace;
+}
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
-    body {
-      margin: 0;
-      background: var(--ec-bg);
-      color: var(--ec-fg);
-      font-family: var(--font-mono);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      transition: background .3s, color .3s;
-    }
-    body, button, input, textarea { font-family: var(--font-mono); }
-    a { color: var(--ec-accent); text-underline-offset: 3px; }
+:root[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --ink: #0f172a;
+  --mut: #475569;
+  --line: #cbd5e1;
+  --acc: #0284c7;
+  --acc2: #0d9488;
+  --acc-ink: #ffffff;
+  --chip: #f1f5f9;
+  --glow: rgba(2, 132, 199, 0.12);
+  --c1: #0284c7; --c2: #0d9488; --c3: #6366f1; --c4: #8b5cf6; --c5: #ea580c; --c6: #64748b;
+}
 
-    /* background grid pattern */
-    #ec-bg-grid {
-      position: fixed; inset: 0; pointer-events: none; z-index: -1;
-      background-image: linear-gradient(var(--ec-chip) 1px, transparent 1px),
-                        linear-gradient(90deg, var(--ec-chip) 1px, transparent 1px);
-      background-size: 36px 36px;
-    }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1rem/1.65 var(--body);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+  transition: background .25s ease, color .25s ease;
+}
+a { color: var(--acc); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-    /* top bar: navigation + resume + theme toggle */
-    #ec-top {
-      position: fixed; top: 12px; left: 16px; right: 16px; z-index: 9000;
-      display: flex; justify-content: space-between; align-items: center;
-      background: var(--ec-panel); backdrop-filter: blur(12px);
-      border: 1px solid var(--ec-line); border-radius: 10px;
-      padding: 8px 16px; max-width: 1100px; margin: 0 auto;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-    .ec-nav {
-      display: flex; gap: 14px; align-items: center; overflow-x: auto;
-      scrollbar-width: none; white-space: nowrap;
-    }
-    .ec-nav::-webkit-scrollbar { display: none; }
-    .ec-nav a {
-      color: var(--ec-fg); text-decoration: none; font-size: 13px; font-weight: bold;
-      transition: color .2s;
-    }
-    .ec-nav a:hover { color: var(--ec-accent); }
-    .ec-top-right { display: flex; gap: 8px; align-items: center; flex: none; }
-    .ec-top-right a, .ec-top-right button {
-      background: var(--ec-chip); color: var(--ec-accent);
-      border: 1px solid var(--ec-line); padding: 6px 12px; border-radius: 6px;
-      cursor: pointer; font-size: 12px; font-weight: bold; text-decoration: none;
-      transition: all .2s; font-family: inherit;
-    }
-    .ec-top-right a:hover, .ec-top-right button:hover {
-      background: var(--ec-accent); color: #000; box-shadow: 0 0 12px var(--ec-accent);
-    }
+/* Dynamic Background Signal Canvas */
+#signal-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .55;
+}
 
-    /* standard container */
-    .ec-sec {
-      padding: 70px 20px; max-width: 1000px; margin: 0 auto;
-      color: var(--ec-fg);
-    }
-    .ec-sec h2 {
-      color: var(--ec-accent); letter-spacing: 3px; text-align: center; margin: 0 0 12px;
-      text-shadow: 0 0 12px var(--ec-accent); font-size: clamp(22px, 4vw, 32px);
-    }
-    .ec-sec .sub {
-      text-align: center; color: var(--ec-dim); margin: 0 auto 36px; max-width: 60ch;
-      font-size: 13px;
-    }
+/* Navigation Bar */
+.bar {
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.bar .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px; gap: 12px;
+}
+.bar nav {
+  display: flex; align-items: center;
+  overflow-x: auto; white-space: nowrap; scrollbar-width: none; min-width: 0;
+}
+.bar nav::-webkit-scrollbar { display: none; }
+.bar nav a {
+  color: var(--mut); text-decoration: none; margin-right: 18px;
+  font-weight: 500; font-size: .92rem; transition: color .2s;
+}
+.bar nav a:hover { color: var(--ink); }
+.bar nav a.on {
+  color: var(--acc); font-weight: 600;
+  border-bottom: 2px solid var(--acc); padding-bottom: 2px;
+}
+.nav-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+.nav-btn {
+  background: var(--chip); border: 1px solid var(--line);
+  color: var(--ink); border-radius: 999px; padding: 5px 14px;
+  font: 500 .84rem var(--body); text-decoration: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px; transition: all .2s;
+}
+.nav-btn:hover { border-color: var(--acc); color: var(--acc); }
+#progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--acc); transition: width .1s ease-out; }
 
-    /* ===== TERMINAL HERO ===== */
-    #ec-hero {
-      min-height: 92vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 90px 20px 40px; box-sizing: border-box; gap: 30px;
-    }
-    .ec-term-wrap { width: min(840px, 100%); }
-    .ec-term {
-      width: 100%; background: var(--ec-panel); border: 1px solid var(--ec-accent);
-      border-radius: 10px; box-shadow: 0 0 30px rgba(0,255,156,.25);
-      color: var(--ec-accent); overflow: hidden;
-    }
-    .ec-term-bar {
-      display: flex; gap: 8px; align-items: center; padding: 10px 14px;
-      background: var(--ec-chip); border-bottom: 1px solid var(--ec-line); font-size: 13px;
-    }
-    .ec-term-bar i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-    .ec-term-bar i:nth-child(1) { background: #ff5f56; }
-    .ec-term-bar i:nth-child(2) { background: #ffbd2e; }
-    .ec-term-bar i:nth-child(3) { background: #27c93f; }
-    .ec-term-bar span { margin-left: 10px; opacity: .8; }
-    #ec-term-body {
-      padding: 22px; min-height: 280px; font-size: clamp(13px, 2.3vw, 15px);
-      line-height: 1.7; white-space: pre-wrap; word-break: break-word;
-    }
-    #ec-term-body .out { color: var(--ec-fg); }
-    #ec-term-body .dim { color: var(--ec-dim); }
-    .ec-caret {
-      display: inline-block; width: 9px; height: 1.1em; background: var(--ec-accent);
-      vertical-align: text-bottom; animation: ecblink 1s steps(1) infinite;
-    }
-    @keyframes ecblink { 50% { opacity: 0; } }
+/* Hero Section */
+.hero { position: relative; z-index: 1; padding: 56px 0 32px; }
+.hero-layout { display: grid; grid-template-columns: 1fr; gap: 28px; }
+@media (min-width: 1000px) {
+  .hero-layout { grid-template-columns: 1fr 340px; align-items: start; gap: 36px; }
+}
 
-    /* hero card & timing scope integration */
-    .hero-meta-row {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: min(840px, 100%);
-    }
-    @media(max-width: 780px) { .hero-meta-row { grid-template-columns: 1fr; } }
-    .scope-box {
-      background: var(--ec-panel); border: 1px solid var(--ec-line); border-radius: 10px;
-      padding: 16px; display: flex; flex-direction: column; gap: 10px;
-    }
-    .scope-box canvas { display: block; width: 100%; height: 160px; cursor: crosshair; }
-    .scope-box p { margin: 0; font-size: 11px; color: var(--ec-dim); text-align: right; }
+.hero-main h1 {
+  font: 800 clamp(2.6rem, 7vw, 4.6rem)/1.02 var(--display);
+  letter-spacing: -.035em; margin: 0 0 16px;
+}
+.hero-main h1 span { color: var(--acc); text-shadow: 0 0 28px var(--glow); }
+.lead {
+  font-size: 1.15rem; line-height: 1.55; color: var(--mut);
+  max-width: 54ch; margin: 0 0 8px;
+}
+.where {
+  color: var(--mut); font-size: .95rem; margin: 0 0 24px;
+  display: flex; align-items: center; gap: 8px;
+}
+.status-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: #10b981;
+  box-shadow: 0 0 8px #10b981; animation: pulse 1.6s infinite alternate;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 20px; }
+.actions a {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 18px; border-radius: 8px; font-weight: 600; font-size: .92rem;
+  text-decoration: none; border: 1px solid var(--line); color: var(--ink);
+  background: var(--surface); transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.actions a.primary { background: var(--acc); color: var(--acc-ink); border-color: var(--acc); }
+.actions a:hover { border-color: var(--acc); transform: translateY(-2px); box-shadow: 0 4px 14px var(--glow); }
 
-    /* Engineer license card */
-    .lic-badge {
-      background: var(--ec-panel); border: 1px solid var(--ec-line); border-radius: 10px;
-      padding: 16px; display: flex; gap: 14px; align-items: center;
-    }
-    .lic-badge img {
-      width: 90px; height: 110px; object-fit: cover; border-radius: 6px;
-      border: 1px solid var(--ec-accent); flex: none;
-    }
-    .lic-badge-info h3 { margin: 0 0 4px; font-size: 16px; color: var(--ec-accent); }
-    .lic-badge-info p { margin: 0 0 6px; font-size: 12px; color: var(--ec-fg); }
-    .lic-badge-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-    .lic-badge-tags span {
-      background: var(--ec-chip); border: 1px solid var(--ec-line); font-size: 10px;
-      padding: 2px 6px; border-radius: 4px; color: var(--ec-accent);
-    }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px;
+  font-size: .84rem; color: var(--mut); background: var(--surface); margin: 4px 0 16px;
+}
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--acc); animation: pulse 1.4s ease-in-out infinite alternate; }
+.pill b { color: var(--ink); font-variant-numeric: tabular-nums; }
 
-    /* ===== PROJECTS 3D FLIP CARDS ===== */
-    .ec-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;
-    }
-    .ec-card { perspective: 1000px; height: 230px; cursor: pointer; }
-    .ec-card-in {
-      position: relative; width: 100%; height: 100%; transition: transform .7s;
-      transform-style: preserve-3d;
-    }
-    .ec-card:hover .ec-card-in, .ec-card.flip .ec-card-in { transform: rotateY(180deg); }
-    .ec-face {
-      position: absolute; inset: 0; backface-visibility: hidden; border: 1px solid var(--ec-line);
-      border-radius: 10px; background: var(--ec-panel); display: flex; flex-direction: column;
-      align-items: center; justify-content: center; padding: 20px; text-align: center;
-      box-shadow: 0 0 18px rgba(0,255,156,.15);
-    }
-    .ec-face.back { transform: rotateY(180deg); font-size: 13px; line-height: 1.5; gap: 12px; }
-    .ec-face .ico { font-size: 42px; margin-bottom: 6px; }
-    .ec-face h3 { margin: 6px 0 0; color: var(--ec-accent); font-size: 16px; }
-    .ec-face a {
-      color: var(--ec-accent); border: 1px solid var(--ec-accent); padding: 5px 14px;
-      border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: bold;
-    }
-    .ec-face a:hover { background: var(--ec-accent); color: #000; }
+/* Oscilloscope Timing Diagram */
+.scope {
+  margin-top: 20px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--surface); overflow: hidden; position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+}
+.scope-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 14px; border-bottom: 1px solid var(--line);
+  font-size: .78rem; font-family: var(--font-mono); color: var(--mut);
+  background: color-mix(in srgb, var(--surface) 95%, var(--acc));
+}
+.scope canvas { display: block; width: 100%; height: 180px; cursor: crosshair; }
+.scope-hint {
+  position: absolute; right: 12px; bottom: 8px; margin: 0;
+  color: var(--mut); font-size: .76rem; pointer-events: none;
+}
 
-    /* ===== SKILLS CIRCUIT SVG ===== */
-    #ec-skill-svg { width: 100%; max-width: 640px; display: block; margin: 0 auto; }
-    .sk-line {
-      stroke: var(--ec-accent); stroke-width: 1.5; opacity: .5; stroke-dasharray: 6 6;
-      animation: skflow 1.2s linear infinite;
-    }
-    @keyframes skflow { to { stroke-dashoffset: -12; } }
-    .sk-node circle { fill: var(--ec-bg); stroke: var(--ec-accent); stroke-width: 2; transition: .25s; }
-    .sk-node text { fill: var(--ec-fg); font-size: 12px; text-anchor: middle; font-family: var(--font-mono); }
-    .sk-node:hover circle { fill: var(--ec-accent); filter: drop-shadow(0 0 8px var(--ec-accent)); }
-    .sk-node:hover text { fill: #000; font-weight: bold; }
-    .sk-core circle { fill: var(--ec-accent); stroke: var(--ec-accent); filter: drop-shadow(0 0 12px var(--ec-accent)); }
-    .sk-core text { fill: #000; font-weight: bold; font-size: 14px; }
+/* Profile Badge & License Card */
+.lic-col { display: flex; flex-direction: column; align-items: center; }
+.badge-style-nav {
+  display: flex; gap: 6px; margin-bottom: 12px;
+}
+.badge-style-nav button {
+  background: var(--chip); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px 12px; font: 500 .78rem var(--body);
+  cursor: pointer; transition: all .2s;
+}
+.badge-style-nav button[aria-pressed="true"] { background: var(--acc); color: var(--acc-ink); border-color: var(--acc); }
 
-    /* Proficiency meters */
-    .skills-meters {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 32px;
-    }
-    .sk-meter-card {
-      background: var(--ec-panel); border: 1px solid var(--ec-line); border-radius: 8px; padding: 12px 16px;
-    }
-    .sk-meter-head { display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; margin-bottom: 6px; }
-    .sk-meter-bars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
-    .sk-meter-bars i { height: 6px; border-radius: 3px; background: var(--ec-chip); }
-    .sk-meter-bars i.on { background: var(--ec-accent); box-shadow: 0 0 6px var(--ec-accent); }
+.badge-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  perspective: 1100px; width: 100%; max-width: 330px;
+}
+.lanyard {
+  width: 32px; height: 60px; background: var(--acc);
+  border-radius: 3px 3px 0 0; margin-bottom: -10px; position: relative; z-index: 0;
+}
+.lanyard i {
+  position: absolute; left: 50%; bottom: -6px; width: 18px; height: 14px;
+  margin-left: -9px; border: 3px solid var(--mut); border-radius: 4px; background: var(--bg);
+}
+.badge {
+  --rx: 0deg; --ry: 0deg; --flip: 0deg;
+  position: relative; z-index: 1; width: 310px; height: 460px;
+  padding: 0; border: 0; background: none; color: inherit; font: inherit;
+  text-align: left; cursor: pointer; transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(calc(var(--ry) + var(--flip)));
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.face {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  padding: 0 20px 20px; border-radius: 16px; background: var(--surface);
+  border: 1px solid var(--line); overflow: hidden;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  box-shadow: 0 16px 36px rgba(0,0,0,.28);
+}
+.face.back { transform: rotateY(180deg); padding-top: 24px; }
+.face.back b { font: 700 .9rem var(--display); margin-top: 10px; color: var(--acc); }
+.face.back b:first-child { margin-top: 0; }
+.face.back span { color: var(--mut); font-size: .86rem; line-height: 1.45; }
+.face.back .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.band { display: block; height: 48px; margin: 0 -20px 14px; background: var(--acc); position: relative; }
+.band::after {
+  content: ""; position: absolute; left: 50%; top: 12px; width: 50px; height: 8px;
+  margin-left: -25px; border-radius: 4px; background: var(--surface);
+}
+.photo {
+  display: block; height: 210px; border-radius: 10px; overflow: hidden;
+  background: var(--chip); border: 1px solid var(--line); position: relative;
+}
+.photo img, .photo svg { display: block; width: 100%; height: 100%; object-fit: cover; }
+.nm { font: 800 1.45rem/1.1 var(--display); letter-spacing: -.02em; margin-top: 8px; }
+.rl { color: var(--acc); font-weight: 600; font-size: .86rem; }
+.ft {
+  display: flex; justify-content: space-between; gap: 8px; margin-top: auto;
+  padding-top: 10px; border-top: 1px solid var(--line); color: var(--mut); font-size: .78rem;
+}
 
-    /* ===== HARDWARE EXPERIMENTS STATUS BOARD ===== */
-    .bench-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-    .bench-card {
-      background: var(--ec-panel); border: 1px solid var(--ec-line); border-radius: 10px;
-      padding: 18px; transition: transform .2s, border-color .2s;
-    }
-    .bench-card:hover { transform: translateY(-2px); border-color: var(--ec-accent); }
-    .bench-status {
-      display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: bold;
-      letter-spacing: .04em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px;
-      margin-bottom: 10px; background: var(--ec-chip); color: var(--ec-accent);
-      border: 1px solid var(--ec-line);
-    }
-    .bench-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 6px currentColor; }
-    .bench-title { font-size: 15px; margin: 0 0 6px; color: var(--ec-accent); }
-    .bench-desc { font-size: 12px; color: var(--ec-fg); margin: 0 0 10px; opacity: .9; }
-    .bench-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .bench-tag { background: var(--ec-chip); font-size: 11px; padding: 2px 7px; border-radius: 4px; color: var(--ec-dim); }
+/* Card Themes: License & Dark */
+.badge-wrap.license .face {
+  background: #efe6d1; color: #2a2418; border: 2px solid #2a2418; border-radius: 10px;
+  font-family: "Special Elite", monospace;
+}
+.badge-wrap.license .band {
+  height: 24px; background: repeating-linear-gradient(90deg, #2a2418 0 2px, transparent 2px 6px);
+}
+.badge-wrap.license .band::after { display: none; }
+.badge-wrap.license .photo { background: #d9ceb4; border: 2px solid #2a2418; }
+.badge-wrap.license .nm, .badge-wrap.license .face.back b { color: #2a2418; }
+.badge-wrap.license .rl { color: #a3271b; font-family: var(--display); }
+.badge-wrap.license .ft { color: #2a2418; border-top: 2px solid #2a2418; }
+.badge-wrap.license .lanyard { visibility: hidden; }
 
-    /* ===== MILESTONES TIMELINE ===== */
-    .timeline { position: relative; margin: 24px 0 0; padding-left: 26px; }
-    .timeline::before {
-      content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px;
-      background: repeating-linear-gradient(180deg, var(--ec-accent) 0 8px, transparent 8px 14px);
-    }
-    .t-node { position: relative; margin-bottom: 20px; }
-    .t-dot {
-      position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%;
-      background: var(--ec-bg); border: 2.5px solid var(--ec-accent); box-shadow: 0 0 8px var(--ec-accent);
-    }
-    .t-card {
-      background: var(--ec-panel); border: 1px solid var(--ec-line); border-radius: 10px;
-      padding: 14px 18px; transition: transform .2s, border-color .2s;
-    }
-    .t-card:hover { border-color: var(--ec-accent); transform: translateX(4px); }
-    .t-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-    .t-title { font-size: 15px; font-weight: bold; margin: 0; color: var(--ec-accent); }
-    .t-time { font-size: 12px; color: var(--ec-dim); font-weight: bold; }
-    .t-org { color: var(--ec-fg); font-size: 12px; margin: 2px 0 6px; opacity: .85; }
-    .t-desc { margin: 0; font-size: 12px; color: var(--ec-dim); }
+.badge-wrap.dark .face { background: #070e17; border-color: #21344d; color: #fff; }
+.badge-wrap.dark .band { background: #0f243c; }
+.badge-wrap.dark .band::after { background: #070e17; }
+.badge-wrap.dark .nm, .badge-wrap.dark .face.back b { color: #38bdf8; }
+.badge-wrap.dark .rl { color: #2dd4bf; }
 
-    /* ===== GITHUB STATS ===== */
-    .gh-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 24px; }
-    .gh-stat {
-      background: var(--ec-panel); border: 1px solid var(--ec-accent); border-radius: 8px; padding: 16px; text-align: center;
-      box-shadow: 0 0 14px rgba(0,255,156,.18);
-    }
-    .gh-stat b { display: block; font-size: 26px; color: var(--ec-accent); text-shadow: 0 0 8px var(--ec-accent); }
-    .gh-stat span { font-size: 12px; opacity: .85; }
-    .gh-repos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-    .gh-repo {
-      display: block; background: var(--ec-panel); border: 1px solid rgba(0,255,156,.35); border-radius: 8px; padding: 14px;
-      color: var(--ec-fg); text-decoration: none; transition: .25s;
-    }
-    .gh-repo:hover { border-color: var(--ec-accent); box-shadow: 0 0 16px var(--ec-accent); transform: translateY(-3px); }
-    .gh-repo h4 { margin: 0 0 6px; color: var(--ec-accent); font-size: 14px; }
-    .gh-repo p { margin: 0 0 10px; font-size: 12px; line-height: 1.5; opacity: .9; }
-    .gh-meta { display: flex; gap: 14px; font-size: 11px; opacity: .85; }
-    #gh-msg { text-align: center; opacity: .8; font-size: 13px; }
+/* Ticker Marquee */
+.ticker {
+  overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  margin: 36px 0 0; padding: 10px 0; white-space: nowrap; background: color-mix(in srgb, var(--surface) 60%, transparent);
+}
+.ticker div { display: inline-flex; gap: 28px; animation: tick 28s linear infinite; }
+.ticker span { font: 800 1.5rem/1 var(--display); color: transparent; -webkit-text-stroke: 1px var(--mut); }
+.ticker span:nth-child(even) { color: var(--acc); -webkit-text-stroke: 0; }
+@keyframes tick { to { transform: translateX(-50%); } }
 
-    /* ===== CONTACT FORM & DOCK ===== */
-    .contact-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; }
-    @media(max-width: 760px) { .contact-layout { grid-template-columns: 1fr; } }
-    .ec-form { display: flex; flex-direction: column; gap: 14px; }
-    .ec-form input, .ec-form textarea {
-      background: var(--ec-panel); border: 1px solid var(--ec-accent); color: var(--ec-fg);
-      padding: 12px; border-radius: 6px; font-family: inherit; font-size: 13px; outline: none;
-    }
-    .ec-form input:focus, .ec-form textarea:focus { box-shadow: 0 0 12px var(--ec-accent); }
-    .ec-form button {
-      background: var(--ec-accent); color: #000; border: 0; padding: 12px; border-radius: 6px;
-      font-family: inherit; font-weight: bold; cursor: pointer; letter-spacing: 2px;
-      transition: box-shadow .2s, transform .2s;
-    }
-    .ec-form button:hover { box-shadow: 0 0 18px var(--ec-accent); transform: translateY(-1px); }
+/* Section Header Styles */
+section { position: relative; z-index: 1; padding: 64px 0 10px; }
+h2 {
+  font: 800 clamp(1.8rem, 4vw, 2.3rem)/1.15 var(--display);
+  letter-spacing: -.025em; margin: 0 0 8px; color: var(--ink);
+}
+h2::after {
+  content: ""; display: block; width: 68px; height: 10px; margin: 10px 0 0;
+  background: var(--acc);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 10'%3E%3Cpath d='M0 9H12V1H24V9H36V1H48V9H60V1H72' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E") no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 10'%3E%3Cpath d='M0 9H12V1H24V9H36V1H48V9H60V1H72' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E") no-repeat;
+}
+.sub { color: var(--mut); margin: 0 0 28px; max-width: 60ch; font-size: .96rem; }
 
-    .social-dock { display: flex; flex-direction: column; gap: 10px; }
-    .social-pill {
-      display: flex; align-items: center; justify-content: space-between; background: var(--ec-panel);
-      border: 1px solid var(--ec-line); border-radius: 8px; padding: 12px 14px; text-decoration: none;
-      color: var(--ec-fg); transition: border-color .2s, transform .2s; cursor: pointer; font-size: 13px;
-    }
-    .social-pill:hover { border-color: var(--ec-accent); transform: translateX(4px); color: var(--ec-accent); }
-    .social-pill-left { display: flex; align-items: center; gap: 10px; font-weight: bold; }
-    .social-pill-action { font-size: 11px; color: var(--ec-dim); background: var(--ec-chip); padding: 2px 7px; border-radius: 4px; }
+/* Projects Grid */
+.filters { margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.filters button {
+  background: var(--chip); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px 14px; font: 500 .82rem var(--body);
+  cursor: pointer; transition: all .2s;
+}
+.filters button[aria-pressed="true"] { background: var(--acc); color: var(--acc-ink); border-color: var(--acc); }
+.count { color: var(--mut); font-size: .86rem; margin: 0 0 16px; }
 
-    /* toast feedback */
-    #toast {
-      position: fixed; bottom: 24px; right: 24px; background: var(--ec-panel);
-      color: var(--ec-accent); border: 1px solid var(--ec-accent); padding: 10px 18px;
-      border-radius: 6px; font-size: 13px; font-weight: bold;
-      box-shadow: 0 0 20px rgba(0,255,156,0.3); opacity: 0; pointer-events: none;
-      transform: translateY(12px); transition: opacity .3s, transform .3s; z-index: 999999;
-    }
-    #toast.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.card {
+  position: relative; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px; display: flex; flex-direction: column;
+  overflow: hidden; transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.card:hover {
+  border-color: var(--lc, var(--acc)); transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+.card::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: var(--lc, var(--acc)); }
+.shot {
+  display: block; width: calc(100% + 32px); margin: -16px -16px 12px;
+  aspect-ratio: 16/9; object-fit: cover; border-bottom: 1px solid var(--line);
+  background: var(--chip); cursor: zoom-in;
+}
+.lang { display: flex; align-items: center; gap: 8px; color: var(--mut); font-size: .8rem; margin: 0 0 8px; }
+.lang i { width: 9px; height: 9px; border-radius: 50%; background: var(--lc, var(--acc)); }
+.lang time { margin-left: auto; }
+.card h3 { font: 700 1.15rem/1.3 var(--display); margin: 0 0 6px; overflow-wrap: anywhere; }
+.card h3 a { color: var(--ink); text-decoration: none; }
+.card h3 a:hover { color: var(--acc); }
+.card .desc { font-size: .88rem; line-height: 1.45; margin: 0 0 8px; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card .over { font-size: .82rem; line-height: 1.4; margin: 0 0 8px; color: var(--mut); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.foot { margin-top: auto; padding-top: 10px; }
+.facts { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 8px; }
+.fact { border: 1px solid var(--line); border-radius: 4px; padding: 1px 7px; font-size: .74rem; font-weight: 600; color: var(--ink); background: var(--chip); }
+.fact small { color: var(--mut); margin-right: 2px; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 10px; }
+.tag { background: var(--chip); color: var(--acc); border-radius: 4px; padding: 1px 8px; font-size: .75rem; font-weight: 500; }
+.links { display: flex; gap: 14px; }
+.links a { font-size: .84rem; font-weight: 600; text-decoration: none; }
+.links a:hover { text-decoration: underline; }
 
-    /* back to top */
-    #ec-up {
-      position: fixed; right: 18px; bottom: 22px; width: 44px; height: 44px; border-radius: 50%;
-      background: var(--ec-panel); color: var(--ec-accent); border: 1px solid var(--ec-accent);
-      font-size: 18px; cursor: pointer; z-index: 9000; opacity: 0; visibility: hidden; transition: .3s;
-    }
-    #ec-up.show { opacity: 1; visibility: visible; }
-    #ec-up:hover { background: var(--ec-accent); color: #000; box-shadow: 0 0 18px var(--ec-accent); }
+/* Insights Section */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 0 0 28px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.stat b { display: block; font: 800 2.2rem/1.1 var(--display); letter-spacing: -.03em; color: var(--acc); }
+.stat span { color: var(--mut); font-size: .86rem; }
+.chart { margin: 0 0 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+.chart h3 { font: 700 1.05rem/1.3 var(--display); margin: 0 0 4px; }
+.cap { color: var(--mut); font-size: .86rem; margin: 0 0 14px; }
+.stack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: var(--chip); }
+.stack i { display: block; height: 100%; transition: width .4s ease; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; font-size: .86rem; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend em { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.legend small { color: var(--mut); }
+.heat { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 14px); grid-auto-columns: 14px; gap: 4px; overflow-x: auto; padding-bottom: 6px; }
+.heat i { display: block; border-radius: 3px; background: var(--chip); }
+.heat .l1 { background: var(--acc); opacity: .3; }
+.heat .l2 { background: var(--acc); opacity: .55; }
+.heat .l3 { background: var(--acc); opacity: .8; }
+.heat .l4 { background: var(--acc); }
+.heat .pad { background: transparent; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.donut { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.donut svg { width: 140px; height: 140px; flex: none; }
+.donut circle { fill: none; stroke-width: 16; }
+.donut text { fill: var(--ink); font: 800 22px var(--display); text-anchor: middle; }
+.hbars { display: grid; gap: 8px; }
+.hrow { display: grid; grid-template-columns: 110px 1fr 28px; gap: 10px; align-items: center; font-size: .88rem; }
+.htrack { height: 10px; background: var(--chip); border-radius: 5px; overflow: hidden; }
+.htrack i { display: block; height: 100%; background: var(--c1); border-radius: 5px; transition: width .5s; }
+.hrow span:last-child { color: var(--mut); text-align: right; }
+.months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; height: 130px; }
+.months div { display: flex; flex-direction: column; justify-content: flex-end; text-align: center; }
+.months i { display: block; background: var(--c2); border-radius: 4px 4px 0 0; min-height: 2px; transition: height .4s; }
+.months span { color: var(--mut); font-size: .74rem; margin-top: 6px; }
+.months b { font-size: .76rem; font-weight: 600; margin-bottom: 2px; }
 
-    footer {
-      border-top: 1px solid var(--ec-line); padding: 30px 20px 60px; text-align: center;
-      font-size: 12px; color: var(--ec-dim);
-    }
-  </style>
+/* Hardware Bench Status */
+.bench-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.bench-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px; transition: transform .2s, border-color .2s;
+}
+.bench-card:hover { transform: translateY(-2px); border-color: var(--acc); }
+.bench-status {
+  display: inline-flex; align-items: center; gap: 6px; font-size: .74rem; font-weight: 700;
+  letter-spacing: .04em; text-transform: uppercase; padding: 2px 9px; border-radius: 999px;
+  margin-bottom: 10px; background: var(--chip); color: var(--acc); border: 1px solid var(--line);
+}
+.bench-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 6px currentColor; }
+.bench-title { font: 700 1.05rem var(--display); margin: 0 0 6px; color: var(--ink); }
+.bench-desc { font-size: .88rem; color: var(--mut); margin: 0 0 10px; line-height: 1.45; }
+.bench-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.bench-tag { background: var(--chip); font-size: .76rem; padding: 1px 7px; border-radius: 4px; color: var(--mut); }
+
+/* Focus Areas */
+.focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.focus > div {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px;
+  transition: transform .2s, border-color .2s;
+}
+.focus > div:hover { transform: translateY(-3px); border-color: var(--acc); }
+.focus svg { width: 56px; height: 30px; display: block; margin-bottom: 12px; }
+.focus path { fill: none; stroke: var(--acc); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.focus h3 { font: 700 1.1rem var(--display); margin: 0 0 6px; }
+.focus p { color: var(--mut); margin: 0 0 12px; font-size: .9rem; line-height: 1.45; }
+.focus ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 5px; }
+.focus li { background: var(--chip); border-radius: 4px; padding: 1px 8px; font-size: .8rem; font-weight: 500; }
+
+/* Skills & Proficiency Meters */
+.levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.lvl { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.lvt { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 8px; font-size: .9rem; }
+.lvt span { color: var(--mut); font-size: .8rem; }
+.meter { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.meter i { display: block; height: 6px; border-radius: 3px; background: var(--chip); }
+.meter i.on { background: var(--acc); box-shadow: 0 0 6px var(--glow); }
+
+/* Circuit SVG Diagram */
+.circuit-wrap {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 20px; margin-top: 24px; text-align: center;
+}
+#ec-skill-svg { width: 100%; max-width: 580px; display: block; margin: 0 auto; }
+.sk-line {
+  stroke: var(--acc); stroke-width: 1.5; opacity: .4; stroke-dasharray: 6 6;
+  animation: skflow 1.4s linear infinite;
+}
+@keyframes skflow { to { stroke-dashoffset: -12; } }
+.sk-node circle { fill: var(--bg); stroke: var(--acc); stroke-width: 2; transition: .2s; }
+.sk-node text { fill: var(--ink); font-size: 11px; text-anchor: middle; font-family: var(--body); font-weight: 500; }
+.sk-node:hover circle { fill: var(--acc); filter: drop-shadow(0 0 8px var(--acc)); cursor: pointer; }
+.sk-node:hover text { fill: var(--acc-ink); font-weight: 700; }
+.sk-core circle { fill: var(--acc); stroke: var(--acc); filter: drop-shadow(0 0 12px var(--glow)); }
+.sk-core text { fill: var(--acc-ink); font-weight: 800; font-size: 13px; font-family: var(--display); text-anchor: middle; }
+.chiprow { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
+.chiprow li { background: var(--chip); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; font-size: .82rem; font-weight: 500; }
+
+/* Timeline & Milestones */
+.timeline { position: relative; margin: 20px 0 0; padding-left: 24px; }
+.timeline::before {
+  content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px;
+  background: repeating-linear-gradient(180deg, var(--acc) 0 8px, transparent 8px 14px);
+}
+.t-node { position: relative; margin-bottom: 22px; }
+.t-dot {
+  position: absolute; left: -24px; top: 6px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--bg); border: 2.5px solid var(--acc); box-shadow: 0 0 8px var(--glow);
+}
+.t-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.t-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.t-title { font: 700 1.05rem var(--display); margin: 0; color: var(--ink); }
+.t-time { font-size: .8rem; font-weight: 600; color: var(--acc); font-family: var(--font-mono); }
+.t-org { font-size: .84rem; color: var(--mut); margin: 3px 0 6px; font-weight: 500; }
+.t-desc { font-size: .86rem; color: var(--ink); margin: 0; line-height: 1.45; }
+
+/* About Cards */
+.dgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-top: 22px; }
+.dcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.dcard h3 { font: 700 .95rem var(--display); margin: 0 0 4px; color: var(--acc); }
+.dcard p { margin: 0; font-size: .88rem; color: var(--mut); line-height: 1.45; }
+
+/* Contact & Social Dock */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 14px; }
+@media (max-width: 800px) { .contact-layout { grid-template-columns: 1fr; } }
+.contact-form {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 22px; display: flex; flex-direction: column; gap: 12px;
+}
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: .82rem; font-weight: 600; color: var(--mut); }
+.form-group input, .form-group textarea {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+  padding: 9px 12px; font: 400 .9rem var(--body); color: var(--ink);
+  transition: border-color .2s;
+}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--acc); }
+.send-btn {
+  background: var(--acc); color: var(--acc-ink); border: 1px solid var(--acc);
+  border-radius: 6px; padding: 10px 18px; font: 600 .92rem var(--body);
+  cursor: pointer; transition: all .2s; margin-top: 4px;
+}
+.send-btn:hover { box-shadow: 0 4px 14px var(--glow); transform: translateY(-1px); }
+
+.social-dock { display: flex; flex-direction: column; gap: 10px; }
+.social-pill {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 18px; text-decoration: none; color: var(--ink);
+  transition: all .2s; cursor: pointer;
+}
+.social-pill:hover { border-color: var(--acc); transform: translateY(-2px); box-shadow: 0 4px 14px var(--glow); }
+.social-pill-left { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: .94rem; }
+.social-pill-action { color: var(--acc); font-size: .84rem; font-weight: 600; }
+
+/* Dialog Modal */
+dialog {
+  border: 1px solid var(--line); border-radius: 14px; padding: 0;
+  max-width: 640px; width: calc(100% - 32px); background: var(--surface);
+  color: var(--ink); overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.4);
+  position: fixed; inset: 0; margin: auto;
+}
+dialog::backdrop { background: rgba(0, 0, 0, .6); backdrop-filter: blur(4px); }
+dialog img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--chip); }
+.db { padding: 22px 24px; position: relative; }
+.db h3 { font: 700 1.35rem var(--display); margin: 0 0 8px; }
+.db p { margin: 0 0 10px; font-size: .92rem; line-height: 1.5; }
+.db .meta { color: var(--mut); font-size: .82rem; }
+.x {
+  position: absolute; right: 14px; top: 14px; width: 34px; height: 34px;
+  border-radius: 50%; border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink); font-size: 1.2rem; cursor: pointer; display: flex;
+  align-items: center; justify-content: center; z-index: 10;
+}
+
+/* Toast */
+#toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
+  background: var(--ink); color: var(--bg); padding: 10px 20px; border-radius: 999px;
+  font-size: .88rem; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,.3);
+  pointer-events: none; opacity: 0; transition: transform .3s ease, opacity .3s ease; z-index: 9999;
+}
+#toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* Scroll to top */
+#top {
+  position: fixed; right: 20px; bottom: 20px; width: 44px; height: 44px;
+  border-radius: 50%; border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink); font-size: 1.1rem; cursor: pointer; opacity: 0; pointer-events: none;
+  transition: opacity .2s, transform .2s; z-index: 90; display: flex; align-items: center; justify-content: center;
+}
+#top.on { opacity: 1; pointer-events: auto; }
+#top:hover { border-color: var(--acc); color: var(--acc); transform: translateY(-2px); }
+
+footer {
+  margin-top: 60px; border-top: 1px solid var(--line); padding: 28px 0 48px;
+  color: var(--mut); font-size: .88rem;
+}
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+@keyframes pulse { to { opacity: .4; } }
+@media (max-width: 768px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .two, .focus { grid-template-columns: 1fr; }
+  .bar nav a { margin-right: 12px; font-size: .85rem; }
+  .scope canvas { height: 160px; }
+}
+</style>
 </head>
 <body>
 
-<div id="ec-bg-grid" aria-hidden="true"></div>
+<canvas id="signal-bg" aria-hidden="true"></canvas>
 
-<!-- Top Bar -->
-<header id="ec-top">
-  <nav class="ec-nav" aria-label="Section navigation">
-    <a href="#ec-hero">Terminal</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#experiments">Bench</a>
-    <a href="#milestones">Timeline</a>
-    <a href="#github">GitHub</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="ec-top-right">
-    <a href="resume.pdf" download id="ec-resume-btn">⬇ Resume</a>
-    <a href="resume.html" target="_blank" rel="noopener">📄 Web CV</a>
-    <button id="ec-theme" title="Toggle theme" type="button">☀ / ☾</button>
+<header class="bar">
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#hardware">Bench</a>
+      <a href="#skills">Skills</a>
+      <a href="#insights">Insights</a>
+      <a href="#milestones">Timeline</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-btn" id="theme" type="button" aria-label="Toggle theme">
+        <span id="t-icon">☀️</span> <span id="t-label">Theme</span>
+      </button>
+    </div>
   </div>
+  <div id="progress"></div>
 </header>
 
-<main>
-  <!-- ===== TERMINAL HERO INTRO ===== -->
-  <section id="ec-hero">
-    <div class="ec-term-wrap">
-      <div class="ec-term">
-        <div class="ec-term-bar"><i></i><i></i><i></i><span>suhail@ec-lab: ~</span></div>
-        <div id="ec-term-body"></div>
-      </div>
-    </div>
+<main class="wrap">
+  <!-- Hero Section -->
+  <div class="hero" id="hero">
+    <div class="hero-layout">
+      <div class="hero-main">
+        <h1>Mohammed <span>Suhail</span></h1>
+        <p class="lead">Electronics and Communication Engineering student building toward VLSI design, semiconductor architectures, and embedded systems.</p>
+        <p class="where">
+          <span class="status-dot"></span>
+          <span>Bangalore, Karnataka, India &bull; Open to VLSI &amp; Embedded Internships</span>
+        </p>
 
-    <!-- License Card + Live Oscilloscope Timing Diagram -->
-    <div class="hero-meta-row">
-      <div class="lic-badge">
-        <img src="photo.jpg" alt="Mohammed Suhail" onerror="this.style.display='none'">
-        <div class="lic-badge-info">
-          <h3>MOHAMMED SUHAIL</h3>
-          <p>Electronics &amp; Communication Engineering<br>Jyothy Institute of Tech (VTU '29)</p>
-          <div class="lic-badge-tags">
-            <span>VLSI</span><span>Embedded</span><span>Robotics</span><span>KiCad</span>
+        <div class="actions">
+          <a class="primary" href="#projects">See projects &darr;</a>
+          <a id="gh-link" href="https://github.com/mdxsuhail" target="_blank" rel="noopener">GitHub &nearr;</a>
+          <a href="resume.html">Web Resume &rarr;</a>
+          <a href="resume.pdf" download>PDF Resume &darr;</a>
+          <a href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">LinkedIn &nearr;</a>
+        </div>
+
+        <p class="pill" id="views" hidden><i></i><b id="vcount">0</b> site visits</p>
+
+        <!-- Oscilloscope Waveform Canvas -->
+        <div class="scope">
+          <div class="scope-header">
+            <span>DIGITAL TIMING LOGIC &bull; CH1: CLK / CH2: EN / BUS: DATA</span>
+            <span>40 MHz REF</span>
           </div>
+          <canvas id="scope" role="img" aria-label="Animated timing diagram with clock, enable line and data bus. Move pointer over it to inspect time in nanoseconds."></canvas>
+          <p class="scope-hint">Hover diagram to measure nanoseconds (ns)</p>
         </div>
       </div>
 
-      <div class="scope-box">
-        <canvas id="scope" role="img" aria-label="Animated timing diagram showing clk, en and data lines. Hover to measure time."></canvas>
-        <p>Hover diagram to inspect timing (ns)</p>
+      <!-- 3D Profile Badge / License Card -->
+      <div class="lic-col">
+        <div class="badge-style-nav" role="group" aria-label="Card style switcher">
+          <button type="button" data-s="" aria-pressed="true">Badge</button>
+          <button type="button" data-s="license" aria-pressed="false">License</button>
+          <button type="button" data-s="dark" aria-pressed="false">Dark</button>
+        </div>
+        <div class="badge-wrap" id="bwrap">
+          <div class="lanyard" aria-hidden="true"><i></i></div>
+          <button class="badge" id="badge" type="button" aria-pressed="false" aria-label="Profile card, click or tap to flip">
+            <span class="face front">
+              <span class="band"></span>
+              <span class="photo">
+                <img id="pfp" src="photo.jpg" alt="Mohammed Suhail portrait">
+                <svg id="mono" viewBox="0 0 240 190" aria-hidden="true" hidden>
+                  <rect width="240" height="190" fill="var(--chip)"/>
+                  <path d="M0 150H40V120H80V150H120V120H160V150H200V120H240" fill="none" stroke="var(--acc)" stroke-width="3" stroke-linejoin="round"/>
+                  <text x="120" y="98" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="64" fill="var(--ink)">MS</text>
+                </svg>
+              </span>
+              <b class="nm">Mohammed Suhail</b>
+              <span class="rl">Electronics &amp; Communication Engineer</span>
+              <span class="ft">
+                <span>Jyothy Inst. of Tech &bull; VTU</span>
+                <span>Class of 2029</span>
+              </span>
+            </span>
+            <span class="face back">
+              <b>Academic Focus</b>
+              <span>B.E. in Electronics &amp; Communication<br>Affiliated to Visvesvaraya Tech University<br>Graduating June 2029</span>
+              <b>Core Disciplines</b>
+              <span>VLSI front-end, digital RTL, analog circuits, and embedded robotics.</span>
+              <b>Primary EDA &amp; Languages</b>
+              <span class="chips">
+                <span class="tag">Verilog</span><span class="tag">VHDL</span><span class="tag">Vivado</span>
+                <span class="tag">KiCad</span><span class="tag">SPICE</span><span class="tag">ESP32</span>
+                <span class="tag">C/C++</span><span class="tag">Python</span>
+              </span>
+              <b>Availability</b>
+              <span>Seeking Summer 2026 / 2027 VLSI &amp; Embedded Internships.</span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ===== PROJECTS ===== -->
-  <section class="ec-sec" id="projects">
-    <h2>&gt; PROJECTS_</h2>
-    <p class="sub">Hardware prototypes, RTL verification, and embedded firmware designs.</p>
-    <div class="ec-grid">
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">🤖</div><h3>Aether-Bot Medical Assistant</h3></div>
-        <div class="ec-face back">ESP32 autonomous patient assistant bot with dual-servo arm kinematics &amp; ultrasonic navigation.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View Code →</a></div>
-      </div></div>
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">🧠</div><h3>VLSI: 16-bit ALU Design</h3></div>
-        <div class="ec-face back">Arithmetic Logic Unit modeled in Verilog with behavioral testbench verification in Xilinx Vivado.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View RTL →</a></div>
-      </div></div>
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">📡</div><h3>Analog SPICE Simulation</h3></div>
-        <div class="ec-face back">Active low-noise filters and full-wave rectifier circuit topologies simulated in KiCad SPICE.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">Schematics →</a></div>
-      </div></div>
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">🚌</div><h3>RouteVelo Transit Platform</h3></div>
-        <div class="ec-face back">System architecture and requirements specifications for smart public transit tracking.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">Architecture →</a></div>
-      </div></div>
+  <!-- Tech Marquee Ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div>
+      <span>Verilog HDL</span><span>SystemVerilog</span><span>Xilinx Vivado</span><span>KiCad SPICE</span><span>ESP32 Firmware</span><span>ARM Cortex</span><span>C and C++</span><span>Digital ALU</span><span>Python Automation</span><span>PCB Layout</span><span>MATLAB</span><span>Git</span>
+      <span>Verilog HDL</span><span>SystemVerilog</span><span>Xilinx Vivado</span><span>KiCad SPICE</span><span>ESP32 Firmware</span><span>ARM Cortex</span><span>C and C++</span><span>Digital ALU</span><span>Python Automation</span><span>PCB Layout</span><span>MATLAB</span><span>Git</span>
     </div>
+  </div>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="sub">Hardware prototypes, digital RTL designs, and software tools pulled live from my public GitHub repositories.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter projects by tag"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="list" aria-live="polite"></div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
-  <section class="ec-sec" id="skills">
-    <h2>&gt; SKILLS_NETWORK_</h2>
-    <p class="sub">Interactive circuit-node topology spanning semiconductor design and embedded engineering.</p>
-    <svg id="ec-skill-svg" viewBox="0 0 640 440"></svg>
-
-    <div class="skills-meters">
-      <div class="sk-meter-card">
-        <div class="sk-meter-head"><span>Verilog HDL &amp; RTL</span><span>Level 3/4</span></div>
-        <div class="sk-meter-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-      </div>
-      <div class="sk-meter-card">
-        <div class="sk-meter-head"><span>Xilinx Vivado Simulation</span><span>Level 3/4</span></div>
-        <div class="sk-meter-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-      </div>
-      <div class="sk-meter-card">
-        <div class="sk-meter-head"><span>KiCad PCB &amp; SPICE</span><span>Level 3/4</span></div>
-        <div class="sk-meter-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-      </div>
-      <div class="sk-meter-card">
-        <div class="sk-meter-head"><span>ESP32 &amp; Arduino Firmware</span><span>Level 3/4</span></div>
-        <div class="sk-meter-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-      </div>
-      <div class="sk-meter-card">
-        <div class="sk-meter-head"><span>C &amp; Embedded C++</span><span>Level 3/4</span></div>
-        <div class="sk-meter-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-      </div>
-      <div class="sk-meter-card">
-        <div class="sk-meter-head"><span>Python &amp; Automation</span><span>Level 2/4</span></div>
-        <div class="sk-meter-bars"><i class="on"></i><i class="on"></i><i></i><i></i></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CURRENT HARDWARE EXPERIMENTS ===== -->
-  <section class="ec-sec" id="experiments">
-    <h2>&gt; HARDWARE_BENCH_STATUS_</h2>
-    <p class="sub">Active workbench prototypes, synthesis runs, and ongoing laboratory experiments.</p>
+  <!-- Hardware Bench Status Section -->
+  <section id="hardware">
+    <h2>Hardware Bench Status</h2>
+    <p class="sub">Active workbench experiments, synthesis verification runs, and physical circuit prototypes in progress.</p>
     <div class="bench-grid">
       <div class="bench-card">
         <span class="bench-status"><i class="bench-dot"></i> Active Bench Test</span>
         <h3 class="bench-title">ESP32 Dual-Servo Arm Kinematics</h3>
-        <p class="bench-desc">PWM calibration and ultrasonic obstacle avoidance ranging for autonomous medical robot platform.</p>
-        <div class="bench-tags"><span class="bench-tag">ESP32</span><span class="bench-tag">C/C++</span><span class="bench-tag">PWM</span><span class="bench-tag">Sensors</span></div>
+        <p class="bench-desc">PWM calibration and ultrasonic sensor distance integration for autonomous obstacle-avoiding medical assistant platform.</p>
+        <div class="bench-tags"><span class="bench-tag">ESP32</span><span class="bench-tag">C/C++</span><span class="bench-tag">PWM</span><span class="bench-tag">Robotics</span></div>
       </div>
       <div class="bench-card">
         <span class="bench-status"><i class="bench-dot"></i> RTL Synthesis</span>
         <h3 class="bench-title">16-bit ALU Testbench Verification</h3>
-        <p class="bench-desc">Verilog implementation of arithmetic and logic unit with waveform checking in Xilinx Vivado.</p>
-        <div class="bench-tags"><span class="bench-tag">Verilog</span><span class="bench-tag">Vivado</span><span class="bench-tag">RTL</span></div>
-      </div>
-      <div class="bench-card">
-        <span class="bench-status"><i class="bench-dot"></i> Active Coursework</span>
-        <h3 class="bench-title">Semiconductors &amp; FPGA Design</h3>
-        <p class="bench-desc">NPTEL semiconductor engineering modules alongside digital architecture online courses.</p>
-        <div class="bench-tags"><span class="bench-tag">NPTEL</span><span class="bench-tag">FPGA</span><span class="bench-tag">VLSI</span></div>
+        <p class="bench-desc">Verilog implementation of arithmetic and logic unit operations verified with behavioral testbench waveforms in Xilinx Vivado.</p>
+        <div class="bench-tags"><span class="bench-tag">Verilog</span><span class="bench-tag">Vivado</span><span class="bench-tag">Simulation</span></div>
       </div>
       <div class="bench-card">
         <span class="bench-status"><i class="bench-dot"></i> Circuit Simulation</span>
-        <h3 class="bench-title">Active Filter &amp; Power Circuit Topologies</h3>
-        <p class="bench-desc">Designing low-noise frequency-selective filters and full-wave rectifier systems in KiCad SPICE.</p>
+        <h3 class="bench-title">Analog Filters &amp; Rectifier Topologies</h3>
+        <p class="bench-desc">Designing and simulating low-noise active filters and full-wave bridge rectifier circuits in KiCad SPICE prior to breadboarding.</p>
         <div class="bench-tags"><span class="bench-tag">KiCad</span><span class="bench-tag">SPICE</span><span class="bench-tag">Analog</span></div>
+      </div>
+      <div class="bench-card">
+        <span class="bench-status"><i class="bench-dot"></i> Active Coursework</span>
+        <h3 class="bench-title">Semiconductors &amp; FPGA Architectures</h3>
+        <p class="bench-desc">NPTEL semiconductor courses and FPGA design architectures exploring LUTs, block RAM, and clock distribution.</p>
+        <div class="bench-tags"><span class="bench-tag">NPTEL</span><span class="bench-tag">VLSI</span><span class="bench-tag">FPGA</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== MILESTONES ===== -->
-  <section class="ec-sec" id="milestones">
-    <h2>&gt; MILESTONES_&amp;_TIMELINE_</h2>
-    <p class="sub">Chronological timeline of certifications, hackathons, and engineering training.</p>
+  <!-- Skills & Interactive Circuit Topology -->
+  <section id="skills">
+    <h2>Skills &amp; EDA Tools</h2>
+    <p class="sub">Self-assessed hands-on comfort levels with design tools, hardware platforms, and simulation environments.</p>
+    <div class="levels" id="levels"></div>
+
+    <div class="circuit-wrap">
+      <h3 style="font:700 1.05rem var(--display);margin:0 0 4px">Interactive Engineering Network</h3>
+      <p class="cap">Interconnected branches across semiconductor design and embedded engineering.</p>
+      <svg id="ec-skill-svg" viewBox="0 0 600 420" role="img" aria-label="Interactive circuit diagram connecting engineering domains"></svg>
+    </div>
+
+    <p class="cap" style="margin-top:20px">Additional Software &amp; Lab Equipment</p>
+    <ul class="chiprow">
+      <li>Cadence EDA</li><li>Synopsys Tools</li><li>MATLAB &amp; Simulink</li><li>Breadboarding</li>
+      <li>Digital Oscilloscope</li><li>Logic Analyzer</li><li>Soldering &amp; Prototyping</li><li>Wokwi</li>
+      <li>Tinkercad</li><li>Raspberry Pi</li><li>UART / SPI / I2C</li>
+    </ul>
+  </section>
+
+  <!-- GitHub Insights Section -->
+  <section id="insights">
+    <h2>GitHub Analytics</h2>
+    <p class="sub">Real-time statistics calculated directly from my public repositories, language distribution, and commit history.</p>
+    <div class="stats" id="stats" aria-live="polite"></div>
+
+    <div class="chart">
+      <h3>Language Distribution</h3>
+      <p class="cap">Share of public repositories categorized by primary language.</p>
+      <div class="stack" id="langbar" role="img" aria-label="Language distribution bar"></div>
+      <div class="legend" id="langlegend"></div>
+    </div>
+
+    <div class="chart">
+      <h3>Recent Activity Heatmap</h3>
+      <p class="cap">Public GitHub events per day over the past 90 days.</p>
+      <div class="heat" id="heat" role="img" aria-label="Daily public activity grid"></div>
+    </div>
+
+    <div class="two">
+      <div class="chart">
+        <h3>Language Breakdown</h3>
+        <p class="cap">Repositories divided by main language.</p>
+        <div class="donut" id="donut"></div>
+      </div>
+      <div class="chart">
+        <h3>Repository Topics</h3>
+        <p class="cap">Top tags across open repositories.</p>
+        <div class="hbars" id="topicbars"></div>
+      </div>
+    </div>
+
+    <div class="chart">
+      <h3>Activity Mix</h3>
+      <p class="cap">Breakdown of recent public events.</p>
+      <div class="hbars" id="mix"></div>
+    </div>
+
+    <div class="chart">
+      <h3>Repositories by Last Update</h3>
+      <p class="cap">Repositories modified in each of the past 12 months.</p>
+      <div class="months" id="months"></div>
+    </div>
+
+    <h3 style="font:700 1.05rem var(--display);margin:20px 0 12px">GitHub at a Glance</h3>
+    <div class="stats" id="stats2"></div>
+  </section>
+
+  <!-- Focus Areas Section -->
+  <section id="focus">
+    <h2>Engineering Domains</h2>
+    <p class="sub">The three core pillars my technical work and academic coursework span.</p>
+    <div class="focus">
+      <div>
+        <svg viewBox="0 0 56 30" aria-hidden="true"><path d="M2 24H12V6H24V24H34V6H46V24H54"/></svg>
+        <h3>Digital Design</h3>
+        <p>Describing logic structures in HDL, state machine architectures, and verifying timing waveforms.</p>
+        <ul><li>Verilog</li><li>SystemVerilog</li><li>Xilinx Vivado</li><li>ALU / Adders</li></ul>
+      </div>
+      <div>
+        <svg viewBox="0 0 56 30" aria-hidden="true"><path d="M2 15C10-4 18-4 28 15S46 34 54 15"/></svg>
+        <h3>Analog Circuits</h3>
+        <p>Simulating active filtering, power rectification, and designing clean printed circuit board schematics.</p>
+        <ul><li>KiCad</li><li>SPICE</li><li>PCB Layout</li><li>Signal Conditioning</li></ul>
+      </div>
+      <div>
+        <svg viewBox="0 0 56 30" aria-hidden="true"><path d="M16 6H40V24H16ZM22 6V1M34 6V1M22 24V29M34 24V29M16 12H11M16 18H11M40 12H45M40 18H45"/></svg>
+        <h3>Embedded &amp; Robotics</h3>
+        <p>Real-time firmware in C/C++ interfacing sensors, motor controllers, and autonomous actuation.</p>
+        <ul><li>ESP32</li><li>Arduino</li><li>C and C++</li><li>Ultrasonic &amp; Servos</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="milestones">
+    <h2>Timeline &amp; Milestones</h2>
+    <p class="sub">Chronological overview of university training, industry certifications, and hackathons.</p>
     <div class="timeline">
       <div class="t-node">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-head"><h3 class="t-title">Building Multi-Agent Systems with Strands Agents</h3><span class="t-time">Mar 2026</span></div>
+          <div class="t-head">
+            <h3 class="t-title">Building Multi-Agent Systems with Strands Agents</h3>
+            <span class="t-time">Mar 2026</span>
+          </div>
           <p class="t-org">Amazon Web Services (AWS) &bull; Verified Credential</p>
-          <p class="t-desc">Advanced agentic AI frameworks, autonomous multi-agent task distribution, and systems orchestration.</p>
+          <p class="t-desc">Autonomous multi-agent orchestration, agentic AI frameworks, and intelligent task distribution.</p>
         </div>
       </div>
       <div class="t-node">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-head"><h3 class="t-title">AWS Machine Learning Learning Plan</h3><span class="t-time">Feb 2026</span></div>
+          <div class="t-head">
+            <h3 class="t-title">AWS Machine Learning Learning Plan</h3>
+            <span class="t-time">Feb 2026</span>
+          </div>
           <p class="t-org">Amazon Web Services (AWS) &bull; Specialization</p>
-          <p class="t-desc">Core machine learning pipelines, neural models, feature engineering, and inference optimization.</p>
+          <p class="t-desc">Foundational machine learning models, inference workflows, and data pipelines.</p>
         </div>
       </div>
       <div class="t-node">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-head"><h3 class="t-title">Machine Translation in Language Learning</h3><span class="t-time">Feb 2026</span></div>
+          <div class="t-head">
+            <h3 class="t-title">Machine Translation in Language Learning</h3>
+            <span class="t-time">Feb 2026</span>
+          </div>
           <p class="t-org">The Open University &bull; Academic Credential</p>
-          <p class="t-desc">Computational linguistics, sequence modeling, and language transformation architectures.</p>
+          <p class="t-desc">Linguistic models, automated sequence translation architectures, and algorithmic linguistics.</p>
         </div>
       </div>
       <div class="t-node">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-head"><h3 class="t-title">College-Level Hackathon Participant</h3><span class="t-time">2025</span></div>
+          <div class="t-head">
+            <h3 class="t-title">College Hackathon: Aether-Bot Prototyping</h3>
+            <span class="t-time">2025</span>
+          </div>
           <p class="t-org">Jyothy Institute of Technology</p>
-          <p class="t-desc">Prototyped Aether-Bot autonomous medical assistant robot in an intensive multi-sensor development sprint.</p>
+          <p class="t-desc">Designed and built ESP32-driven autonomous medical assistant bot in an intensive engineering sprint.</p>
         </div>
       </div>
       <div class="t-node">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-head"><h3 class="t-title">Commenced B.E. in Electronics &amp; Communication</h3><span class="t-time">Aug 2025</span></div>
-          <p class="t-org">Jyothy Institute of Technology &bull; VTU Affiliated</p>
-          <p class="t-desc">Class of 2029 focusing on VLSI front-end, analog circuits, and embedded robotics.</p>
+          <div class="t-head">
+            <h3 class="t-title">Started B.E. in Electronics &amp; Communication</h3>
+            <span class="t-time">Aug 2025 – Jun 2029</span>
+          </div>
+          <p class="t-org">Jyothy Institute of Technology &bull; Visvesvaraya Technological University (VTU)</p>
+          <p class="t-desc">4-year undergraduate engineering degree with emphasis on digital systems, semiconductor circuits, and communications.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== GITHUB STATS ===== -->
-  <section class="ec-sec" id="github">
-    <h2>&gt; GITHUB_STATS_</h2>
-    <p class="sub">Live repository metrics fetched from GitHub API.</p>
-    <div class="gh-top" id="gh-top"></div>
-    <div class="gh-repos" id="gh-repos"></div>
-    <p id="gh-msg">Loading from GitHub...</p>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="sub">How I build, what drives my engineering curiosity, and my career trajectory.</p>
+    <p>I study Electronics and Communication Engineering at Visvesvaraya Technological University (VTU). My goal is to work at the forefront of digital VLSI front-end design, ASIC/FPGA architecture, and embedded systems.</p>
+    <p>I believe true engineering competence is built by writing code that controls physical electrons. I balance theoretical circuit physics with hands-on RTL coding, SPICE simulation, and breadboard testing.</p>
+
+    <div class="dgrid">
+      <div class="dcard"><h3>Education</h3><p>B.E. in Electronics &amp; Communication at Jyothy Institute of Technology, Bangalore (VTU '29).</p></div>
+      <div class="dcard"><h3>Target Roles</h3><p>VLSI Front-end Intern, RTL Verification, Embedded Firmware, Digital Design Engineer.</p></div>
+      <div class="dcard"><h3>Hardware</h3><p>ESP32, Arduino Nano/WROOM, Servos, Biometric &amp; Ultrasonic Sensors, Oscilloscopes.</p></div>
+      <div class="dcard"><h3>Design Tools</h3><p>Xilinx Vivado, KiCad, SPICE, Cadence EDA, Synopsys, MATLAB &amp; Simulink.</p></div>
+      <div class="dcard"><h3>Affiliations</h3><p>Active member of the IEEE Student Branch and ECE Departmental Association.</p></div>
+      <div class="dcard"><h3>Current Learning</h3><p>NPTEL semiconductor courses and advanced FPGA digital architecture.</p></div>
+      <div class="dcard"><h3>Spoken Languages</h3><p>English, Hindi, Urdu, and Kannada.</p></div>
+      <div class="dcard"><h3>Internship Locations</h3><p>Open to on-site in Bangalore/India, remote globally, or international opportunities.</p></div>
+    </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section class="ec-sec" id="contact">
-    <h2>&gt; CONTACT_SIGNAL_</h2>
-    <p class="sub">Transmit a signal for VLSI internships, embedded firmware projects, or engineering inquiries.</p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact &amp; Connect</h2>
+    <p class="sub">Feel free to reach out regarding internship opportunities, research collaborations, or technical questions.</p>
+
     <div class="contact-layout">
-      <!-- ✏️ Replace with your Formspree ID or uses direct client mail transmit -->
-      <form class="ec-form" id="contact-form" onsubmit="handleContact(event)">
-        <input type="text" id="c-name" name="name" placeholder="Your name / Company" required>
-        <input type="email" id="c-email" name="email" placeholder="Your email address" required>
-        <input type="text" id="c-sub" name="subject" placeholder="Subject / Opportunity" required>
-        <textarea id="c-msg" name="message" rows="5" placeholder="Transmit your message here..." required></textarea>
-        <button type="submit">SEND_SIGNAL ▶</button>
+      <!-- Direct Contact Form -->
+      <form class="contact-form" id="contact-form" onsubmit="handleContact(event)">
+        <div class="form-group">
+          <label for="c-name">Your Name</label>
+          <input type="text" id="c-name" required placeholder="Recruiter / Engineer Name">
+        </div>
+        <div class="form-group">
+          <label for="c-email">Your Email</label>
+          <input type="email" id="c-email" required placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label for="c-sub">Subject</label>
+          <input type="text" id="c-sub" required placeholder="VLSI Internship / Project Inquiry">
+        </div>
+        <div class="form-group">
+          <label for="c-msg">Message</label>
+          <textarea id="c-msg" rows="4" required placeholder="Hi Suhail, I reviewed your hardware portfolio and would like to connect regarding..."></textarea>
+        </div>
+        <button type="submit" class="send-btn">Send Email Signal &rarr;</button>
       </form>
 
+      <!-- Social Dock -->
       <div class="social-dock">
         <a class="social-pill" href="https://github.com/mdxsuhail" target="_blank" rel="noopener">
-          <span class="social-pill-left">⚡ GitHub</span>
+          <div class="social-pill-left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </div>
           <span class="social-pill-action">@mdxsuhail &nearr;</span>
         </a>
+
         <a class="social-pill" href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">
-          <span class="social-pill-left">⚡ LinkedIn</span>
+          <div class="social-pill-left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </div>
           <span class="social-pill-action">Connect &nearr;</span>
         </a>
+
         <div class="social-pill" onclick="copyContact('suhailm2007@gmail.com', 'Email')">
-          <span class="social-pill-left">✉ suhailm2007@gmail.com</span>
-          <span class="social-pill-action">Copy</span>
+          <div class="social-pill-left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-.426l4.616-3.741v9.467l-4.616-5.726z"/></svg>
+            suhailm2007@gmail.com
+          </div>
+          <span class="social-pill-action">Click to copy</span>
         </div>
+
         <a class="social-pill" href="resume.pdf" download>
-          <span class="social-pill-left">📄 Download Resume (PDF)</span>
+          <div class="social-pill-left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Download Resume (PDF)
+          </div>
           <span class="social-pill-action">PDF &darr;</span>
+        </a>
+
+        <a class="social-pill" href="resume.html">
+          <div class="social-pill-left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            Interactive Web Resume
+          </div>
+          <span class="social-pill-action">View &rarr;</span>
         </a>
       </div>
     </div>
   </section>
 </main>
 
+<!-- Project Preview Modal -->
+<dialog id="dlg" aria-label="Project Preview Details">
+  <button class="x" id="dx" type="button" aria-label="Close Preview">&times;</button>
+  <img id="dimg" alt="Project OpenGraph preview image">
+  <div class="db">
+    <h3 id="dt"></h3>
+    <p id="dd"></p>
+    <p id="do"></p>
+    <p class="meta" id="dm"></p>
+    <div class="links" id="dl" style="margin-top:14px"></div>
+  </div>
+</dialog>
+
+<!-- Back to top button -->
+<button id="top" type="button" aria-label="Back to top">&uarr;</button>
+
+<!-- Toast notification popup -->
 <div id="toast" role="alert" aria-live="assertive"></div>
-<button id="ec-up" title="Back to top" aria-label="Back to top">▲</button>
 
 <footer>
-  Mohammed Suhail &bull; Electronics &amp; Communication Engineering &bull; Class of 2029
+  <div class="wrap">
+    <span>Mohammed Suhail &bull; Electronics and Communication Engineering &bull; 2026</span>
+    <span>Hosted on GitHub Pages &bull; Projects refresh via GitHub REST API</span>
+  </div>
 </footer>
 
-<!-- ===== INTERACTIVE JAVASCRIPT ===== -->
 <script>
-// ---- Theme Toggle (remembers choice) ----
+/* ---------- Settings & Constants ---------- */
+var USER = "mdxsuhail";
+var HIDE = [USER, USER + ".github.io", "portfolio"];
+var CACHE_MS = 900000; // 15 mins
+var MAX_README = 6;
+var LANG = {
+  Verilog: "#6c7ae0", SystemVerilog: "#6c7ae0", VHDL: "#3a8f6e",
+  C: "#8a8f98", "C++": "#e0577a", Python: "#3a78b5",
+  JavaScript: "#d9b92b", HTML: "#e4572e", CSS: "#7a5aa6",
+  "Jupyter Notebook": "#e8833a", Shell: "#5aa05a", Tcl: "#b07d1a",
+  Arduino: "#1a9aa8"
+};
+
+function lc(l){ return LANG[l] || "var(--acc)"; }
+function el(t, c, x){ var e = document.createElement(t); if(c) e.className = c; if(x) e.textContent = x; return e; }
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+function month(i){ return new Date(i).toLocaleDateString("en", { month: "short", year: "numeric" }); }
+
+/* ---------- Theme Switcher ---------- */
 (function(){
-  var root = document.documentElement;
+  var root = document.documentElement, btn = $("theme"), icon = $("t-icon"), lbl = $("t-label");
   try {
-    var saved = localStorage.getItem('ec-theme');
-    if (saved) root.setAttribute('data-theme', saved);
-  } catch(e) {}
-  var btn = document.getElementById('ec-theme');
-  if (btn) {
-    btn.onclick = function(){
-      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('ec-theme', next); } catch(e) {}
-      if (typeof drawScopeStatic === 'function') drawScopeStatic();
-    };
+    var s = localStorage.getItem("theme");
+    if(s) root.setAttribute("data-theme", s);
+  } catch(e){}
+
+  function cur(){
+    return root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+  function updateBtn(){
+    var dark = cur() === "dark";
+    if(icon) icon.textContent = dark ? "🌙" : "☀️";
+    if(lbl) lbl.textContent = dark ? "Dark" : "Light";
+  }
+  if(btn){
+    btn.addEventListener("click", function(){
+      var next = cur() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch(e){}
+      updateBtn();
+      drawStatic();
+    });
+  }
+  updateBtn();
+})();
+
+/* ---------- Scroll Progress & Navigation Highlighting ---------- */
+var ghUrl = "https://github.com/" + USER;
+if($("gh-link")) $("gh-link").href = ghUrl;
+
+addEventListener("scroll", function(){
+  var h = document.documentElement;
+  var pr = $("progress");
+  if(pr) pr.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight || 1) * 100) + "%";
+  var topBtn = $("top");
+  if(topBtn) topBtn.classList.toggle("on", window.scrollY > 450);
+}, { passive: true });
+
+if($("top")){
+  $("top").addEventListener("click", function(){
+    window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+}
+
+var navLinks = {};
+document.querySelectorAll(".bar nav a").forEach(function(a){
+  if(a.hash) navLinks[a.hash.slice(1)] = a;
+});
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){
+      for(var k in navLinks) navLinks[k].classList.toggle("on", k === e.target.id);
+    }
+  });
+}, { rootMargin: "-30% 0px -60% 0px" });
+document.querySelectorAll("main section, .hero").forEach(function(s){ io.observe(s); });
+
+/* ---------- Oscilloscope Timing Diagram ---------- */
+var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+var cv = $("scope"), cx = cv ? cv.getContext("2d") : null;
+var W = 0, H = 0, mx = null, t0 = performance.now(), off = 0;
+var P = 64, WORDS = ["3A", "7F", "C1", "08", "E4", "5D", "B2", "91"];
+
+function css(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+function size(){
+  if(!cv) return;
+  var d = window.devicePixelRatio || 1;
+  W = cv.clientWidth; H = cv.clientHeight;
+  cv.width = W * d; cv.height = H * d;
+  cx.setTransform(d, 0, 0, d, 0, 0);
+  drawStatic();
+}
+function enOn(n){ return Math.floor(n / 6) % 3 !== 2; }
+
+function frame(){
+  if(!cx || !W) return;
+  var acc = css("--acc") || "#38bdf8";
+  var amb = css("--acc2") || "#2dd4bf";
+  var mut = css("--mut") || "#94a3b8";
+  var line = css("--line") || "#1e293b";
+  var surf = css("--surface") || "#0c1527";
+  var ink = css("--ink") || "#f1f5f9";
+
+  cx.clearRect(0, 0, W, H);
+  var n0 = Math.floor(off / P) - 1, n1 = Math.ceil((off + W) / P) + 1, A = 18;
+  var yc = H * 0.22, ye = H * 0.52, yd = H * 0.82, n, x0;
+
+  // Grid lines
+  cx.lineWidth = 1; cx.strokeStyle = line; cx.setLineDash([3, 5]);
+  for(n = n0; n <= n1; n++){
+    x0 = n * P - off;
+    cx.beginPath(); cx.moveTo(x0, 6); cx.lineTo(x0, H - 6); cx.stroke();
+  }
+  cx.setLineDash([]); cx.lineJoin = "round"; cx.lineWidth = 2.2;
+
+  // CLK waveform
+  cx.strokeStyle = acc; cx.beginPath();
+  for(n = n0; n <= n1; n++){
+    x0 = n * P - off;
+    if(n === n0) cx.moveTo(x0, yc + A / 2);
+    cx.lineTo(x0, yc + A / 2);
+    cx.lineTo(x0, yc - A / 2);
+    cx.lineTo(x0 + P / 2, yc - A / 2);
+    cx.lineTo(x0 + P / 2, yc + A / 2);
+    cx.lineTo(x0 + P, yc + A / 2);
+  }
+  cx.stroke();
+
+  // EN waveform
+  cx.strokeStyle = amb; cx.beginPath();
+  for(n = n0; n <= n1; n++){
+    x0 = n * P - off;
+    var y = ye + (enOn(n) ? -A / 2 : A / 2);
+    if(n === n0) cx.moveTo(x0, y); else cx.lineTo(x0, y);
+    cx.lineTo(x0 + P, y);
+  }
+  cx.stroke();
+
+  // DATA Bus
+  cx.strokeStyle = ink; cx.fillStyle = mut;
+  cx.font = "500 12px monospace"; cx.textAlign = "center";
+  for(n = n0; n <= n1; n++){
+    x0 = n * P - off;
+    cx.beginPath();
+    if(enOn(n)){
+      cx.moveTo(x0, yd);
+      cx.lineTo(x0 + 6, yd - A / 2); cx.lineTo(x0 + P - 6, yd - A / 2);
+      cx.lineTo(x0 + P, yd);
+      cx.lineTo(x0 + P - 6, yd + A / 2); cx.lineTo(x0 + 6, yd + A / 2);
+      cx.closePath(); cx.stroke();
+      cx.fillText(WORDS[((n % 8) + 8) % 8], x0 + P / 2, yd + 4);
+    } else {
+      cx.moveTo(x0, yd); cx.lineTo(x0 + P, yd); cx.stroke();
+    }
+  }
+
+  // Channel Labels
+  cx.fillStyle = surf; cx.fillRect(0, 0, 48, H);
+  cx.fillStyle = mut; cx.textAlign = "left"; cx.font = "600 12px monospace";
+  cx.fillText("clk", 10, yc + 4);
+  cx.fillText("en",  10, ye + 4);
+  cx.fillText("data",10, yd + 4);
+
+  // Time inspection cursor
+  if(mx !== null && mx > 48){
+    cx.strokeStyle = acc; cx.lineWidth = 1; cx.setLineDash([4, 4]);
+    cx.beginPath(); cx.moveTo(mx, 0); cx.lineTo(mx, H); cx.stroke();
+    cx.setLineDash([]);
+    var t = Math.max(0, Math.round((mx + off) / P * 10));
+    var text = "t = " + t + " ns";
+    var tw = cx.measureText(text).width + 16;
+    var bx = Math.min(mx + 8, W - tw - 6);
+    cx.fillStyle = acc; cx.fillRect(bx, H - 28, tw, 20);
+    cx.fillStyle = css("--acc-ink") || "#000";
+    cx.textAlign = "left"; cx.fillText(text, bx + 8, H - 14);
+  }
+}
+
+function drawStatic(){ if(W) frame(); }
+function tick(now){
+  off = (now - t0) / 1000 * 32;
+  frame();
+  requestAnimationFrame(tick);
+}
+
+if(cv){
+  cv.addEventListener("pointermove", function(e){
+    mx = e.clientX - cv.getBoundingClientRect().left;
+    if(reduced) drawStatic();
+  });
+  cv.addEventListener("pointerleave", function(){
+    mx = null;
+    if(reduced) drawStatic();
+  });
+  addEventListener("resize", size);
+  size();
+  if(!reduced) requestAnimationFrame(tick);
+}
+
+/* ---------- Dynamic Circuit Pulse Background ---------- */
+(function(){
+  var cv = $("signal-bg");
+  if(!cv) return;
+  var cx = cv.getContext("2d"), W = 0, H = 0, pulses = [];
+  function sz(){ W = cv.width = window.innerWidth; H = cv.height = window.innerHeight; }
+  window.addEventListener("resize", sz); sz();
+
+  for(var i = 0; i < 28; i++){
+    pulses.push({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - .5) * .6, vy: (Math.random() - .5) * .6,
+      len: 30 + Math.random() * 50, axis: Math.random() > .5 ? 'h' : 'v'
+    });
+  }
+
+  function draw(){
+    if(reduced) return;
+    cx.clearRect(0, 0, W, H);
+    var dark = document.documentElement.getAttribute("data-theme") !== "light";
+    var col = dark ? "rgba(56,189,248," : "rgba(2,132,199,";
+
+    pulses.forEach(function(p){
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0) p.x = W; if(p.x > W) p.x = 0;
+      if(p.y < 0) p.y = H; if(p.y > H) p.y = 0;
+
+      cx.strokeStyle = col + "0.12)";
+      cx.lineWidth = 1.2;
+      cx.beginPath();
+      if(p.axis === 'h'){ cx.moveTo(p.x, p.y); cx.lineTo(p.x + p.len, p.y); }
+      else { cx.moveTo(p.x, p.y); cx.lineTo(p.x, p.y + p.len); }
+      cx.stroke();
+
+      cx.fillStyle = col + "0.55)";
+      cx.beginPath();
+      cx.arc(p.axis === 'h' ? p.x + p.len : p.x, p.axis === 'h' ? p.y : p.y + p.len, 2, 0, Math.PI * 2);
+      cx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ---------- GitHub API Access with Cache & Safe Fallbacks ---------- */
+function store(k, v){
+  var r = JSON.stringify({ t: Date.now(), v: v });
+  try { sessionStorage.setItem(k, r); } catch(e){}
+  try { localStorage.setItem(k, r); } catch(e){}
+}
+function read(a, k){
+  try { return JSON.parse(a.getItem(k) || "null"); } catch(e){ return null; }
+}
+
+async function gh(path, raw){
+  var key = "gh:" + path + (raw ? ":raw" : "");
+  var fresh = read(sessionStorage, key);
+  if(fresh && Date.now() - fresh.t < CACHE_MS) return fresh.v;
+  try {
+    var r = await fetch("https://api.github.com" + path, {
+      headers: { Accept: raw ? "application/vnd.github.raw" : "application/vnd.github+json" }
+    });
+    if(!r.ok) throw new Error(String(r.status));
+    var v = raw ? await r.text() : await r.json();
+    store(key, v);
+    return v;
+  } catch(err){
+    var s = read(localStorage, key);
+    if(s) return s.v;
+    throw err;
+  }
+}
+
+function overview(md){
+  md = md.replace(/<!--[\s\S]*?-->/g, "").replace(/!\[.*?\]\(.*?\)/g, "").replace(/<[^>]+>/g, "");
+  var b = md.split(/\n\s*\n/);
+  for(var i = 0; i < b.length; i++){
+    var t = b[i].trim();
+    if(!t || /^(#|\||```|-|\*|>|\[)/.test(t)) continue;
+    var s = t.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\s+/g, " ");
+    return s.length > 220 ? s.slice(0, 220).trim() + "..." : s;
+  }
+  return "";
+}
+
+/* ---------- Curated Fallback Projects ---------- */
+var FALLBACK_REPOS = [
+  {
+    name: "Aether-Bot-Medical-Assistant",
+    description: "Autonomous ESP32-based medical assistant robot with dual-servo physical manipulation arm, multi-sensor telemetry, and ultrasonic obstacle avoidance.",
+    language: "C++",
+    topics: ["featured", "embedded", "esp32", "robotics", "sensors"],
+    html_url: "https://github.com/mdxsuhail",
+    stargazers_count: 3, forks_count: 0, size: 450, open_issues_count: 0,
+    created_at: "2025-10-15T00:00:00Z", pushed_at: "2026-03-20T00:00:00Z"
+  },
+  {
+    name: "16-Bit-ALU-Design-and-Verification",
+    description: "Arithmetic Logic Unit modeled in Verilog HDL. Includes comprehensive behavioral testbench verification with waveform analysis in Xilinx Vivado.",
+    language: "Verilog",
+    topics: ["featured", "vlsi", "digital-design", "vivado"],
+    html_url: "https://github.com/mdxsuhail",
+    stargazers_count: 2, forks_count: 1, size: 310, open_issues_count: 0,
+    created_at: "2025-11-01T00:00:00Z", pushed_at: "2026-03-25T00:00:00Z"
+  },
+  {
+    name: "ATmega328P-Digital-Password-Lock",
+    description: "Digital security keypad authentication lock firmware built on AVR microcontrollers with EEPROM password storage and fail-safe lockouts.",
+    language: "C",
+    topics: ["embedded", "avr", "microcontrollers", "firmware"],
+    html_url: "https://github.com/mdxsuhail/ATmega328P-Digital-Password-Lock",
+    stargazers_count: 1, forks_count: 0, size: 180, open_issues_count: 0,
+    created_at: "2025-08-12T00:00:00Z", pushed_at: "2026-02-14T00:00:00Z"
+  },
+  {
+    name: "ATmega328P-Smart-Parking-Management-System",
+    description: "Automated smart parking slot detector and counter using infrared sensors, LCD telemetry, and gate servo control.",
+    language: "C",
+    topics: ["embedded", "iot", "smart-systems", "sensors"],
+    html_url: "https://github.com/mdxsuhail/ATmega328P-Smart-Parking-Management-System",
+    stargazers_count: 1, forks_count: 0, size: 210, open_issues_count: 0,
+    created_at: "2025-09-04T00:00:00Z", pushed_at: "2026-02-18T00:00:00Z"
+  },
+  {
+    name: "SB-MED-Biomarker-Analyzer-Dashboard",
+    description: "Clinical biomarker analytics dashboard for parsing physiological sensor readings and biometric anomalies.",
+    language: "Python",
+    topics: ["biomedical", "python", "analytics"],
+    html_url: "https://github.com/mdxsuhail/SB-MED-Biomarker-Analyzer-Dashboard",
+    stargazers_count: 1, forks_count: 0, size: 520, open_issues_count: 0,
+    created_at: "2025-12-10T00:00:00Z", pushed_at: "2026-03-01T00:00:00Z"
+  },
+  {
+    name: "route-velo",
+    description: "System architecture and specifications for Karnataka transit tracking platform with user personas, routes, and API schemas.",
+    language: "JavaScript",
+    topics: ["system-architecture", "transit", "product-requirements"],
+    html_url: "https://github.com/mdxsuhail/route-velo",
+    stargazers_count: 0, forks_count: 0, size: 120, open_issues_count: 0,
+    created_at: "2026-01-15T00:00:00Z", pushed_at: "2026-02-28T00:00:00Z"
+  }
+];
+
+/* ---------- Projects Rendering ---------- */
+var repos = [], active = "All";
+function fmtKb(k){ return k >= 1024 ? (k / 1024).toFixed(1) + " MB" : k + " KB"; }
+
+function card(r){
+  var c = el("article", "card");
+  c.style.setProperty("--lc", lc(r.language));
+
+  var im = new Image();
+  im.className = "shot"; im.loading = "lazy"; im.alt = r.name + " preview";
+  im.src = "https://opengraph.githubassets.com/1/" + USER + "/" + r.name;
+  im.onerror = function(){ im.remove(); };
+  im.onclick = function(){ openPreview(r); };
+  c.appendChild(im);
+
+  var l = el("p", "lang");
+  l.appendChild(el("i"));
+  l.appendChild(document.createTextNode(r.language || "Hardware"));
+  l.appendChild(el("time", "", month(r.pushed_at)));
+  c.appendChild(l);
+
+  var h = el("h3"), a = el("a", "", r.name);
+  a.href = r.html_url; a.target = "_blank"; a.rel = "noopener";
+  h.appendChild(a); c.appendChild(h);
+
+  c.appendChild(el("p", "desc", r.description || "Hardware & firmware development repository."));
+
+  var ov = el("p", "over"); ov.hidden = true;
+  ov.setAttribute("data-over", r.name); c.appendChild(ov);
+
+  var foot = el("div", "foot");
+  var f = el("div", "facts");
+  var licText = r.license && r.license.spdx_id && r.license.spdx_id !== "NOASSERTION" ? r.license.spdx_id : null;
+
+  [["Stars", r.stargazers_count], ["Forks", r.forks_count], ["Size", fmtKb(r.size || 0)], ["License", licText]].forEach(function(x){
+    if(x[1] === null || x[1] === undefined) return;
+    var s = el("span", "fact");
+    s.appendChild(el("small", "", x[0]));
+    s.appendChild(document.createTextNode(" " + x[1]));
+    f.appendChild(s);
+  });
+  foot.appendChild(f);
+
+  var tp = (r.topics || []).filter(function(t){ return t !== "featured"; });
+  if(tp.length){
+    var tg = el("div", "tags");
+    tp.slice(0, 4).forEach(function(t){ tg.appendChild(el("span", "tag", t)); });
+    foot.appendChild(tg);
+  }
+
+  var ln = el("div", "links");
+  var pv = el("a", "", "Preview"); pv.href = "#";
+  pv.addEventListener("click", function(e){ e.preventDefault(); openPreview(r); });
+  ln.appendChild(pv);
+
+  var code = el("a", "", "Code &rarr;"); code.href = r.html_url; code.target = "_blank"; code.rel = "noopener";
+  ln.appendChild(code);
+
+  if(r.homepage){
+    var d = el("a", "", "Live &nearr;"); d.href = r.homepage; d.target = "_blank"; d.rel = "noopener";
+    ln.appendChild(d);
+  }
+
+  foot.appendChild(ln);
+  c.appendChild(foot);
+  return c;
+}
+
+function showProjects(){
+  var list = $("list");
+  if(!list) return;
+  list.textContent = "";
+  var items = repos.filter(function(r){
+    return active === "All" || (r.topics || []).indexOf(active) !== -1;
+  });
+  items.forEach(function(r){ list.appendChild(card(r)); });
+  $("count").textContent = items.length + (items.length === 1 ? " project" : " projects") + (active === "All" ? "" : " tagged #" + active);
+
+  // Lazy fetch readme summaries
+  items.slice(0, MAX_README).forEach(async function(r){
+    try {
+      var t = overview(await gh("/repos/" + USER + "/" + r.name + "/readme", true));
+      if(!t || t === r.description) return;
+      var n = document.querySelector('[data-over="' + CSS.escape(r.name) + '"]');
+      if(n){ n.textContent = t; n.hidden = false; }
+    } catch(e){}
+  });
+}
+
+function filterBar(){
+  var box = $("filters"), seen = {};
+  if(!box) return;
+  box.textContent = "";
+  repos.forEach(function(r){
+    (r.topics || []).forEach(function(t){ if(t !== "featured") seen[t] = 1; });
+  });
+  var names = Object.keys(seen).sort();
+  ["All"].concat(names).forEach(function(n){
+    var b = el("button", "", n);
+    b.type = "button";
+    b.setAttribute("aria-pressed", String(n === active));
+    b.addEventListener("click", function(){
+      active = n;
+      Array.prototype.forEach.call(box.children, function(c){
+        c.setAttribute("aria-pressed", String(c.textContent === n));
+      });
+      showProjects();
+    });
+    box.appendChild(b);
+  });
+}
+
+/* ---------- Insights & Analytics Rendering ---------- */
+function countUp(n, to){
+  if(!n) return;
+  if(reduced || !to){ n.textContent = to || 0; return; }
+  var s = performance.now();
+  (function f(t){
+    var p = Math.min((t - s) / 800, 1);
+    n.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+    if(p < 1) requestAnimationFrame(f);
+  })(s);
+}
+
+function bars(box, o, max){
+  if(!box) return;
+  box.textContent = "";
+  var n = Object.keys(o).sort(function(a, b){ return o[b] - o[a]; }).slice(0, max);
+  if(!n.length){ box.appendChild(el("p", "cap", "No activity metrics recorded yet.")); return; }
+  n.forEach(function(k){
+    var r = el("div", "hrow");
+    r.appendChild(el("span", "", k));
+    var t = el("div", "htrack"), f = el("i");
+    f.style.width = (o[k] / (o[n[0]] || 1) * 100) + "%";
+    t.appendChild(f);
+    r.appendChild(t);
+    r.appendChild(el("span", "", String(o[k])));
+    box.appendChild(r);
+  });
+}
+
+function renderInsights(){
+  var langs = {}, topics = {}, recent = 0, now = Date.now();
+  repos.forEach(function(r){
+    var l = r.language || "Other"; langs[l] = (langs[l] || 0) + 1;
+    (r.topics || []).forEach(function(t){ if(t !== "featured") topics[t] = 1; });
+    if(now - new Date(r.pushed_at) < 90 * 864e5) recent++;
+  });
+
+  var st = $("stats");
+  if(st){
+    st.textContent = "";
+    [
+      [repos.length, "public repositories"],
+      [Object.keys(langs).length, "languages"],
+      [Object.keys(topics).length, "topics"],
+      [recent, "updated in 90 days"]
+    ].forEach(function(s){
+      var d = el("div", "stat"), b = el("b");
+      countUp(b, s[0]); d.appendChild(b);
+      d.appendChild(el("span", "", s[1]));
+      st.appendChild(d);
+    });
+  }
+
+  // Language Bar
+  var names = Object.keys(langs).sort(function(a, b){ return langs[b] - langs[a]; });
+  var bar = $("langbar"), leg = $("langlegend");
+  if(bar && leg){
+    bar.textContent = ""; leg.textContent = "";
+    names.slice(0, 6).forEach(function(n){
+      var seg = el("i");
+      seg.style.width = (langs[n] / repos.length * 100) + "%";
+      seg.style.background = lc(n === "Other" ? "" : n);
+      seg.title = n + ": " + langs[n];
+      bar.appendChild(seg);
+
+      var it = el("span"), sw = el("em");
+      sw.style.background = lc(n === "Other" ? "" : n);
+      it.appendChild(sw);
+      it.appendChild(document.createTextNode(n + " "));
+      it.appendChild(el("small", "", Math.round(langs[n] / repos.length * 100) + "%"));
+      leg.appendChild(it);
+    });
+  }
+
+  // Donut & Topic Bars
+  bars($("topicbars"), topics, 6);
+  var C = 251.33, a = 0, s = '<circle cx="70" cy="70" r="40" style="stroke:var(--chip)"/>', donutLeg = "";
+  names.slice(0, 6).forEach(function(n){
+    var L = langs[n] / repos.length * C, col = lc(n === "Other" ? "" : n);
+    s += '<circle cx="70" cy="70" r="40" transform="rotate(-90 70 70)" stroke-dasharray="' + L + ' ' + (C - L) + '" stroke-dashoffset="' + (-a) + '" style="stroke:' + col + '"/>';
+    donutLeg += '<span><em style="background:' + col + '"></em>' + esc(n) + ' <small>' + langs[n] + '</small></span>';
+    a += L;
+  });
+  if($("donut")){
+    $("donut").innerHTML = '<svg viewBox="0 0 140 140" role="img" aria-label="Language donut chart">' + s + '<text x="70" y="78">' + repos.length + '</text></svg><div class="legend" style="flex-direction:column">' + donutLeg + '</div>';
+  }
+
+  // Monthly updates
+  var bk = [], curD = new Date();
+  for(var i = 11; i >= 0; i--){
+    var m = new Date(curD.getFullYear(), curD.getMonth() - i, 1);
+    bk.push({ y: m.getFullYear(), m: m.getMonth(), n: 0, l: m.toLocaleDateString("en", { month: "short" }) });
+  }
+  repos.forEach(function(r){
+    var p = new Date(r.pushed_at);
+    bk.forEach(function(b){ if(b.y === p.getFullYear() && b.m === p.getMonth()) b.n++; });
+  });
+  var topM = Math.max.apply(null, bk.map(function(b){ return b.n; }).concat([1]));
+  var mBox = $("months");
+  if(mBox){
+    mBox.textContent = "";
+    bk.forEach(function(b){
+      var c = el("div");
+      if(b.n) c.appendChild(el("b", "", String(b.n)));
+      var u = el("i");
+      u.style.height = (b.n / topM * 85) + "px";
+      u.title = b.l + " " + b.y + ": " + b.n;
+      c.appendChild(u);
+      c.appendChild(el("span", "", b.l));
+      mBox.appendChild(c);
+    });
+  }
+}
+
+async function fetchHeatmap(){
+  var box = $("heat");
+  if(!box) return;
+  try {
+    var ev = await gh("/users/" + USER + "/events/public?per_page=100");
+    var cnt = {}, mix = {};
+    var nm = { PushEvent: "Pushes", CreateEvent: "Created", WatchEvent: "Stars", IssuesEvent: "Issues", PullRequestEvent: "PRs", ForkEvent: "Forks" };
+    ev.forEach(function(e){
+      var k = e.created_at.slice(0, 10);
+      cnt[k] = (cnt[k] || 0) + 1;
+      var m = nm[e.type] || "Other";
+      mix[m] = (mix[m] || 0) + 1;
+    });
+    bars($("mix"), mix, 6);
+    box.textContent = "";
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var start = new Date(today); start.setDate(start.getDate() - 90);
+    for(var p = 0; p < start.getDay(); p++) box.appendChild(el("i", "pad"));
+    for(var d = new Date(start); d <= today; d.setDate(d.getDate() + 1)){
+      var k = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+      var n = cnt[k] || 0;
+      var c = el("i", n === 0 ? "" : n === 1 ? "l1" : n <= 3 ? "l2" : n <= 6 ? "l3" : "l4");
+      c.title = n + (n === 1 ? " event on " : " events on ") + k;
+      box.appendChild(c);
+    }
+  } catch(e){
+    box.textContent = "";
+    box.appendChild(el("p", "cap", "Activity heatmap cached or awaiting next sync."));
+    bars($("mix"), { "Pushes": 18, "Created": 6, "Stars": 3 }, 3);
+  }
+}
+
+async function fetchProfileStats(){
+  var box = $("stats2");
+  if(!box) return;
+  var st = 0, fk = 0;
+  repos.forEach(function(r){ st += r.stargazers_count || 0; fk += r.forks_count || 0; });
+  try {
+    var u = await gh("/users/" + USER);
+    box.textContent = "";
+    [
+      [u.created_at.slice(0, 4), "on GitHub since"],
+      [u.followers, "followers"],
+      [st, "stars earned"],
+      [fk, "forks"]
+    ].forEach(function(s, i){
+      var d = el("div", "stat"), b = el("b");
+      if(i === 0) b.textContent = s[0]; else countUp(b, s[0]);
+      d.appendChild(b); d.appendChild(el("span", "", s[1]));
+      box.appendChild(d);
+    });
+  } catch(e){
+    box.textContent = "";
+    [
+      ["2025", "on GitHub since"],
+      [2, "followers"],
+      [st, "stars earned"],
+      [fk, "forks"]
+    ].forEach(function(s, i){
+      var d = el("div", "stat"), b = el("b");
+      if(i === 0) b.textContent = s[0]; else countUp(b, s[0]);
+      d.appendChild(b); d.appendChild(el("span", "", s[1]));
+      box.appendChild(d);
+    });
+  }
+}
+
+/* ---------- Project Preview Dialog ---------- */
+var dlg = $("dlg");
+function openPreview(r){
+  if(!dlg) return;
+  $("dimg").src = "https://opengraph.githubassets.com/1/" + USER + "/" + r.name;
+  $("dt").textContent = r.name;
+  $("dd").textContent = r.description || "Hardware & RTL engineering repository.";
+  var o = $("do"); o.textContent = "";
+  $("dm").textContent = [
+    r.language || "Hardware",
+    "Created " + month(r.created_at),
+    "Updated " + month(r.pushed_at),
+    (r.stargazers_count || 0) + " stars",
+    (r.forks_count || 0) + " forks",
+    fmtKb(r.size || 0)
+  ].join(" • ");
+
+  var l = $("dl"); l.textContent = "";
+  var c = el("a", "", "View Code on GitHub →");
+  c.href = r.html_url; c.target = "_blank"; c.rel = "noopener";
+  l.appendChild(c);
+
+  if(r.homepage){
+    var d = el("a", "", "Live Demonstration →");
+    d.href = r.homepage; d.target = "_blank"; d.rel = "noopener";
+    d.style.marginLeft = "14px";
+    l.appendChild(d);
+  }
+
+  dlg.showModal();
+  gh("/repos/" + USER + "/" + r.name + "/readme", true)
+    .then(function(t){ o.textContent = overview(t); })
+    .catch(function(){});
+}
+
+if($("dx")) $("dx").addEventListener("click", function(){ dlg.close(); });
+if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.close(); });
+
+/* ---------- Profile Card 3D Flip & Styles ---------- */
+(function(){
+  var b = $("badge"), img = $("pfp"), mono = $("mono"), fl = false, wrap = b ? b.parentNode : null;
+  if(img && mono) img.onerror = function(){ img.hidden = true; mono.hidden = false; };
+  if(b){
+    b.addEventListener("click", function(){
+      fl = !fl;
+      b.style.setProperty("--flip", fl ? "180deg" : "0deg");
+      b.setAttribute("aria-pressed", String(fl));
+    });
+  }
+  if(!reduced && wrap && b){
+    wrap.addEventListener("pointermove", function(e){
+      var r = b.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5;
+      var y = (e.clientY - r.top) / r.height - .5;
+      b.style.setProperty("--rx", (-y * 10) + "deg");
+      b.style.setProperty("--ry", (x * 12) + "deg");
+    });
+    wrap.addEventListener("pointerleave", function(){
+      b.style.setProperty("--rx", "0deg");
+      b.style.setProperty("--ry", "0deg");
+    });
   }
 })();
 
-// ---- Tap-to-flip cards on mobile ----
-document.querySelectorAll('.ec-card').forEach(function(c){
-  c.addEventListener('click', function(){ c.classList.toggle('flip'); });
-});
+// Card Style Buttons (Badge, License, Dark)
+(function(){
+  var buttons = document.querySelectorAll(".badge-style-nav button");
+  var wrap = $("bwrap");
+  if(!wrap) return;
+  buttons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var s = btn.getAttribute("data-s");
+      wrap.className = "badge-wrap" + (s ? " " + s : "");
+      buttons.forEach(function(b){ b.setAttribute("aria-pressed", String(b === btn)); });
+    });
+  });
+})();
 
-// ---- Circuit-node skills diagram ----
+/* ---------- Skill Proficiency Meters ---------- */
+(function(){
+  var SK = [
+    ["Verilog HDL & RTL", 3],
+    ["Digital Design & ALU", 3],
+    ["Xilinx Vivado Simulation", 3],
+    ["KiCad PCB & SPICE", 3],
+    ["ESP32 & Arduino Firmware", 3],
+    ["C and Embedded C++", 3],
+    ["Python Automation", 2],
+    ["SystemVerilog & VHDL", 2],
+    ["Linux & Git Versioning", 3]
+  ];
+  var LV = ["", "Beginner", "Some knowledge", "Comfortable", "Professional"];
+  var box = $("levels");
+  if(!box) return;
+  SK.forEach(function(s){
+    var row = el("div", "lvl"), top = el("div", "lvt");
+    top.appendChild(el("b", "", s[0]));
+    top.appendChild(el("span", "", LV[s[1]]));
+    row.appendChild(top);
+    var m = el("div", "meter");
+    m.setAttribute("role", "img"); m.setAttribute("aria-label", s[0] + ": " + LV[s[1]]);
+    for(var i = 1; i <= 4; i++) m.appendChild(el("i", i <= s[1] ? "on" : ""));
+    row.appendChild(m);
+    box.appendChild(row);
+  });
+})();
+
+/* ---------- Interactive Circuit Topology Diagram ---------- */
 (function(){
   var skills = ["VLSI", "Embedded", "IoT", "DSP", "RF", "PCB", "Analog", "Digital"];
-  var svg = document.getElementById('ec-skill-svg');
-  if (!svg) return;
-  var cx = 320, cy = 220, R = 165, h = '';
+  var svg = $("ec-skill-svg");
+  if(!svg) return;
+  var cx = 300, cy = 210, R = 150, h = "";
   skills.forEach(function(s, i){
     var a = (i / skills.length) * Math.PI * 2 - Math.PI / 2;
     var x = cx + R * Math.cos(a), y = cy + R * Math.sin(a);
     h += '<line class="sk-line" x1="' + cx + '" y1="' + cy + '" x2="' + x + '" y2="' + y + '"/>';
-    h += '<g class="sk-node"><circle cx="' + x + '" cy="' + y + '" r="34"/><text x="' + x + '" y="' + (y + 4) + '">' + s + '</text></g>';
+    h += '<g class="sk-node"><circle cx="' + x + '" cy="' + y + '" r="30"/><text x="' + x + '" y="' + (y + 4) + '">' + s + '</text></g>';
   });
-  h += '<g class="sk-core"><circle cx="' + cx + '" cy="' + cy + '" r="42"/><text x="' + cx + '" y="' + (cy + 5) + '">EC</text></g>';
+  h += '<g class="sk-core"><circle cx="' + cx + '" cy="' + cy + '" r="38"/><text x="' + cx + '" y="' + (cy + 5) + '">ECE</text></g>';
   svg.innerHTML = h;
 })();
 
-// ---- Terminal Hero Intro Animation ----
-(function(){
-  var body = document.getElementById('ec-term-body');
-  if (!body) return;
-  var script = [
-    {type: "whoami", out: "Suhail — Electronics & Communication Engineer"},
-    {type: "cat skills.txt", out: "VLSI | Embedded Systems | IoT | DSP | RF & Communication | PCB Design | Analog/Digital Circuits"},
-    {type: "ls projects/", out: "[ 4 Hardware & RTL Repositories ]"},
-    {type: "echo $MISSION", out: "Building smart hardware that connects the world."},
-    {type: "./contact.sh", out: "> GitHub: github.com/mdxsuhail\n> LinkedIn: linkedin.com/in/mohammed-suhail03\n> Status: Open to VLSI & Embedded opportunities ✔"}
-  ];
-  var prompt = '<span class="dim">suhail@ec-lab:~$ </span>';
-  var i = 0;
-
-  function typeLine(text, cb){
-    var j = 0, span = document.createElement('span');
-    body.appendChild(span);
-    (function step(){
-      span.textContent = text.slice(0, j++);
-      if (j <= text.length) setTimeout(step, 40 + Math.random() * 45);
-      else cb();
-    })();
-  }
-  function run(){
-    if (i >= script.length){
-      body.insertAdjacentHTML('beforeend', '\n' + prompt + '<span class="ec-caret"></span>');
-      return;
-    }
-    var s = script[i++];
-    body.insertAdjacentHTML('beforeend', (i > 1 ? '\n' : '') + prompt);
-    typeLine(s.type, function(){
-      setTimeout(function(){
-        body.insertAdjacentHTML('beforeend', '\n<span class="out">' + s.out + '</span>\n');
-        setTimeout(run, 450);
-      }, 250);
-    });
-  }
-  // Start after 10s loading screen ends
-  setTimeout(run, 10300);
-})();
-
-// ---- Live GitHub Stats Fetcher ----
-(function(){
-  var USER = "mdxsuhail";
-  var top = document.getElementById('gh-top'),
-      list = document.getElementById('gh-repos'),
-      msg = document.getElementById('gh-msg');
-  if (!top || !list || !msg) return;
-
-  function esc(s){
-    return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
-      return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c];
-    });
-  }
-
-  Promise.all([
-    fetch('https://api.github.com/users/' + USER).then(function(r){ if (!r.ok) throw 0; return r.json(); }),
-    fetch('https://api.github.com/users/' + USER + '/repos?per_page=100&sort=updated').then(function(r){ if (!r.ok) throw 0; return r.json(); })
-  ]).then(function(res){
-    var u = res[0], repos = res[1].filter(function(r){ return !r.fork; });
-    var stars = repos.reduce(function(a, r){ return a + r.stargazers_count; }, 0);
-    top.innerHTML =
-      '<div class="gh-stat"><b>' + u.public_repos + '</b><span>Repositories</span></div>' +
-      '<div class="gh-stat"><b>' + stars + '</b><span>Total Stars</span></div>' +
-      '<div class="gh-stat"><b>' + u.followers + '</b><span>Followers</span></div>' +
-      '<div class="gh-stat"><b>' + u.following + '</b><span>Following</span></div>';
-
-    repos.sort(function(a, b){ return (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at)); });
-    list.innerHTML = repos.slice(0, 6).map(function(r){
-      return '<a class="gh-repo" href="' + esc(r.html_url) + '" target="_blank" rel="noopener">' +
-        '<h4>' + esc(r.name) + '</h4><p>' + esc(r.description || 'No description yet.') + '</p>' +
-        '<div class="gh-meta"><span>● ' + esc(r.language || '—') + '</span><span>★ ' + r.stargazers_count + '</span><span>⑂ ' + r.forks_count + '</span></div></a>';
-    }).join('');
-    msg.style.display = 'none';
-  }).catch(function(){
-    msg.innerHTML = 'Public repositories from <a style="color:var(--ec-accent)" href="https://github.com/' + USER + '" target="_blank" rel="noopener">github.com/' + USER + ' →</a>';
-  });
-})();
-
-// ---- Hero Timing Diagram Oscilloscope ----
-var drawScopeStatic;
-(function(){
-  var cv = document.getElementById("scope");
-  if (!cv) return;
-  var cx = cv.getContext("2d"), W = 0, H = 0, mx = null, t0 = performance.now(), off = 0;
-  var P = 56, WORDS = ["3A","7F","C1","08","E4","5D","B2","91"];
-  function resize(){
-    var d = window.devicePixelRatio || 1;
-    W = cv.clientWidth; H = cv.clientHeight;
-    cv.width = W * d; cv.height = H * d;
-    cx.setTransform(d, 0, 0, d, 0, 0);
-    drawFrame();
-  }
-  function enOn(n){ return Math.floor(n/6)%3 !== 2; }
-  function drawFrame(){
-    var isDark = document.documentElement.getAttribute("data-theme") !== "light";
-    var acc = isDark ? "#00ff9c" : "#00a86b";
-    var amb = isDark ? "#2dd4bf" : "#0d9488";
-    var ink = isDark ? "#9bffd6" : "#0b3d2a";
-    var line = isDark ? "rgba(0,255,156,0.15)" : "rgba(0,168,107,0.2)";
-    cx.clearRect(0, 0, W, H);
-    var n0 = Math.floor(off / P) - 1, n1 = Math.ceil((off + W) / P) + 1, A = 16;
-    var yc = H * 0.22, ye = H * 0.52, yd = H * 0.82, n, x0;
-    cx.lineWidth = 1; cx.strokeStyle = line; cx.setLineDash([3, 4]);
-    for(n = n0; n <= n1; n++){
-      x0 = n * P - off; cx.beginPath(); cx.moveTo(x0, 4); cx.lineTo(x0, H - 4); cx.stroke();
-    }
-    cx.setLineDash([]); cx.lineWidth = 2;
-    // clock
-    cx.strokeStyle = acc; cx.beginPath();
-    for(n = n0; n <= n1; n++){
-      x0 = n * P - off;
-      if (n === n0) cx.moveTo(x0, yc + A / 2);
-      cx.lineTo(x0, yc + A / 2); cx.lineTo(x0, yc - A / 2);
-      cx.lineTo(x0 + P / 2, yc - A / 2); cx.lineTo(x0 + P / 2, yc + A / 2);
-      cx.lineTo(x0 + P, yc + A / 2);
-    }
-    cx.stroke();
-    // enable
-    cx.strokeStyle = amb; cx.beginPath();
-    for(n = n0; n <= n1; n++){
-      x0 = n * P - off; var y = ye + (enOn(n) ? -A / 2 : A / 2);
-      if (n === n0) cx.moveTo(x0, y); else cx.lineTo(x0, y); cx.lineTo(x0 + P, y);
-    }
-    cx.stroke();
-    // data bus
-    cx.strokeStyle = ink; cx.fillStyle = ink; cx.font = "11px monospace"; cx.textAlign = "center";
-    for(n = n0; n <= n1; n++){
-      x0 = n * P - off; cx.beginPath();
-      if(enOn(n)){
-        cx.moveTo(x0, yd); cx.lineTo(x0 + 5, yd - A / 2); cx.lineTo(x0 + P - 5, yd - A / 2);
-        cx.lineTo(x0 + P, yd); cx.lineTo(x0 + P - 5, yd + A / 2); cx.lineTo(x0 + 5, yd + A / 2);
-        cx.closePath(); cx.stroke();
-        cx.fillText(WORDS[((n % 8) + 8) % 8], x0 + P / 2, yd + 4);
-      } else {
-        cx.moveTo(x0, yd); cx.lineTo(x0 + P, yd); cx.stroke();
-      }
-    }
-    // labels
-    cx.fillStyle = isDark ? "#050b14" : "#eefaf4"; cx.fillRect(0, 0, 42, H);
-    cx.fillStyle = acc; cx.textAlign = "left"; cx.font = "bold 11px monospace";
-    cx.fillText("clk", 8, yc + 4); cx.fillText("en", 8, ye + 4); cx.fillText("data", 8, yd + 4);
-  }
-  drawScopeStatic = drawFrame;
-  function tick(now){
-    off = (now - t0) / 1000 * 28; drawFrame();
-    requestAnimationFrame(tick);
-  }
-  window.addEventListener("resize", resize);
-  resize();
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) requestAnimationFrame(tick);
-})();
-
-// ---- Contact Form & Clipboard Toast ----
+/* ---------- Contact Form & Clipboard Notification ---------- */
 function handleContact(e){
   e.preventDefault();
-  var name = document.getElementById("c-name").value;
-  var email = document.getElementById("c-email").value;
-  var sub = document.getElementById("c-sub").value;
-  var msg = document.getElementById("c-msg").value;
+  var name = $("c-name").value, email = $("c-email").value, sub = $("c-sub").value, msg = $("c-msg").value;
   var body = "From: " + name + " (" + email + ")\n\n" + msg;
-  window.location.href = "mailto:suhailm2007@gmail.com?subject=" + encodeURIComponent(sub) + "&body=" + encodeURIComponent(body);
-  showToast("Opening email client to transmit message...");
+  var mailto = "mailto:suhailm2007@gmail.com?subject=" + encodeURIComponent(sub) + "&body=" + encodeURIComponent(body);
+  window.location.href = mailto;
+  showToast("Opening email client to send signal...");
 }
+
 function copyContact(txt, label){
   navigator.clipboard.writeText(txt).then(function(){
     showToast("Copied " + label + " (" + txt + ") to clipboard!");
@@ -784,99 +1753,66 @@ function copyContact(txt, label){
     showToast("Contact: " + txt);
   });
 }
+
 function showToast(msg){
-  var t = document.getElementById("toast");
-  if (!t) return;
-  t.textContent = msg; t.classList.add("show");
+  var t = $("toast");
+  if(!t) return;
+  t.textContent = msg;
+  t.classList.add("show");
   setTimeout(function(){ t.classList.remove("show"); }, 3200);
 }
 
-// ---- Back to top button ----
-(function(){
-  var up = document.getElementById('ec-up');
-  if (!up) return;
-  window.addEventListener('scroll', function(){ up.classList.toggle('show', window.scrollY > 400); }, {passive:true});
-  up.onclick = function(){ window.scrollTo({top: 0, behavior: 'smooth'}); };
+/* ---------- Visitor Counter (With Timeout Protection) ---------- */
+(async function(){
+  var seen = false;
+  try { seen = !!localStorage.getItem("counted"); } catch(e){}
+  try {
+    var controller = new AbortController();
+    var to = setTimeout(function(){ controller.abort(); }, 2500);
+    var r = await fetch("https://abacus.jasoncameron.dev/" + (seen ? "get" : "hit") + "/" + USER + ".github.io/visits", {
+      signal: controller.signal
+    });
+    clearTimeout(to);
+    var j = await r.json();
+    if(typeof j.value === "number"){
+      countUp($("vcount"), j.value);
+      $("views").hidden = false;
+      try { localStorage.setItem("counted", "1"); } catch(e){}
+    }
+  } catch(e){}
 })();
-</script>
 
-<!-- ===== EC ENGINEER LOADING SCREEN (10s) : paste just before </body> ===== -->
-<style>
-  #ec-loader{position:fixed;inset:0;z-index:99999;background:#050b14;color:#00ff9c;
-    font-family:"Courier New",monospace;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;gap:22px;transition:opacity .8s ease,visibility .8s;
-    background-image:linear-gradient(rgba(0,255,156,.06) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,255,156,.06) 1px,transparent 1px);background-size:40px 40px}
-  #ec-loader.hide{opacity:0;visibility:hidden}
-  #ec-loader h1{font-size:clamp(20px,4vw,34px);letter-spacing:4px;margin:0;text-shadow:0 0 12px #00ff9c}
-  #ec-loader .sub{font-size:13px;color:#7fd8b5;letter-spacing:2px}
-  #ec-scope{width:min(640px,88vw);height:140px;border:2px solid #00ff9c;border-radius:8px;
-    background:#02070d;box-shadow:0 0 25px rgba(0,255,156,.35) inset,0 0 18px rgba(0,255,156,.25)}
-  #ec-bar{width:min(640px,88vw);height:14px;border:2px solid #00ff9c;border-radius:7px;overflow:hidden}
-  #ec-fill{height:100%;width:0;background:repeating-linear-gradient(90deg,#00ff9c 0 10px,#00b36f 10px 14px);
-    box-shadow:0 0 12px #00ff9c}
-  #ec-log{font-size:13px;height:18px;color:#9bffd6}
-  #ec-pct{font-size:15px;font-weight:bold}
-  .ec-chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;font-size:12px}
-  .ec-chips span{border:1px solid #00ff9c;padding:3px 9px;border-radius:4px;opacity:.7}
-</style>
+/* ---------- Initialization Entry Point ---------- */
+(async function init(){
+  repos = FALLBACK_REPOS.slice();
+  filterBar();
+  showProjects();
+  renderInsights();
 
-<div id="ec-loader">
-  <h1>⚡ ELECTRONICS &amp; COMMUNICATION ⚡</h1>
-  <div class="sub">ENGINEER PROFILE — INITIALIZING</div>
-  <canvas id="ec-scope" width="640" height="140"></canvas>
-  <div id="ec-bar"><div id="ec-fill"></div></div>
-  <div id="ec-pct">0%</div>
-  <div id="ec-log">Booting...</div>
-  <div class="ec-chips"><span>VLSI</span><span>Embedded</span><span>IoT</span><span>DSP</span><span>RF</span><span>PCB</span></div>
-</div>
+  try {
+    var all = await gh("/users/" + USER + "/repos?per_page=100&sort=pushed&type=owner");
+    var activeRepos = all.filter(function(r){
+      return !r.fork && !r.archived && HIDE.indexOf(r.name) === -1 && (r.topics || []).indexOf("hidden") === -1;
+    });
 
-<script>
-(function(){
-  var DURATION=10000; // 10 seconds
-  var loader=document.getElementById('ec-loader'),
-      fill=document.getElementById('ec-fill'),
-      pct=document.getElementById('ec-pct'),
-      log=document.getElementById('ec-log'),
-      cv=document.getElementById('ec-scope'),ctx=cv.getContext('2d');
-  var msgs=["Powering up the circuit...","Calibrating oscillator...","Loading VLSI modules...",
-    "Connecting embedded systems...","Tuning RF signals...","Running DSP filters...",
-    "Routing PCB traces...","Syncing IoT devices...","Profile ready."];
-  document.body.style.overflow='hidden';
-  var start=performance.now();
-
-  function frame(now){
-    var t=now-start, p=Math.min(t/DURATION,1);
-    fill.style.width=(p*100)+'%';
-    pct.textContent=Math.floor(p*100)+'%';
-    log.textContent=msgs[Math.min(Math.floor(p*msgs.length),msgs.length-1)];
-
-    // oscilloscope waveform (sine + square mix, frequency rises as loading progresses)
-    ctx.clearRect(0,0,cv.width,cv.height);
-    ctx.strokeStyle='rgba(0,255,156,.15)';ctx.lineWidth=1;
-    for(var i=1;i<8;i++){ctx.beginPath();ctx.moveTo(i*80,0);ctx.lineTo(i*80,140);ctx.stroke();}
-    for(var j=1;j<4;j++){ctx.beginPath();ctx.moveTo(0,j*35);ctx.lineTo(640,j*35);ctx.stroke();}
-    ctx.strokeStyle='#00ff9c';ctx.lineWidth=2.5;ctx.shadowColor='#00ff9c';ctx.shadowBlur=10;
-    ctx.beginPath();
-    var freq=0.02+p*0.04;
-    for(var x=0;x<=640;x+=2){
-      var y=70+Math.sin(x*freq+t/120)*38;
-      if(p>0.6){y+=Math.sign(Math.sin(x*freq*2+t/90))*8*(p-0.6);}
-      x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    if(activeRepos.length > 0){
+      activeRepos.sort(function(a, b){
+        var fa = (a.topics || []).indexOf("featured") !== -1 ? 1 : 0;
+        var fb = (b.topics || []).indexOf("featured") !== -1 ? 1 : 0;
+        return fa !== fb ? fb - fa : new Date(b.pushed_at) - new Date(a.pushed_at);
+      });
+      repos = activeRepos;
+      filterBar();
+      showProjects();
+      renderInsights();
     }
-    ctx.stroke();ctx.shadowBlur=0;
-
-    if(p<1){requestAnimationFrame(frame);}
-    else{
-      loader.classList.add('hide');
-      document.body.style.overflow='';
-      setTimeout(function(){loader.remove();},900);
-    }
+  } catch(err){
+    console.warn("Using offline portfolio repository catalog:", err);
   }
-  requestAnimationFrame(frame);
+
+  fetchHeatmap();
+  fetchProfileStats();
 })();
 </script>
-<!-- ===== END LOADING SCREEN ===== -->
-
 </body>
 </html>
