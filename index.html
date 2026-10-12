@@ -870,35 +870,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </div>
 
-  <!-- PROJECTS -->
-  <section class="ec-sec" id="projects">
-    <h2>&gt; PROJECTS_</h2>
-    <div class="ec-grid">
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">🔌</div><h3>Smart Home IoT</h3></div>
-        <div class="ec-face back">ESP32-based automation with sensors and a mobile dashboard.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View →</a></div>
-      </div></div>
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">🧠</div><h3>VLSI: 4-bit ALU</h3></div>
-        <div class="ec-face back">Designed in Verilog, simulated and synthesized.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View →</a></div>
-      </div></div>
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">📡</div><h3>RF Signal Analyzer</h3></div>
-        <div class="ec-face back">DSP filters to clean and analyze communication signals.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View →</a></div>
-      </div></div>
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">🤖</div><h3>Aether-Bot Medical Assistant</h3></div>
-        <div class="ec-face back">ESP32 autonomous patient assistant bot with dual-servo arm kinematics &amp; ultrasonic navigation.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View →</a></div>
-      </div></div>
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">🚌</div><h3>RouteVelo Transit Platform</h3></div>
-        <div class="ec-face back">System architecture and requirements specifications for smart public transit tracking.<a href="https://github.com/mdxsuhail/route-velo" target="_blank" rel="noopener">View →</a></div>
-      </div></div>
-      <div class="ec-card"><div class="ec-card-in">
-        <div class="ec-face"><div class="ico">🔐</div><h3>ATmega328P Digital Lock</h3></div>
-        <div class="ec-face back">AVR microcontroller security keypad authentication lock with EEPROM memory.<a href="https://github.com/mdxsuhail/ATmega328P-Digital-Password-Lock" target="_blank" rel="noopener">View →</a></div>
-      </div></div>
-    </div>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="sub">Hardware prototypes, digital RTL designs, and software tools pulled live from my public GitHub repositories.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter projects by tag"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="list" aria-live="polite"></div>
   </section>
 
   <!-- Hardware Bench Status Section -->
