@@ -699,7 +699,8 @@ async function heat(){
 
 /* ---------- interaction polish ---------- */
 function countUp(n,to){
-  if(reduced||!to){n.textContent=to;return}
+  if(!n)return;
+  if(reduced||!to){n.textContent=to||0;return}
   var s=performance.now();
   (function f(t){var p=Math.min((t-s)/800,1);n.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s);
 }
@@ -753,8 +754,10 @@ function extras(){
   });
 }
 async function profile(){
+  var box=$("stats2");
+  if(!box)return;
   try{
-    var u=await gh("/users/"+USER),st=0,fk=0,box=$("stats2");
+    var u=await gh("/users/"+USER),st=0,fk=0;
     repos.forEach(function(r){st+=r.stargazers_count;fk+=r.forks_count});
     box.textContent="";
     [[u.created_at.slice(0,4),"on GitHub since"],[u.followers,"followers"],[st,"stars earned"],[fk,"forks"]].forEach(function(s,i){
@@ -762,7 +765,18 @@ async function profile(){
       if(i===0)b.textContent=s[0];else countUp(b,s[0]);
       d.appendChild(b);d.appendChild(el("span","",s[1]));box.appendChild(d);
     });
-  }catch(e){}
+  }catch(e){
+    if(repos.length){
+      var st=0,fk=0;
+      repos.forEach(function(r){st+=r.stargazers_count;fk+=r.forks_count});
+      box.textContent="";
+      [["Active","GitHub profile"],[st,"stars earned"],[fk,"forks"],[repos.length,"repositories"]].forEach(function(s){
+        var d=el("div","stat"),b=el("b");
+        if(typeof s[0]==="number")countUp(b,s[0]);else b.textContent=s[0];
+        d.appendChild(b);d.appendChild(el("span","",s[1]));box.appendChild(d);
+      });
+    }
+  }
 }
 /* visitor counter: counts each browser once, then just reads the total */
 (async function(){
@@ -810,8 +824,9 @@ dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
 
 /* ---------- profile badge ---------- */
 (function(){
-  var b=$("badge"),img=$("pfp"),mono=$("mono"),fl=false,wrap=b.parentNode;
-  img.onerror=function(){img.hidden=true;mono.hidden=false};
+  var b=$("badge"),img=$("pfp"),mono=$("mono"),fl=false,wrap=b?b.parentNode:null;
+  if(!b||!wrap)return;
+  if(img&&mono)img.onerror=function(){img.hidden=true;mono.hidden=false};
   b.addEventListener("click",function(){
     fl=!fl;b.style.setProperty("--flip",fl?"180deg":"0deg");b.setAttribute("aria-pressed",String(fl));
   });
@@ -826,6 +841,7 @@ dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
 /* ---------- card style switcher ---------- */
 (function(){
   var seg=$("seg"),wrap=$("bwrap");
+  if(!seg||!wrap)return;
   seg.addEventListener("click",function(e){
     var b=e.target.closest("button");if(!b)return;
     wrap.className="badge-wrap "+b.getAttribute("data-s");
