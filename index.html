@@ -464,24 +464,20 @@ h2::after {
 /* Contact & Social Dock */
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 14px; }
 @media (max-width: 800px) { .contact-layout { grid-template-columns: 1fr; } }
-.contact-form {
+.contact-card {
   background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-  padding: 22px; display: flex; flex-direction: column; gap: 12px;
+  padding: 24px; display: flex; flex-direction: column; justify-content: center; gap: 14px;
 }
-.form-group { display: flex; flex-direction: column; gap: 4px; }
-.form-group label { font-size: .82rem; font-weight: 600; color: var(--mut); }
-.form-group input, .form-group textarea {
-  background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
-  padding: 9px 12px; font: 400 .9rem var(--body); color: var(--ink);
-  transition: border-color .2s;
-}
-.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--acc); }
+.contact-card h3 { font: 700 1.25rem var(--display); margin: 0; color: var(--ink); }
+.contact-card p { font-size: .92rem; color: var(--mut); margin: 0; line-height: 1.55; }
+.contact-note { font-size: .82rem !important; color: var(--mut); margin-top: 4px !important; }
 .send-btn {
   background: var(--acc); color: var(--acc-ink); border: 1px solid var(--acc);
-  border-radius: 6px; padding: 10px 18px; font: 600 .92rem var(--body);
-  cursor: pointer; transition: all .2s; margin-top: 4px;
+  border-radius: 8px; padding: 12px 20px; font: 600 .94rem var(--body);
+  cursor: pointer; transition: all .2s; text-align: center; display: inline-flex;
+  align-items: center; justify-content: center; gap: 8px; text-decoration: none;
 }
-.send-btn:hover { box-shadow: 0 4px 14px var(--glow); transform: translateY(-1px); }
+.send-btn:hover { box-shadow: 0 4px 14px var(--glow); transform: translateY(-2px); }
 
 .social-dock { display: flex; flex-direction: column; gap: 10px; }
 .social-pill {
@@ -883,37 +879,18 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <p class="sub">Feel free to reach out regarding internship opportunities, research collaborations, or technical questions.</p>
 
     <div class="contact-layout">
-      <!-- Direct Contact Form -->
-      <form class="contact-form" id="contact-form" onsubmit="handleContact(event)">
-        <div class="form-group">
-          <label for="c-name">Your Name</label>
-          <input type="text" id="c-name" required placeholder="Recruiter / Engineer Name">
-        </div>
-        <div class="form-group">
-          <label for="c-email">Your Email</label>
-          <input type="email" id="c-email" required placeholder="you@company.com">
-        </div>
-        <div class="form-group">
-          <label for="c-sub">Subject</label>
-          <input type="text" id="c-sub" required placeholder="VLSI Internship / Project Inquiry">
-        </div>
-        <div class="form-group">
-          <label for="c-msg">Message</label>
-          <textarea id="c-msg" rows="4" required placeholder="Hi Suhail, I reviewed your hardware portfolio and would like to connect regarding..."></textarea>
-        </div>
-        <button type="submit" class="send-btn">Send Email Signal &rarr;</button>
-      </form>
+      <!-- Direct Contact Card -->
+      <div class="contact-card">
+        <h3>Connect Directly</h3>
+        <p>I am actively seeking internship opportunities in VLSI Front-End Design, RTL Verification, and Embedded Systems. The quickest way to connect or message me is via LinkedIn.</p>
+        <a class="send-btn" href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">
+          Message on LinkedIn &rarr;
+        </a>
+        <p class="contact-note">Based in Bangalore, Karnataka &bull; Open to on-site, hybrid, or remote opportunities.</p>
+      </div>
 
       <!-- Social Dock -->
       <div class="social-dock">
-        <a class="social-pill" href="https://github.com/mdxsuhail" target="_blank" rel="noopener">
-          <div class="social-pill-left">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </div>
-          <span class="social-pill-action">@mdxsuhail &nearr;</span>
-        </a>
-
         <a class="social-pill" href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">
           <div class="social-pill-left">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -922,20 +899,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <span class="social-pill-action">Connect &nearr;</span>
         </a>
 
-        <div class="social-pill" onclick="copyContact('suhailm2007@gmail.com', 'Email')">
+        <a class="social-pill" href="https://github.com/mdxsuhail" target="_blank" rel="noopener">
           <div class="social-pill-left">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-.426l4.616-3.741v9.467l-4.616-5.726z"/></svg>
-            suhailm2007@gmail.com
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
           </div>
-          <span class="social-pill-action">Click to copy</span>
-        </div>
-
-        <a class="social-pill" href="resume.pdf" download>
-          <div class="social-pill-left">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-            Download Resume (PDF)
-          </div>
-          <span class="social-pill-action">PDF &darr;</span>
+          <span class="social-pill-action">@mdxsuhail &nearr;</span>
         </a>
 
         <a class="social-pill" href="resume.html">
@@ -944,6 +913,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             Interactive Web Resume
           </div>
           <span class="social-pill-action">View &rarr;</span>
+        </a>
+
+        <a class="social-pill" href="resume.pdf" download>
+          <div class="social-pill-left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Download Resume (PDF)
+          </div>
+          <span class="social-pill-action">PDF &darr;</span>
         </a>
       </div>
     </div>
@@ -1736,24 +1713,7 @@ if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.clos
   svg.innerHTML = h;
 })();
 
-/* ---------- Contact Form & Clipboard Notification ---------- */
-function handleContact(e){
-  e.preventDefault();
-  var name = $("c-name").value, email = $("c-email").value, sub = $("c-sub").value, msg = $("c-msg").value;
-  var body = "From: " + name + " (" + email + ")\n\n" + msg;
-  var mailto = "mailto:suhailm2007@gmail.com?subject=" + encodeURIComponent(sub) + "&body=" + encodeURIComponent(body);
-  window.location.href = mailto;
-  showToast("Opening email client to send signal...");
-}
-
-function copyContact(txt, label){
-  navigator.clipboard.writeText(txt).then(function(){
-    showToast("Copied " + label + " (" + txt + ") to clipboard!");
-  }).catch(function(){
-    showToast("Contact: " + txt);
-  });
-}
-
+/* ---------- Toast Feedback Notification ---------- */
 function showToast(msg){
   var t = $("toast");
   if(!t) return;
