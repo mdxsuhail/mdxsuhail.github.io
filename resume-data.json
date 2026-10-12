@@ -1,0 +1,36 @@
+{
+  "_help": "Edit only the text between quotes. Add an item by copying a { ... } block and putting a comma between blocks. Empty lists [] hide that section. Save and commit, the resume updates by itself.",
+
+  "name": "Mohammed Suhail",
+  "role": "Electronics and Communication Engineering student",
+  "objective": "Looking for a VLSI or Semiconductor Engineering internship, with a strong interest in embedded systems and robotics.",
+
+  "links": [
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/mohammed-suhail03" },
+    { "label": "GitHub", "url": "https://github.com/mdxsuhail" }
+  ],
+
+  "education": [
+    {
+      "degree": "Bachelor of Engineering",
+      "school": "Visvesvaraya Technological University",
+      "year": "Expected graduation 2029"
+    }
+  ],
+
+  "skills": [
+    { "group": "Digital design", "items": ["Verilog", "VHDL", "Xilinx Vivado"] },
+    { "group": "Circuits", "items": ["KiCad", "SPICE", "PCB layout"] },
+    { "group": "Embedded and robotics", "items": ["ESP32", "C and C++", "Python", "Sensors and servos"] }
+  ],
+
+  "certificates": [],
+
+  "achievements": [],
+
+  "projects": {
+    "fromGitHub": true,
+    "max": 6,
+    "extra": []
+  }
+}
