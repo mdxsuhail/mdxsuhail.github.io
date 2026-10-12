@@ -82,16 +82,7 @@ a { color: var(--acc); text-underline-offset: 3px; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 4px; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-/* Dynamic Background Signal Canvas */
-#signal-bg {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  opacity: .55;
-}
+
 
 /* Navigation Bar */
 .bar {
@@ -546,7 +537,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </head>
 <body>
 
-<canvas id="signal-bg" aria-hidden="true"></canvas>
+
 
 <header class="bar">
   <div class="wrap">
@@ -1154,49 +1145,7 @@ if(cv){
   if(!reduced) requestAnimationFrame(tick);
 }
 
-/* ---------- Dynamic Circuit Pulse Background ---------- */
-(function(){
-  var cv = $("signal-bg");
-  if(!cv) return;
-  var cx = cv.getContext("2d"), W = 0, H = 0, pulses = [];
-  function sz(){ W = cv.width = window.innerWidth; H = cv.height = window.innerHeight; }
-  window.addEventListener("resize", sz); sz();
 
-  for(var i = 0; i < 28; i++){
-    pulses.push({
-      x: Math.random() * W, y: Math.random() * H,
-      vx: (Math.random() - .5) * .6, vy: (Math.random() - .5) * .6,
-      len: 30 + Math.random() * 50, axis: Math.random() > .5 ? 'h' : 'v'
-    });
-  }
-
-  function draw(){
-    if(reduced) return;
-    cx.clearRect(0, 0, W, H);
-    var dark = document.documentElement.getAttribute("data-theme") !== "light";
-    var col = dark ? "rgba(56,189,248," : "rgba(2,132,199,";
-
-    pulses.forEach(function(p){
-      p.x += p.vx; p.y += p.vy;
-      if(p.x < 0) p.x = W; if(p.x > W) p.x = 0;
-      if(p.y < 0) p.y = H; if(p.y > H) p.y = 0;
-
-      cx.strokeStyle = col + "0.12)";
-      cx.lineWidth = 1.2;
-      cx.beginPath();
-      if(p.axis === 'h'){ cx.moveTo(p.x, p.y); cx.lineTo(p.x + p.len, p.y); }
-      else { cx.moveTo(p.x, p.y); cx.lineTo(p.x, p.y + p.len); }
-      cx.stroke();
-
-      cx.fillStyle = col + "0.55)";
-      cx.beginPath();
-      cx.arc(p.axis === 'h' ? p.x + p.len : p.x, p.axis === 'h' ? p.y : p.y + p.len, 2, 0, Math.PI * 2);
-      cx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
 
 /* ---------- GitHub API Access with Cache & Safe Fallbacks ---------- */
 function store(k, v){
@@ -1774,5 +1723,64 @@ function showToast(msg){
   fetchProfileStats();
 })();
 </script>
+<!-- ===== EC CIRCUIT BACKGROUND : paste just before </body> ===== -->
+<canvas id="ec-bg"></canvas>
+<style>
+  #ec-bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#050b14}
+  [data-theme="light"] #ec-bg{background:#f8fafc}
+</style>
+<script>
+(function(){
+  var cv=document.getElementById('ec-bg'),ctx=cv.getContext('2d');
+  var COLOR='0,255,156', GRID=50, W,H, nodes=[], pulses=[];
+
+  function getCol(){
+    return document.documentElement.getAttribute('data-theme')==='light'?'2,132,199':'0,255,156';
+  }
+
+  function resize(){
+    W=cv.width=innerWidth; H=cv.height=innerHeight; nodes=[];
+    for(var x=0;x<=W;x+=GRID)for(var y=0;y<=H;y+=GRID){
+      if(Math.random()<0.18)nodes.push({x:x,y:y});
+    }
+  }
+  function spawn(){
+    if(!nodes.length)return;
+    var n=nodes[Math.floor(Math.random()*nodes.length)];
+    var horiz=Math.random()<.5, dir=Math.random()<.5?1:-1;
+    pulses.push({x:n.x,y:n.y,h:horiz,d:dir,life:0,max:120+Math.random()*180});
+  }
+  function draw(){
+    var c=getCol();
+    ctx.clearRect(0,0,W,H);
+    // faint grid
+    ctx.strokeStyle='rgba('+c+',0.05)';ctx.lineWidth=1;
+    for(var x=0;x<=W;x+=GRID){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(var y=0;y<=H;y+=GRID){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+    // solder pads / nodes
+    nodes.forEach(function(n){
+      ctx.fillStyle='rgba('+c+',0.35)';
+      ctx.beginPath();ctx.arc(n.x,n.y,2.5,0,6.283);ctx.fill();
+    });
+    // moving signal pulses with fading tails
+    if(Math.random()<0.15)spawn();
+    pulses=pulses.filter(function(p){
+      var tx=p.x,ty=p.y;
+      for(var i=0;i<14;i++){
+        ctx.fillStyle='rgba('+c+','+(0.9-i*0.065)+')';
+        ctx.fillRect(tx-1.5,ty-1.5,3,3);
+        if(p.h)tx-=p.d*3;else ty-=p.d*3;
+      }
+      if(p.h)p.x+=p.d*3;else p.y+=p.d*3;
+      // randomly turn 90° at grid junctions
+      if(p.x%GRID<3&&p.y%GRID<3&&Math.random()<.04)p.h=!p.h;
+      return ++p.life<p.max&&p.x>-20&&p.x<W+20&&p.y>-20&&p.y<H+20;
+    });
+    requestAnimationFrame(draw);
+  }
+  addEventListener('resize',resize);resize();draw();
+})();
+</script>
+<!-- ===== END BACKGROUND ===== -->
 </body>
 </html>
