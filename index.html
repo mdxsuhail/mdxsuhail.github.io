@@ -581,17 +581,184 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .ec-form button{background:var(--ec-accent);color:#000;border:0;padding:12px;border-radius:6px;font-family:inherit;
     font-weight:bold;cursor:pointer;letter-spacing:2px}
   .ec-form button:hover{box-shadow:0 0 18px var(--ec-accent)}
+
+  /* ===== ENGINEER LICENSE CARD ===== */
+  #lic-wrap{width:min(680px,94vw);margin:0 auto;position:relative}
+  #lic{width:680px;height:470px;position:absolute;left:0;top:0;transform-origin:top left;
+    font-family:"Courier New",Consolas,monospace;color:#1c1c1c}
+  .lic-card{position:absolute;inset:0;border-radius:14px;transform:rotate(-1.5deg);transition:transform .5s;
+    background:
+      radial-gradient(circle at 15% 20%,rgba(150,110,60,.18),transparent 40%),
+      radial-gradient(circle at 85% 80%,rgba(150,110,60,.22),transparent 45%),
+      radial-gradient(circle at 60% 10%,rgba(120,90,50,.12),transparent 35%),
+      #ebe2d0;
+    box-shadow:0 18px 40px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.2) inset}
+  #lic:hover .lic-card{transform:rotate(0deg)}
+  .lic-frame{position:absolute;inset:14px;border:2px solid #222}
+  .lic-abs{position:absolute}
+  .lic-stars{left:34px;right:34px;top:22px;color:#4a63a8;font-size:14px;display:flex;justify-content:space-between;padding:0 10px}
+
+  .lic-photo{left:40px;top:62px;width:180px;height:210px;background:#fff;padding:8px 8px 26px;
+    box-shadow:0 6px 14px rgba(0,0,0,.4);transform:rotate(-3deg)}
+  .lic-photo div{width:100%;height:100%;background:#9a9a9a center/cover no-repeat;display:flex;
+    align-items:center;justify-content:center;font-size:12px;color:#fff;text-align:center}
+  .lic-clip{left:48px;top:44px;width:14px;height:46px;border:3px solid #9aa0a6;border-radius:8px;z-index:3}
+
+  .lic-title{left:244px;top:52px;line-height:.92}
+  .lic-title b{display:block;font:900 46px Impact,"Arial Black",sans-serif;letter-spacing:-1px}
+  .lic-title b+b{font-size:28px;letter-spacing:0}
+  .lic-small{left:244px;top:140px;width:150px;font-size:8px;line-height:1.4;color:#555}
+
+  .lic-stamp{left:252px;top:182px;width:124px;height:124px;border:3px double #3b5aa6;border-radius:50%;
+    color:#3b5aa6;display:flex;align-items:center;justify-content:center;text-align:center;
+    font:bold 10px/1.3 "Courier New",monospace;letter-spacing:1px;transform:rotate(-14deg);opacity:.72;padding:14px}
+
+  .lic-no{right:40px;top:28px;font-size:12px;letter-spacing:2px}
+  .lic-no b{color:#b3261e;font-size:22px;letter-spacing:3px}
+  .lic-sig{left:400px;top:62px;width:240px;height:78px;border:2px solid #222;padding:4px 8px}
+  .lic-sig small{font-size:9px}
+  .lic-sig i{display:block;font:italic 32px "Brush Script MT","Segoe Script",cursive;color:#1a2a6c;margin-top:4px}
+
+  .lic-fields{left:400px;top:148px;width:240px;border:2px solid #222;font-size:11px}
+  .lic-fields div{display:flex;border-bottom:1.5px solid #222}
+  .lic-fields div:last-child{border-bottom:0}
+  .lic-fields span{width:92px;padding:5px 6px;border-right:1.5px solid #222;font-size:9px;background:rgba(0,0,0,.04)}
+  .lic-fields b{padding:5px 6px;font-size:11px;flex:1}
+
+  .lic-strip{left:240px;width:400px;border-top:2px solid #222;border-bottom:2px solid #222;text-align:center;
+    font:900 14px Impact,"Arial Black",sans-serif;letter-spacing:1px;padding:7px 4px;white-space:nowrap}
+  .lic-strip.big{font-size:19px}
+  .lic-tools{left:240px;top:384px;width:400px;font-size:11px;line-height:1.6;color:#333;
+    border-bottom:1.5px solid #555;padding-bottom:6px}
+
+  .lic-bar{left:40px;top:336px;width:182px;height:44px;
+    background:repeating-linear-gradient(90deg,#111 0 2px,transparent 2px 4px,#111 4px 5px,transparent 5px 8px,#111 8px 11px,transparent 11px 13px)}
+  .lic-barnum{left:40px;top:384px;font-size:11px;letter-spacing:3px}
+  .lic-sticker{left:34px;top:288px;background:#e8742a;color:#fff;font:bold 9px "Courier New",monospace;
+    padding:4px 8px;transform:rotate(-3deg);box-shadow:0 2px 4px rgba(0,0,0,.3);letter-spacing:1px;z-index:2}
+  .lic-foot{left:34px;right:34px;top:432px;display:flex;justify-content:space-between;font:bold 11px "Courier New",monospace;
+    letter-spacing:2px;border-top:2px solid #222;padding-top:8px}
+
+  /* ===== EC LOADING SCREEN v2 : RC charging curve (10s) ===== */
+  #ec-loader{position:fixed;inset:0;z-index:99999;background:#050b14;color:#00ff9c;
+    font-family:"Courier New",Consolas,monospace;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:14px;padding:20px;box-sizing:border-box;
+    transition:opacity .8s ease,visibility .8s}
+  #ec-loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+  #ec-loader .eq{font-size:clamp(12px,2.6vw,15px);opacity:.85;letter-spacing:1px;text-align:center}
+  #ec-loader canvas{width:min(560px,92vw);height:200px}
+  #ec-loader .read{display:flex;gap:28px;font-size:clamp(14px,3vw,18px)}
+  #ec-loader .read b{font-weight:normal;text-shadow:0 0 8px #00ff9c}
+  #ec-loader .meta{font-size:11px;opacity:.55;letter-spacing:1px;text-align:center}
 </style>
 </head>
 <body>
 
+<!-- ===== EC LOADING SCREEN v2 : RC charging curve (10s) ===== -->
+<div id="ec-loader">
+  <div class="eq">Vc(t) = Vcc · (1 − e<sup>−t/RC</sup>)</div>
+  <canvas id="ec-rc"></canvas>
+  <div class="read">
+    <span>Vc = <b id="ec-v">0.00</b> V</span>
+    <span>t = <b id="ec-t">0.0</b> s</span>
+    <span><b id="ec-p">0.0</b>%</span>
+  </div>
+  <div class="meta">R = 100 kΩ &nbsp;·&nbsp; C = 20 µF &nbsp;·&nbsp; τ = 2 s &nbsp;·&nbsp; Vcc = 3.3 V &nbsp;·&nbsp; page: <span id="ec-rs">loading</span> &nbsp;·&nbsp; <span id="ec-skip" style="text-decoration:underline;cursor:pointer">[skip ⏭]</span></div>
+</div>
+
+<script>
+(function(){
+  var DUR=10000, TAU=2000, VCC=3.3;       // 5τ = 10 s -> 99.3 % charged
+  var L=document.getElementById('ec-loader'),
+      cv=document.getElementById('ec-rc'),
+      V=document.getElementById('ec-v'),T=document.getElementById('ec-t'),
+      P=document.getElementById('ec-p'),RS=document.getElementById('ec-rs'),
+      skipBtn=document.getElementById('ec-skip');
+
+  if(!L || !cv) return;
+
+  // crisp canvas on high-DPI screens
+  var dpr=window.devicePixelRatio||1, cw=cv.clientWidth||560, ch=cv.clientHeight||200;
+  cv.width=cw*dpr; cv.height=ch*dpr;
+  var ctx=cv.getContext('2d'); ctx.scale(dpr,dpr);
+
+  var pl=36,pb=26,pt=14,pr=12;
+  function X(t){return pl+(t/DUR)*(cw-pl-pr);}
+  function Y(v){return ch-pb-(v/VCC)*(ch-pb-pt);}
+  function vAt(t){return VCC*(1-Math.exp(-t/TAU));}
+
+  document.body.style.overflow='hidden';
+  var start=performance.now();
+  var finished=false;
+
+  function dismiss(){
+    if(finished) return;
+    finished=true;
+    L.classList.add('hide');
+    document.body.style.overflow='';
+    setTimeout(function(){ if(L && L.parentNode) L.remove(); }, 900);
+  }
+
+  if(skipBtn) skipBtn.onclick=function(e){ e.stopPropagation(); dismiss(); };
+  L.addEventListener('click', function(){ dismiss(); });
+  window.addEventListener('keydown', function(e){ if(e.key==='Escape' || e.key===' ') dismiss(); }, { once: true });
+
+  function frame(now){
+    if(finished) return;
+    var t=Math.min(now-start,DUR);
+    var v=vAt(t), done=t>=DUR;
+    ctx.clearRect(0,0,cw,ch);
+    ctx.font='10px "Courier New",monospace';
+
+    // axes
+    ctx.strokeStyle='rgba(0,255,156,.35)';ctx.lineWidth=1;ctx.setLineDash([]);
+    ctx.beginPath();ctx.moveTo(pl,pt);ctx.lineTo(pl,ch-pb);ctx.lineTo(cw-pr,ch-pb);ctx.stroke();
+
+    // Vcc line
+    ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(pl,Y(VCC));ctx.lineTo(cw-pr,Y(VCC));ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='rgba(0,255,156,.6)';ctx.textAlign='right';ctx.fillText('3.3V',pl-5,Y(VCC)+3);
+    ctx.fillText('0',pl-5,ch-pb+3);
+
+    // τ ticks (1τ … 5τ)
+    ctx.textAlign='center';
+    for(var k=1;k<=5;k++){
+      var xx=X(k*TAU);
+      ctx.beginPath();ctx.moveTo(xx,ch-pb);ctx.lineTo(xx,ch-pb+4);ctx.stroke();
+      ctx.fillText(k+'τ',xx,ch-pb+15);
+    }
+
+    // curve
+    ctx.strokeStyle='#00ff9c';ctx.lineWidth=2;ctx.shadowColor='#00ff9c';ctx.shadowBlur=8;
+    ctx.beginPath();ctx.moveTo(X(0),Y(0));
+    for(var tt=0;tt<=t;tt+=25){ctx.lineTo(X(tt),Y(vAt(tt)));}
+    ctx.lineTo(X(t),Y(v));ctx.stroke();
+
+    // head dot
+    ctx.shadowBlur=14;ctx.fillStyle='#00ff9c';
+    ctx.beginPath();ctx.arc(X(t),Y(v),3.5,0,6.283);ctx.fill();ctx.shadowBlur=0;
+
+    // readouts
+    V.textContent=(done?VCC:v).toFixed(2);
+    T.textContent=(t/1000).toFixed(1);
+    P.textContent=(done?100:(1-Math.exp(-t/TAU))*100).toFixed(1);
+    RS.textContent=document.readyState;
+
+    if(!done){requestAnimationFrame(frame);}
+    else{
+      dismiss();
+    }
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+<!-- ===== END LOADING SCREEN v2 ===== -->
+
 <!-- Top bar -->
 <div id="ec-top">
   <a href="resume.pdf" download>⬇ Resume</a>
+  <a href="license.html" target="_blank" title="View standalone License Card">🪪 License</a>
   <button id="ec-theme" title="Toggle theme" type="button">☀ / ☾</button>
 </div>
-
-
 
 <header class="bar">
   <div class="wrap">
@@ -601,7 +768,9 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a href="#skills">Skills</a>
       <a href="#insights">Insights</a>
       <a href="#milestones">Timeline</a>
+      <a href="#license">License</a>
       <a href="#about">About</a>
+      <a href="#connect">Connect</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
@@ -916,6 +1085,44 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
+  <!-- ENGINEER LICENSE CARD -->
+  <section class="ec-sec" id="license">
+    <h2>&gt; ENGINEER_LICENSE_</h2>
+    <div id="lic-wrap">
+      <div id="lic">
+        <div class="lic-card"></div>
+        <div class="lic-abs lic-frame"></div>
+        <div class="lic-abs lic-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+
+        <div class="lic-abs lic-clip"></div>
+        <div class="lic-abs lic-photo"><div id="lic-img" style="background-image:url(photo.jpg)"></div></div>
+        <div class="lic-abs lic-sticker">EC • ACTIVE</div>
+
+        <div class="lic-abs lic-title"><b>ENGINEER</b><b>LICENSE</b></div>
+        <div class="lic-abs lic-small">This licence certifies the holder designs, debugs and ships electronics.</div>
+        <div class="lic-abs lic-stamp">ELECTRONICS &amp;<br>COMMUNICATION<br>★ ENGINEER ★</div>
+
+        <div class="lic-abs lic-no"># OF LICENSE &nbsp;<b>0001</b></div>
+        <div class="lic-abs lic-sig"><small>Signature of Authorized Engineer</small><i>Suhail</i></div>
+        <div class="lic-abs lic-fields">
+          <div><span>First Name:</span><b>MOHAMMED</b></div>
+          <div><span>Family Name:</span><b>SUHAIL</b></div>
+          <div><span>Profession:</span><b>EC Engineer</b></div>
+          <div><span>Qualification:</span><b>B.E. · ECE</b></div>
+          <div><span>Specialization:</span><b>VLSI · Embedded · IoT</b></div>
+        </div>
+
+        <div class="lic-abs lic-strip big" style="top:306px">CIRCUIT DESIGNER | EMBEDDED DEVELOPER</div>
+        <div class="lic-abs lic-strip big" style="top:346px">SIGNAL PROCESSOR | PCB BUILDER</div>
+        <div class="lic-abs lic-tools">Tools: Verilog · C/C++ · Python · KiCad · MATLAB · Arduino · ESP32 · Vivado</div>
+
+        <div class="lic-abs lic-bar"></div>
+        <div class="lic-abs lic-barnum">440 234 00042 5549</div>
+        <div class="lic-abs lic-foot"><span>VALID UNTIL: DOES NOT EXPIRE</span><span>ENGINEER STATUS: ACTIVE</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
@@ -932,6 +1139,20 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="dcard"><h3>Current Learning</h3><p>NPTEL semiconductor courses and advanced FPGA digital architecture.</p></div>
       <div class="dcard"><h3>Spoken Languages</h3><p>English, Hindi, Urdu, and Kannada.</p></div>
       <div class="dcard"><h3>Internship Locations</h3><p>Open to on-site in Bangalore/India, remote globally, or international opportunities.</p></div>
+    </div>
+  </section>
+
+  <!-- CONNECT: RECRUITERS + FEEDBACK -->
+  <section class="ec-sec" id="connect" style="text-align:center">
+    <h2>&gt; CONNECT_</h2>
+    <p style="margin-bottom:22px">Hiring? Send me the role details. Just visiting? I'd love your feedback.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3VI6o3yMbcxhK0i6Q4EMaM9ao5kCAScJku_uR0pOu23ukNw/viewform?usp=header" target="_blank" rel="noopener"
+         style="background:var(--ec-accent);color:#000;padding:12px 24px;border-radius:6px;text-decoration:none;
+         font-weight:bold;letter-spacing:2px;font-family:inherit">💼 I'M A RECRUITER ▶</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3VI6o3yMbcxhK0i6Q4EMaM9ao5kCAScJku_uR0pOu23ukNw/viewform?usp=header" target="_blank" rel="noopener"
+         style="border:1px solid var(--ec-accent);color:var(--ec-accent);padding:12px 24px;border-radius:6px;
+         text-decoration:none;font-weight:bold;letter-spacing:2px;font-family:inherit">💬 GIVE FEEDBACK ▶</a>
     </div>
   </section>
 
@@ -1894,6 +2115,18 @@ function showToast(msg){
         }, 1200);
       }
     });
+  }
+
+  // ---- scale license card to fit any screen ----
+  var licWrap = document.getElementById('lic-wrap'), licEl = document.getElementById('lic');
+  if(licWrap && licEl){
+    function fitLic(){
+      var s = licWrap.clientWidth / 680;
+      licEl.style.transform = 'scale(' + s + ')';
+      licWrap.style.height = (470 * s + 20) + 'px';
+    }
+    addEventListener('resize', fitLic);
+    fitLic();
   }
 })();
 </script>
