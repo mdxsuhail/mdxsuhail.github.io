@@ -20,17 +20,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=Special+Elite&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f3f7f6;--surface:#fff;--ink:#0b1a1d;--mut:#4d6268;--line:#d3dedf;--acc:#00766f;--acc2:#b4690e;--acc-ink:#fff;--chip:#e3f0ee;
-  --c1:#00766f;--c2:#3a6ea5;--c3:#b4690e;--c4:#7a5aa6;--c5:#c4553b;--c6:#5b6b72;
+  --bg:#f8fafc;--surface:#ffffff;--ink:#0f172a;--mut:#475569;--line:#cbd5e1;--acc:#0284c7;--acc2:#0d9488;--acc-ink:#ffffff;--chip:#f1f5f9;
+  --c1:#0284c7;--c2:#0d9488;--c3:#6366f1;--c4:#8b5cf6;--c5:#ea580c;--c6:#64748b;
   --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
   --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#081316;--surface:#0e1c20;--ink:#e6efef;--mut:#93a8ad;--line:#21343a;--acc:#4fd1c5;--acc2:#f0b35a;--acc-ink:#04201e;--chip:#132a2d;
-  --c1:#4fd1c5;--c2:#7fb2ea;--c3:#f0b35a;--c4:#b79ae0;--c5:#ef8a73;--c6:#93a6ab}}
+  --bg:#070d18;--surface:#0c1527;--ink:#f1f5f9;--mut:#94a3b8;--line:#1e293b;--acc:#38bdf8;--acc2:#2dd4bf;--acc-ink:#04121f;--chip:#132036;
+  --c1:#38bdf8;--c2:#2dd4bf;--c3:#818cf8;--c4:#a78bfa;--c5:#fb923c;--c6:#94a3b8}}
 :root[data-theme="dark"]{
-  --bg:#081316;--surface:#0e1c20;--ink:#e6efef;--mut:#93a8ad;--line:#21343a;--acc:#4fd1c5;--acc2:#f0b35a;--acc-ink:#04201e;--chip:#132a2d;
-  --c1:#4fd1c5;--c2:#7fb2ea;--c3:#f0b35a;--c4:#b79ae0;--c5:#ef8a73;--c6:#93a6ab}
+  --bg:#070d18;--surface:#0c1527;--ink:#f1f5f9;--mut:#94a3b8;--line:#1e293b;--acc:#38bdf8;--acc2:#2dd4bf;--acc-ink:#04121f;--chip:#132036;
+  --c1:#38bdf8;--c2:#2dd4bf;--c3:#818cf8;--c4:#a78bfa;--c5:#fb923c;--c6:#94a3b8}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
@@ -292,15 +292,67 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 @media(max-width:700px){.levels{grid-template-columns:1fr}}
 
 @media(max-width:999px){.hero{display:flex;flex-direction:column}.hero>.lic-wrap{order:1;margin:26px 0 4px}.hero>.pill,.hero>.scope{order:2}}
+
+/* dynamic signal flow background */
+#signal-bg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:.5}
+
+/* milestones & timeline */
+.timeline{position:relative;margin:24px 0 34px;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:repeating-linear-gradient(180deg,var(--acc) 0 8px,transparent 8px 14px)}
+.t-node{position:relative;margin-bottom:20px}
+.t-dot{position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2.5px solid var(--acc);box-shadow:0 0 8px var(--acc)}
+.t-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:transform .2s,border-color .2s}
+.t-card:hover{border-color:var(--acc);transform:translateX(4px)}
+.t-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:4px;flex-wrap:wrap}
+.t-title{font:700 1.05rem var(--display);margin:0;color:var(--ink)}
+.t-time{font-size:.82rem;color:var(--acc);font-weight:600;white-space:nowrap}
+.t-org{color:var(--mut);font-size:.88rem;font-weight:500;margin:0 0 6px}
+.t-desc{margin:0;font-size:.88rem;color:var(--mut);line-height:1.5}
+
+/* hardware experiments status board */
+.bench-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+.bench-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;position:relative;transition:transform .2s,border-color .2s}
+.bench-card:hover{transform:translateY(-2px);border-color:var(--acc)}
+.bench-status{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-bottom:10px}
+.bench-status.live{background:rgba(2,132,199,.12);color:var(--acc)}
+.bench-status.rtl{background:rgba(234,88,12,.12);color:var(--c5)}
+.bench-status.study{background:rgba(13,148,136,.12);color:var(--acc2)}
+.bench-status.sim{background:rgba(99,102,241,.12);color:var(--c3)}
+.bench-dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 6px currentColor}
+.bench-title{font:700 1.05rem/1.3 var(--display);margin:0 0 6px}
+.bench-desc{font-size:.88rem;color:var(--mut);margin:0 0 12px;line-height:1.45}
+.bench-tags{display:flex;flex-wrap:wrap;gap:6px}
+.bench-tag{background:var(--chip);font-size:.76rem;font-weight:600;padding:2px 8px;border-radius:4px;color:var(--ink)}
+
+/* contact form & social dock */
+.contact-box{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin-top:20px}
+@media(max-width:760px){.contact-box{grid-template-columns:1fr}}
+.contact-form{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.field-group{display:flex;flex-direction:column;gap:4px}
+.field-group label{font-size:.82rem;font-weight:600;color:var(--mut)}
+.field-group input,.field-group textarea{background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:9px 12px;font:400 .92rem var(--body);transition:border-color .2s}
+.field-group input:focus,.field-group textarea:focus{outline:none;border-color:var(--acc)}
+.field-group textarea{resize:vertical;min-height:96px}
+.contact-btn{background:var(--acc);color:var(--acc-ink);border:0;padding:10px 20px;border-radius:8px;font:600 .94rem var(--body);cursor:pointer;transition:transform .2s,opacity .2s;align-self:flex-start}
+.contact-btn:hover{opacity:.9;transform:translateY(-2px)}
+.social-dock{display:flex;flex-direction:column;gap:10px}
+.social-pill{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s;cursor:pointer}
+.social-pill:hover{border-color:var(--acc);transform:translateX(4px)}
+.social-pill-left{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem}
+.social-pill-left svg{width:20px;height:20px;fill:currentColor;color:var(--acc);flex:none}
+.social-pill-action{font-size:.78rem;color:var(--mut);background:var(--chip);padding:2px 8px;border-radius:5px}
+#toast{position:fixed;bottom:24px;right:24px;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:8px;font:600 .86rem var(--body);box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999999}
+#toast.show{opacity:1;pointer-events:auto;transform:translateY(0)}
 </style>
 </head>
 <body>
+<canvas id="signal-bg" aria-hidden="true"></canvas>
 <header class="bar">
   <div class="wrap">
     <nav aria-label="Sections">
-      <a href="#projects">Projects</a><a href="#insights">Insights</a><a href="#focus">Focus</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#projects">Projects</a><a href="#insights">Insights</a><a href="#experiments">Experiments</a><a href="#skills">Skills</a><a href="#milestones">Milestones</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
-    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+    <button class="theme" id="theme" type="button" aria-label="Switch colour theme"><span id="t-icon">🌙</span> <span id="t-label">Theme</span></button>
   </div>
   <div id="progress"></div>
 </header>
@@ -336,9 +388,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <p class="where up d1">Based in Bangalore, India. Looking for VLSI and embedded systems internships.</p>
     <div class="actions up d2">
       <a class="primary" href="#projects">See projects</a>
-      <a id="gh-link" href="#">GitHub</a>
-      <a href="resume.html">Resume</a>
-      <a href="https://www.linkedin.com/in/mohammed-suhail03">LinkedIn</a>
+      <a href="resume.html" target="_blank" rel="noopener">Interactive Resume</a>
+      <a href="resume.html" onclick="window.open('resume.html');return false;">Download CV (PDF)</a>
+      <a id="gh-link" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <p class="pill up d3" id="views" hidden><i></i><b id="vcount">0</b> people have visited this site</p>
     <div class="scope up d3">
@@ -407,6 +460,36 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         <h3>Embedded and robotics</h3><p>Firmware that reads sensors and drives motors on real hardware.</p>
         <ul><li>ESP32</li><li>C and C++</li><li>Python</li><li>Sensors and servos</li></ul>
       </div>
+  </section>
+
+  <section id="experiments">
+    <h2>Current Hardware Experiments</h2>
+    <p class="sub">Active engineering bench work, ongoing hardware synthesis, and course laboratories.</p>
+    <div class="bench-grid">
+      <div class="bench-card">
+        <span class="bench-status live"><i class="bench-dot"></i> Active Bench Test</span>
+        <h3 class="bench-title">ESP32 Medical Bot Arm Kinematics</h3>
+        <p class="bench-desc">Dual-servo calibration and ultrasonic sensor ranging integration for autonomous patient assistant robot.</p>
+        <div class="bench-tags"><span class="bench-tag">ESP32</span><span class="bench-tag">C/C++</span><span class="bench-tag">Servos</span><span class="bench-tag">Ultrasonic</span></div>
+      </div>
+      <div class="bench-card">
+        <span class="bench-status rtl"><i class="bench-dot"></i> RTL Simulation</span>
+        <h3 class="bench-title">16-bit ALU Testbench Verification</h3>
+        <p class="bench-desc">Verilog implementation of arithmetic logic unit with behavioral testbench waveforms verified in Xilinx Vivado.</p>
+        <div class="bench-tags"><span class="bench-tag">Verilog</span><span class="bench-tag">Vivado</span><span class="bench-tag">RTL</span><span class="bench-tag">Waveforms</span></div>
+      </div>
+      <div class="bench-card">
+        <span class="bench-status study"><i class="bench-dot"></i> Coursework</span>
+        <h3 class="bench-title">Semiconductor Physics &amp; FPGA Design</h3>
+        <p class="bench-desc">Pursuing NPTEL semiconductor engineering curriculum alongside advanced digital design online modules.</p>
+        <div class="bench-tags"><span class="bench-tag">NPTEL</span><span class="bench-tag">FPGA</span><span class="bench-tag">Semiconductors</span><span class="bench-tag">VLSI</span></div>
+      </div>
+      <div class="bench-card">
+        <span class="bench-status sim"><i class="bench-dot"></i> SPICE Simulation</span>
+        <h3 class="bench-title">Active Filter &amp; Power Supply Circuits</h3>
+        <p class="bench-desc">Designing low-noise frequency-selective filters and full-wave rectifier circuit topologies in KiCad SPICE.</p>
+        <div class="bench-tags"><span class="bench-tag">KiCad</span><span class="bench-tag">SPICE</span><span class="bench-tag">Analog</span><span class="bench-tag">PCB</span></div>
+      </div>
     </div>
   </section>
 
@@ -451,6 +534,52 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
           <span>VLSI and embedded systems internships</span>
         </span>
       </button>
+  </section>
+
+  <section id="milestones">
+    <h2>Milestones &amp; Achievements</h2>
+    <p class="sub">Chronological timeline of certifications, engineering competitions, and academic milestones.</p>
+    <div class="timeline">
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-head"><h3 class="t-title">Building Multi-Agent Systems with Strands Agents</h3><span class="t-time">Mar 2026</span></div>
+          <p class="t-org">Amazon Web Services (AWS) &bull; Verified Credential</p>
+          <p class="t-desc">Advanced agentic AI frameworks, autonomous multi-agent task distribution, and systems orchestration.</p>
+        </div>
+      </div>
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-head"><h3 class="t-title">AWS Machine Learning Learning Plan</h3><span class="t-time">Feb 2026</span></div>
+          <p class="t-org">Amazon Web Services (AWS) &bull; Specialization</p>
+          <p class="t-desc">Core machine learning pipelines, neural models, feature engineering, and inference optimization.</p>
+        </div>
+      </div>
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-head"><h3 class="t-title">Machine Translation in Language Learning</h3><span class="t-time">Feb 2026</span></div>
+          <p class="t-org">The Open University &bull; Academic Credential</p>
+          <p class="t-desc">Computational linguistics, sequence modeling, and language transformation architectures.</p>
+        </div>
+      </div>
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-head"><h3 class="t-title">College-Level Hackathon Participant</h3><span class="t-time">2025</span></div>
+          <p class="t-org">Jyothy Institute of Technology</p>
+          <p class="t-desc">Prototyped Aether-Bot autonomous medical assistant robot in an intensive multi-sensor development sprint.</p>
+        </div>
+      </div>
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-head"><h3 class="t-title">Commenced B.E. in Electronics &amp; Communication</h3><span class="t-time">Aug 2025</span></div>
+          <p class="t-org">Jyothy Institute of Technology &bull; VTU Affiliated</p>
+          <p class="t-desc">B.E. program (Class of 2029) focusing on VLSI front-end, analog circuits, and embedded robotics.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -474,11 +603,62 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p class="sub">The best places to reach me are LinkedIn and GitHub.</p>
+    <h2>Contact &amp; Transmit</h2>
+    <p class="sub">Reach out for VLSI internships, embedded firmware projects, or collaborative research.</p>
     <p class="pill" id="cstat" hidden><i></i><b id="ccount">0</b> people have shown interest in contacting me</p>
-    <p><a href="https://www.linkedin.com/in/mohammed-suhail03">LinkedIn</a> &nbsp; <a id="gh-link2" href="#">GitHub</a></p>
+    <div class="contact-box">
+      <form class="contact-form" id="contact-form" onsubmit="handleContact(event)">
+        <div class="field-group">
+          <label for="c-name">Your Name</label>
+          <input type="text" id="c-name" required placeholder="Dr. / Eng. Alex Morgan">
+        </div>
+        <div class="field-group">
+          <label for="c-email">Your Email</label>
+          <input type="email" id="c-email" required placeholder="alex@semiconductor.com">
+        </div>
+        <div class="field-group">
+          <label for="c-sub">Subject</label>
+          <input type="text" id="c-sub" required placeholder="VLSI Internship Opportunity / Embedded Collaboration">
+        </div>
+        <div class="field-group">
+          <label for="c-msg">Message</label>
+          <textarea id="c-msg" required placeholder="Hello Mohammed, I reviewed your RTL / hardware portfolio and would like to connect regarding..."></textarea>
+        </div>
+        <button type="submit" class="contact-btn">Send Message &rarr;</button>
+      </form>
+      <div class="social-dock">
+        <a class="social-pill" href="https://github.com/mdxsuhail" target="_blank" rel="noopener">
+          <span class="social-pill-left">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </span>
+          <span class="social-pill-action">@mdxsuhail &nearr;</span>
+        </a>
+        <a class="social-pill" href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">
+          <span class="social-pill-left">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </span>
+          <span class="social-pill-action">Connect &nearr;</span>
+        </a>
+        <div class="social-pill" onclick="copyContact('suhailm2007@gmail.com', 'Email')">
+          <span class="social-pill-left">
+            <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-.426l4.616-3.741v9.467l-4.616-5.726z"/></svg>
+            suhailm2007@gmail.com
+          </span>
+          <span class="social-pill-action">Click to copy</span>
+        </div>
+        <div class="social-pill" onclick="copyContact('+918151988486', 'Phone')">
+          <span class="social-pill-left">
+            <svg viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615l2.11-1.033z"/></svg>
+            +91 8151988486
+          </span>
+          <span class="social-pill-action">Click to copy</span>
+        </div>
+      </div>
+    </div>
   </section>
+  <div id="toast" role="alert" aria-live="assertive"></div>
 </main>
 
 <dialog id="dlg" aria-label="Project preview">
@@ -507,11 +687,15 @@ function month(i){return new Date(i).toLocaleDateString("en",{month:"short",year
 
 /* ---------- theme ---------- */
 (function(){
-  var root=document.documentElement,btn=$("theme");
+  var root=document.documentElement,btn=$("theme"),icon=$("t-icon"),lbl=$("t-label");
   try{var s=localStorage.getItem("theme");if(s)root.setAttribute("data-theme",s)}catch(e){}
   function cur(){return root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}
-  function label(){btn.textContent=cur()==="dark"?"Light theme":"Dark theme"}
-  btn.addEventListener("click",function(){
+  function label(){
+    var dark=cur()==="dark";
+    if(icon)icon.textContent=dark?"☀️":"🌙";
+    if(lbl)lbl.textContent=dark?"Light":"Dark";
+  }
+  if(btn)btn.addEventListener("click",function(){
     var n=cur()==="dark"?"light":"dark";root.setAttribute("data-theme",n);
     try{localStorage.setItem("theme",n)}catch(e){}
     label();drawStatic();
@@ -521,7 +705,8 @@ function month(i){return new Date(i).toLocaleDateString("en",{month:"short",year
 
 /* ---------- links and scroll progress ---------- */
 var ghUrl="https://github.com/"+USER;
-$("gh-link").href=ghUrl;$("gh-link2").href=ghUrl;
+if($("gh-link"))$("gh-link").href=ghUrl;
+if($("gh-link2"))$("gh-link2").href=ghUrl;
 addEventListener("scroll",function(){
   var h=document.documentElement;
   $("progress").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+"%";
@@ -852,14 +1037,82 @@ dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
 
 /* ---------- skill levels ---------- */
 (function(){
-  var SK=[["Verilog",3],["C and C++",3],["Git and GitHub",3],["KiCad PCB design",3],["Python",2],["VHDL",1],["Linux and command line",1]];
+  var SK=[
+    ["Verilog HDL",3],
+    ["Digital Design & ALU",3],
+    ["Xilinx Vivado",3],
+    ["KiCad PCB & SPICE",3],
+    ["ESP32 & Arduino",3],
+    ["C and C++",3],
+    ["Python & Automation",2],
+    ["SystemVerilog & VHDL",2],
+    ["Linux & Git",3]
+  ];
   var LV=["","Beginner","Some knowledge","Comfortable","Professional"],box=$("levels");
+  if(!box)return;
   SK.forEach(function(s){
     var row=el("div","lvl"),top=el("div","lvt");top.appendChild(el("b","",s[0]));top.appendChild(el("span","",LV[s[1]]));row.appendChild(top);
     var m=el("div","meter");m.setAttribute("role","img");m.setAttribute("aria-label",s[0]+": "+LV[s[1]]);
     for(var i=1;i<=4;i++)m.appendChild(el("i",i<=s[1]?"on":""));
     row.appendChild(m);box.appendChild(row);
   });
+})();
+
+/* ---------- contact form & clipboard actions ---------- */
+function handleContact(e){
+  e.preventDefault();
+  var name=$("c-name").value,email=$("c-email").value,sub=$("c-sub").value,msg=$("c-msg").value;
+  var body="From: "+name+" ("+email+")\n\n"+msg;
+  var mailto="mailto:suhailm2007@gmail.com?subject="+encodeURIComponent(sub)+"&body="+encodeURIComponent(body);
+  window.location.href=mailto;
+  showToast("Opening email client to send message...");
+}
+function copyContact(txt,label){
+  navigator.clipboard.writeText(txt).then(function(){
+    showToast("Copied "+label+" ("+txt+") to clipboard!");
+  }).catch(function(){
+    showToast("Contact: "+txt);
+  });
+}
+function showToast(msg){
+  var t=$("toast");if(!t)return;
+  t.textContent=msg;t.classList.add("show");
+  setTimeout(function(){t.classList.remove("show");},3200);
+}
+
+/* ---------- dynamic signal flow background canvas ---------- */
+(function(){
+  var cv=$("signal-bg");if(!cv)return;
+  var cx=cv.getContext("2d"),W=0,H=0,pulses=[];
+  function sz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight}
+  window.addEventListener("resize",sz);sz();
+  for(var i=0;i<30;i++){
+    pulses.push({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.7,vy:(Math.random()-.5)*.7,
+      len:30+Math.random()*60,axis:Math.random()>.5?'h':'v'
+    });
+  }
+  function draw(){
+    if(reduced){return}
+    cx.clearRect(0,0,W,H);
+    var dark=document.documentElement.getAttribute("data-theme")==="dark"||
+      (!document.documentElement.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme: dark)").matches);
+    var col=dark?"rgba(56,189,248,":"rgba(2,132,199,";
+    pulses.forEach(function(p){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+      cx.strokeStyle=col+".14)";cx.lineWidth=1.2;cx.beginPath();
+      if(p.axis==='h'){cx.moveTo(p.x,p.y);cx.lineTo(p.x+p.len,p.y)}
+      else{cx.moveTo(p.x,p.y);cx.lineTo(p.x,p.y+p.len)}
+      cx.stroke();
+      cx.fillStyle=col+".45)";cx.beginPath();
+      cx.arc(p.axis==='h'?p.x+p.len:p.x,p.axis==='h'?p.y:p.y+p.len,2,0,Math.PI*2);cx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
 })();
 
 /* ---------- start ---------- */
