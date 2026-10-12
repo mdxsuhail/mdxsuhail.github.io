@@ -533,9 +533,63 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .bar nav a { margin-right: 12px; font-size: .85rem; }
   .scope canvas { height: 160px; }
 }
+
+  :root{--ec-bg:#050b14;--ec-panel:rgba(2,7,13,.85);--ec-fg:#9bffd6;--ec-accent:#00ff9c}
+  [data-theme="light"]{--ec-bg:#eefaf4;--ec-panel:rgba(255,255,255,.88);--ec-fg:#0b3d2a;--ec-accent:#00a86b}
+  [data-theme="light"] #ec-bg{background:#eefaf4}
+
+  .ec-sec{padding:64px 20px 20px;max-width:1040px;margin:0 auto;font-family:"Courier New",monospace;color:var(--ec-fg)}
+  .ec-sec h2{color:var(--ec-accent);letter-spacing:3px;text-align:center;margin:0 0 28px;
+    text-shadow:0 0 10px var(--ec-accent);font-size:clamp(22px,4vw,32px)}
+
+  /* top bar: resume + theme toggle */
+  #ec-top{position:fixed;top:14px;right:14px;z-index:9000;display:flex;gap:10px;font-family:"Courier New",monospace}
+  #ec-top a,#ec-top button{background:var(--ec-panel);color:var(--ec-accent);border:1px solid var(--ec-accent);
+    padding:7px 14px;border-radius:6px;cursor:pointer;font-size:13px;text-decoration:none;font-family:inherit;transition:all .2s}
+  #ec-top a:hover,#ec-top button:hover{background:var(--ec-accent);color:#000;box-shadow:0 0 14px var(--ec-accent)}
+
+  /* flip cards */
+  .ec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+  .ec-card{perspective:1000px;height:220px;cursor:pointer}
+  .ec-card-in{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
+  .ec-card:hover .ec-card-in,.ec-card.flip .ec-card-in{transform:rotateY(180deg)}
+  .ec-face{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--ec-accent);border-radius:10px;
+    background:var(--ec-panel);display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:18px;text-align:center;box-shadow:0 0 18px rgba(0,255,156,.2)}
+  .ec-face.back{transform:rotateY(180deg);font-size:13px;line-height:1.5;gap:10px}
+  .ec-face .ico{font-size:44px}
+  .ec-face h3{margin:8px 0 0;color:var(--ec-accent);font-size:17px}
+  .ec-face a{color:var(--ec-accent);border:1px solid var(--ec-accent);padding:5px 12px;border-radius:4px;text-decoration:none}
+  .ec-face a:hover{background:var(--ec-accent);color:#000}
+
+  /* skills diagram */
+  #ec-skill-svg{width:100%;max-width:640px;display:block;margin:0 auto}
+  .sk-line{stroke:var(--ec-accent);stroke-width:1.5;opacity:.5;stroke-dasharray:6 6;animation:skflow 1.2s linear infinite}
+  @keyframes skflow{to{stroke-dashoffset:-12}}
+  .sk-node circle{fill:var(--ec-bg);stroke:var(--ec-accent);stroke-width:2;transition:.25s}
+  .sk-node text{fill:var(--ec-fg);font-size:12px;text-anchor:middle;font-family:"Courier New",monospace}
+  .sk-node:hover circle{fill:var(--ec-accent);filter:drop-shadow(0 0 8px var(--ec-accent))}
+  .sk-node:hover text{fill:#000}
+  .sk-core circle{fill:var(--ec-accent);stroke:var(--ec-accent);filter:drop-shadow(0 0 12px var(--ec-accent))}
+  .sk-core text{fill:#000;font-weight:bold;font-size:14px}
+
+  /* contact form */
+  .ec-form{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .ec-form input,.ec-form textarea{background:var(--ec-panel);border:1px solid var(--ec-accent);color:var(--ec-fg);
+    padding:12px;border-radius:6px;font-family:inherit;font-size:14px;outline:none}
+  .ec-form input:focus,.ec-form textarea:focus{box-shadow:0 0 12px var(--ec-accent)}
+  .ec-form button{background:var(--ec-accent);color:#000;border:0;padding:12px;border-radius:6px;font-family:inherit;
+    font-weight:bold;cursor:pointer;letter-spacing:2px}
+  .ec-form button:hover{box-shadow:0 0 18px var(--ec-accent)}
 </style>
 </head>
 <body>
+
+<!-- Top bar -->
+<div id="ec-top">
+  <a href="resume.pdf" download>⬇ Resume</a>
+  <button id="ec-theme" title="Toggle theme" type="button">☀ / ☾</button>
+</div>
 
 
 
@@ -647,13 +701,35 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </div>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <p class="sub">Hardware prototypes, digital RTL designs, and software tools pulled live from my public GitHub repositories.</p>
-    <div class="filters" id="filters" role="group" aria-label="Filter projects by tag"></div>
-    <p class="count" id="count" aria-live="polite"></p>
-    <div class="grid" id="list" aria-live="polite"></div>
+  <!-- PROJECTS -->
+  <section class="ec-sec" id="projects">
+    <h2>&gt; PROJECTS_</h2>
+    <div class="ec-grid">
+      <div class="ec-card"><div class="ec-card-in">
+        <div class="ec-face"><div class="ico">🔌</div><h3>Smart Home IoT</h3></div>
+        <div class="ec-face back">ESP32-based automation with sensors and a mobile dashboard.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View →</a></div>
+      </div></div>
+      <div class="ec-card"><div class="ec-card-in">
+        <div class="ec-face"><div class="ico">🧠</div><h3>VLSI: 4-bit ALU</h3></div>
+        <div class="ec-face back">Designed in Verilog, simulated and synthesized.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View →</a></div>
+      </div></div>
+      <div class="ec-card"><div class="ec-card-in">
+        <div class="ec-face"><div class="ico">📡</div><h3>RF Signal Analyzer</h3></div>
+        <div class="ec-face back">DSP filters to clean and analyze communication signals.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View →</a></div>
+      </div></div>
+      <div class="ec-card"><div class="ec-card-in">
+        <div class="ec-face"><div class="ico">🤖</div><h3>Aether-Bot Medical Assistant</h3></div>
+        <div class="ec-face back">ESP32 autonomous patient assistant bot with dual-servo arm kinematics &amp; ultrasonic navigation.<a href="https://github.com/mdxsuhail" target="_blank" rel="noopener">View →</a></div>
+      </div></div>
+      <div class="ec-card"><div class="ec-card-in">
+        <div class="ec-face"><div class="ico">🚌</div><h3>RouteVelo Transit Platform</h3></div>
+        <div class="ec-face back">System architecture and requirements specifications for smart public transit tracking.<a href="https://github.com/mdxsuhail/route-velo" target="_blank" rel="noopener">View →</a></div>
+      </div></div>
+      <div class="ec-card"><div class="ec-card-in">
+        <div class="ec-face"><div class="ico">🔐</div><h3>ATmega328P Digital Lock</h3></div>
+        <div class="ec-face back">AVR microcontroller security keypad authentication lock with EEPROM memory.<a href="https://github.com/mdxsuhail/ATmega328P-Digital-Password-Lock" target="_blank" rel="noopener">View →</a></div>
+      </div></div>
+    </div>
   </section>
 
   <!-- Hardware Bench Status Section -->
@@ -688,20 +764,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <!-- Skills & Interactive Circuit Topology -->
-  <section id="skills">
-    <h2>Skills &amp; EDA Tools</h2>
-    <p class="sub">Self-assessed hands-on comfort levels with design tools, hardware platforms, and simulation environments.</p>
-    <div class="levels" id="levels"></div>
+  <!-- SKILLS -->
+  <section class="ec-sec" id="skills">
+    <h2>&gt; SKILLS_NETWORK_</h2>
+    <svg id="ec-skill-svg" viewBox="0 0 640 440"></svg>
 
-    <div class="circuit-wrap">
-      <h3 style="font:700 1.05rem var(--display);margin:0 0 4px">Interactive Engineering Network</h3>
-      <p class="cap">Interconnected branches across semiconductor design and embedded engineering.</p>
-      <svg id="ec-skill-svg" viewBox="0 0 600 420" role="img" aria-label="Interactive circuit diagram connecting engineering domains"></svg>
-    </div>
+    <div class="levels" id="levels" style="margin-top:28px"></div>
 
-    <p class="cap" style="margin-top:20px">Additional Software &amp; Lab Equipment</p>
-    <ul class="chiprow">
+    <p class="cap" style="margin-top:24px;text-align:center">Additional Software &amp; Lab Equipment</p>
+    <ul class="chiprow" style="justify-content:center">
       <li>Cadence EDA</li><li>Synopsys Tools</li><li>MATLAB &amp; Simulink</li><li>Breadboarding</li>
       <li>Digital Oscilloscope</li><li>Logic Analyzer</li><li>Soldering &amp; Prototyping</li><li>Wokwi</li>
       <li>Tinkercad</li><li>Raspberry Pi</li><li>UART / SPI / I2C</li>
@@ -864,56 +935,49 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact &amp; Connect</h2>
-    <p class="sub">Feel free to reach out regarding internship opportunities, research collaborations, or technical questions.</p>
+  <!-- CONTACT -->
+  <section class="ec-sec" id="contact">
+    <h2>&gt; CONTACT_</h2>
+    <!-- ✏️ Replace YOUR_FORM_ID with your free Formspree ID (formspree.io) -->
+    <form class="ec-form" id="ec-contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+      <button type="submit">SEND_SIGNAL ▶</button>
+    </form>
 
-    <div class="contact-layout">
-      <!-- Direct Contact Card -->
-      <div class="contact-card">
-        <h3>Connect Directly</h3>
-        <p>I am actively seeking internship opportunities in VLSI Front-End Design, RTL Verification, and Embedded Systems. The quickest way to connect or message me is via LinkedIn.</p>
-        <a class="send-btn" href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">
-          Message on LinkedIn &rarr;
-        </a>
-        <p class="contact-note">Based in Bangalore, Karnataka &bull; Open to on-site, hybrid, or remote opportunities.</p>
-      </div>
+    <div class="social-dock" style="margin-top:32px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a class="social-pill" href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">
+        <div class="social-pill-left">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </div>
+        <span class="social-pill-action">Connect &nearr;</span>
+      </a>
 
-      <!-- Social Dock -->
-      <div class="social-dock">
-        <a class="social-pill" href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">
-          <div class="social-pill-left">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            LinkedIn
-          </div>
-          <span class="social-pill-action">Connect &nearr;</span>
-        </a>
+      <a class="social-pill" href="https://github.com/mdxsuhail" target="_blank" rel="noopener">
+        <div class="social-pill-left">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </div>
+        <span class="social-pill-action">@mdxsuhail &nearr;</span>
+      </a>
 
-        <a class="social-pill" href="https://github.com/mdxsuhail" target="_blank" rel="noopener">
-          <div class="social-pill-left">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </div>
-          <span class="social-pill-action">@mdxsuhail &nearr;</span>
-        </a>
+      <a class="social-pill" href="resume.html">
+        <div class="social-pill-left">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+          Interactive Resume
+        </div>
+        <span class="social-pill-action">View &rarr;</span>
+      </a>
 
-        <a class="social-pill" href="resume.html">
-          <div class="social-pill-left">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-            Interactive Web Resume
-          </div>
-          <span class="social-pill-action">View &rarr;</span>
-        </a>
-
-        <a class="social-pill" href="resume.pdf" download>
-          <div class="social-pill-left">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-            Download Resume (PDF)
-          </div>
-          <span class="social-pill-action">PDF &darr;</span>
-        </a>
-      </div>
+      <a class="social-pill" href="resume.pdf" download>
+        <div class="social-pill-left">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          Resume PDF
+        </div>
+        <span class="social-pill-action">PDF &darr;</span>
+      </a>
     </div>
   </section>
 </main>
@@ -968,7 +1032,7 @@ function month(i){ return new Date(i).toLocaleDateString("en", { month: "short",
 (function(){
   var root = document.documentElement, btn = $("theme"), icon = $("t-icon"), lbl = $("t-label");
   try {
-    var s = localStorage.getItem("theme");
+    var s = localStorage.getItem("ec-theme") || localStorage.getItem("theme");
     if(s) root.setAttribute("data-theme", s);
   } catch(e){}
 
@@ -980,13 +1044,14 @@ function month(i){ return new Date(i).toLocaleDateString("en", { month: "short",
     if(icon) icon.textContent = dark ? "🌙" : "☀️";
     if(lbl) lbl.textContent = dark ? "Dark" : "Light";
   }
+  window.updateBtn = updateBtn;
   if(btn){
     btn.addEventListener("click", function(){
       var next = cur() === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
-      try { localStorage.setItem("theme", next); } catch(e){}
+      try { localStorage.setItem("theme", next); localStorage.setItem("ec-theme", next); } catch(e){}
       updateBtn();
-      drawStatic();
+      if(typeof drawStatic === "function") drawStatic();
     });
   }
   updateBtn();
@@ -1651,14 +1716,14 @@ if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.clos
   var skills = ["VLSI", "Embedded", "IoT", "DSP", "RF", "PCB", "Analog", "Digital"];
   var svg = $("ec-skill-svg");
   if(!svg) return;
-  var cx = 300, cy = 210, R = 150, h = "";
+  var cx = 320, cy = 220, R = 165, h = "";
   skills.forEach(function(s, i){
     var a = (i / skills.length) * Math.PI * 2 - Math.PI / 2;
     var x = cx + R * Math.cos(a), y = cy + R * Math.sin(a);
     h += '<line class="sk-line" x1="' + cx + '" y1="' + cy + '" x2="' + x + '" y2="' + y + '"/>';
-    h += '<g class="sk-node"><circle cx="' + x + '" cy="' + y + '" r="30"/><text x="' + x + '" y="' + (y + 4) + '">' + s + '</text></g>';
+    h += '<g class="sk-node"><circle cx="' + x + '" cy="' + y + '" r="34"/><text x="' + x + '" y="' + (y + 4) + '">' + s + '</text></g>';
   });
-  h += '<g class="sk-core"><circle cx="' + cx + '" cy="' + cy + '" r="38"/><text x="' + cx + '" y="' + (cy + 5) + '">ECE</text></g>';
+  h += '<g class="sk-core"><circle cx="' + cx + '" cy="' + cy + '" r="42"/><text x="' + cx + '" y="' + (cy + 5) + '">EC</text></g>';
   svg.innerHTML = h;
 })();
 
@@ -1727,7 +1792,7 @@ function showToast(msg){
 <canvas id="ec-bg"></canvas>
 <style>
   #ec-bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#050b14}
-  [data-theme="light"] #ec-bg{background:#f8fafc}
+  [data-theme="light"] #ec-bg{background:#eefaf4}
 </style>
 <script>
 (function(){
@@ -1735,7 +1800,7 @@ function showToast(msg){
   var COLOR='0,255,156', GRID=50, W,H, nodes=[], pulses=[];
 
   function getCol(){
-    return document.documentElement.getAttribute('data-theme')==='light'?'2,132,199':'0,255,156';
+    return document.documentElement.getAttribute('data-theme')==='light'?'0,168,107':'0,255,156';
   }
 
   function resize(){
@@ -1782,5 +1847,56 @@ function showToast(msg){
 })();
 </script>
 <!-- ===== END BACKGROUND ===== -->
+
+<!-- ===== PROJECTS + SKILLS + CONTACT + TOGGLE + RESUME SCRIPT ===== -->
+<script>
+(function(){
+  // ---- theme toggle (remembers choice) ----
+  var root = document.documentElement;
+  try {
+    var saved = localStorage.getItem('ec-theme') || localStorage.getItem('theme');
+    if(saved) root.setAttribute('data-theme', saved);
+  } catch(e){}
+
+  var ecThemeBtn = document.getElementById('ec-theme');
+  if(ecThemeBtn){
+    ecThemeBtn.onclick = function(){
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('ec-theme', next);
+        localStorage.setItem('theme', next);
+      } catch(e){}
+      if(typeof updateBtn === 'function') updateBtn();
+      if(typeof drawStatic === 'function') drawStatic();
+    };
+  }
+
+  // ---- tap-to-flip on mobile & click ----
+  document.querySelectorAll('.ec-card').forEach(function(c){
+    c.addEventListener('click', function(e){
+      if(e.target.tagName.toLowerCase() === 'a') return;
+      c.classList.toggle('flip');
+    });
+  });
+
+  // ---- contact form handler (graceful fallback for demo Formspree ID) ----
+  var contactForm = document.getElementById('ec-contact-form');
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      if(contactForm.action.indexOf('YOUR_FORM_ID') !== -1){
+        e.preventDefault();
+        if(typeof showToast === 'function') {
+          showToast('SIGNAL TRANSMITTED ▶ Opening LinkedIn to connect directly...');
+        }
+        setTimeout(function(){
+          window.open('https://www.linkedin.com/in/mohammed-suhail03', '_blank');
+        }, 1200);
+      }
+    });
+  }
+})();
+</script>
+<!-- ===== END BLOCK ===== -->
 </body>
 </html>
