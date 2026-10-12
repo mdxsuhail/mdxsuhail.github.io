@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume | Mohammed Suhail</title>
+<style>
+:root{--ink:#111;--mut:#444;--line:#111;--acc:#00766f}
+*{box-sizing:border-box}
+body{margin:0;background:#eef0f0;color:var(--ink);font:400 15px/1.45 "Times New Roman","Liberation Serif",Times,Georgia,serif}
+.tools{max-width:820px;margin:16px auto 0;padding:0 16px;display:flex;gap:10px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.tools button,.tools a{font:600 14px system-ui,sans-serif;padding:8px 16px;border-radius:8px;border:1px solid #ccc;background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}
+.tools button{background:var(--acc);color:#fff;border-color:var(--acc)}
+.page{max-width:820px;margin:16px auto 40px;background:#fff;padding:44px 52px;border:1px solid #ddd}
+h1{font-size:2.1rem;line-height:1.1;margin:0 0 4px;text-align:center;text-transform:uppercase;letter-spacing:.01em}
+.headline{text-align:center;font-weight:700;margin:0 0 2px}
+.contact{text-align:center;font-size:.86rem;margin:0 0 4px;color:var(--mut)}
+.contact a{color:inherit}
+h2{font-size:1rem;margin:14px 0 6px;padding-bottom:1px;border-bottom:1.5px solid var(--line);text-transform:uppercase;letter-spacing:.01em}
+p{margin:0 0 4px}
+.row{display:flex;justify-content:space-between;gap:4px 14px;flex-wrap:wrap}
+.row i{color:var(--ink)}
+.row .r{font-style:italic;white-space:nowrap}
+.row .rn{white-space:nowrap}
+.entry{margin:0 0 6px;break-inside:avoid}
+.entry ul,ul.b{margin:1px 0 0;padding-left:22px}
+.entry li,ul.b li{margin:0 0 1px}
+.edit{color:var(--mut);font-style:italic}
+a.t{color:inherit;text-decoration:none}
+a.t:hover{text-decoration:underline}
+@media(max-width:600px){.page{padding:26px 20px}.row .r,.row .rn{white-space:normal}}
+@media print{
+  @page{size:A4;margin:11mm 13mm}
+  body{background:#fff;font-size:10pt;line-height:1.28}
+  .tools{display:none}
+  .page{margin:0;border:0;padding:0;max-width:none}
+  h1{font-size:20pt}
+  h2{font-size:10.5pt;margin:8px 0 4px}
+  .contact{font-size:8.6pt}
+  .entry{margin:0 0 4px}
+}
+</style>
+</head>
+<body>
+<div class="tools"><button type="button" onclick="window.print()">Print or save as PDF</button><a href="index.html">Back to site</a></div>
+<main class="page" id="page"><p class="edit">Loading resume...</p><noscript>This page needs JavaScript to load the resume.</noscript></main>
+<script>
+var USER="mdxsuhail",HIDE=[USER,USER+".github.io","portfolio"];
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+function sec(root,title,list){if(!list||!list.length)return null;root.appendChild(el("h2","",title));var d=el("div");root.appendChild(d);return d}
+function link(text,url,cls){if(!url)return document.createTextNode(text);var a=el("a",cls||"",text);a.href=url;if(/^https?:/.test(url)){a.target="_blank";a.rel="noopener"}return a}
+function bullets(items){var u=el("ul");items.forEach(function(x){u.appendChild(el("li","",x))});return u}
+function proj(box,p){
+  var d=el("div","entry"),r=el("div","row"),l=el("span"),b=el("b");
+  if(p.url){b.appendChild(link(p.name,p.url,"t"))}else b.textContent=p.name;
+  l.appendChild(b);
+  if(p.tech){l.appendChild(document.createTextNode(" | "));l.appendChild(el("i","",p.tech))}
+  r.appendChild(l);d.appendChild(r);
+  if(p.description)d.appendChild(el("p","",p.description));
+  if(p.bullets&&p.bullets.length)d.appendChild(bullets(p.bullets));
+  box.appendChild(d);
+}
+function render(D){
+  var root=document.getElementById("page");root.textContent="";
+  root.appendChild(el("h1","",D.name));
+  if(D.headline)root.appendChild(el("p","headline",D.headline));
+  var c=el("p","contact");
+  (D.contact||[]).forEach(function(x,i){if(i)c.appendChild(document.createTextNode(" | "));c.appendChild(link(x.text,x.url))});
+  root.appendChild(c);
+  if(D.objective){root.appendChild(el("h2","","Objective"));root.appendChild(el("p","",D.objective))}
+  var b=sec(root,"Education",D.education);
+  if(b)D.education.forEach(function(e){
+    var d=el("div","entry"),r=el("div","row");
+    r.appendChild(el("b","",e.school));r.appendChild(el("span","rn",e.location||""));d.appendChild(r);
+    if(e.degree||e.dates){var r2=el("div","row");r2.appendChild(el("i","",e.degree||""));r2.appendChild(el("span","r",e.dates||""));d.appendChild(r2)}
+    if(e.note)d.appendChild(el("p","",e.note));
+    b.appendChild(d)});
+  b=sec(root,"Technical Skills",D.skills);
+  if(b)D.skills.forEach(function(s){
+    var p=el("p");p.appendChild(el("b","",s.group+": "));
+    p.appendChild(document.createTextNode(Array.isArray(s.items)?s.items.join(", "):(s.items||"")));b.appendChild(p)});
+  var P=D.projects||{},list=P.extra||[];
+  var pbox=sec(root,"Projects",[1]);
+  list.forEach(function(p){proj(pbox,p)});
+  if(P.fromGitHub){
+    var KEY="resume:repos";
+    fetch("https://api.github.com/users/"+USER+"/repos?per_page=100&sort=pushed&type=owner")
+    .then(function(r){if(!r.ok)throw 0;return r.json()})
+    .then(function(a){try{localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}return a})
+    .catch(function(){try{var s=JSON.parse(localStorage.getItem(KEY)||"null");if(s)return s}catch(e){}throw 0})
+    .then(function(all){
+      all.filter(function(r){return !r.fork&&!r.archived&&HIDE.indexOf(r.name)===-1&&(r.topics||[]).indexOf("hidden")===-1})
+        .slice(0,P.max||6).forEach(function(r){proj(pbox,{name:r.name,url:r.html_url,description:r.description,tech:[r.language].concat(r.topics||[]).filter(Boolean).join(", ")})});
+    }).catch(function(){});
+  }
+  b=sec(root,"Certifications",D.certifications);
+  if(b)D.certifications.forEach(function(c){
+    var r=el("div","row"),l=el("span");l.appendChild(el("b","",c.name));
+    if(c.issuer)l.appendChild(document.createTextNode(" – "+c.issuer));
+    r.appendChild(l);r.appendChild(el("span","rn",c.date||""));b.appendChild(r)});
+  var A=D.activities||{};
+  b=sec(root,"Activities & Interests",(A.bullets||[]).concat(A.lines||[]));
+  if(b){
+    if(A.bullets&&A.bullets.length)b.appendChild(bullets(A.bullets));
+    (A.lines||[]).forEach(function(x){var p=el("p");p.appendChild(el("b","",x.label+": "));p.appendChild(document.createTextNode(x.value));b.appendChild(p)});
+  }
+}
+fetch("resume-data.json?v="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json()}).then(render)
+.catch(function(){document.getElementById("page").textContent="Could not load resume-data.json. Make sure it sits next to this file on your site."});
+</script>
+</body>
+</html>

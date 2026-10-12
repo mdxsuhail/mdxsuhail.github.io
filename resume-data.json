@@ -1,0 +1,179 @@
+{
+  "_help": "Edit only the text between quotes. Add an item by copying a { ... } block and putting a comma between blocks. Empty lists [] hide that section. Save and commit, the resume updates by itself.",
+  "name": "Mohammed Suhail",
+  "headline": "Aspiring VLSI / Semiconductor Engineer | Embedded Systems & Robotics",
+  "contact": [
+    {
+      "text": "Bangalore, Karnataka, India"
+    },
+    {
+      "text": "8151988486",
+      "url": "tel:+918151988486"
+    },
+    {
+      "text": "1jt25ec046@jyothyit.ac.in",
+      "url": "mailto:1jt25ec046@jyothyit.ac.in"
+    },
+    {
+      "text": "https://github.com/mdxsuhail",
+      "url": "https://github.com/mdxsuhail"
+    },
+    {
+      "text": "linkedin.com/in/mohammed-suhail03",
+      "url": "https://www.linkedin.com/in/mohammed-suhail03"
+    }
+  ],
+  "objective": "Second-year Electronics and Communication Engineering student with hands-on experience in RTL simulation (Verilog/VHDL, Xilinx Vivado), analog circuit simulation (KiCad, SPICE), and ESP32 firmware in C/C++. Seeking a VLSI / Semiconductor Engineering internship to apply digital design fundamentals and learn industry design flows, with a strong interest in embedded systems and robotics.",
+  "education": [
+    {
+      "school": "Jyothy Institute of Technology",
+      "location": "Bangalore, Karnataka",
+      "degree": "Bachelor of Engineering in Electronics and Communication Engineering (currently in 2nd year)",
+      "dates": "Aug 2025 – Jun 2029",
+      "note": "Affiliated to Visvesvaraya Technological University"
+    },
+    {
+      "school": "Deeksha Jnana Sweekar College",
+      "location": "Bangalore, Karnataka",
+      "degree": "Pre-University Course",
+      "dates": "Jan 2023 – Mar 2025"
+    }
+  ],
+  "skills": [
+    {
+      "group": "HDLs",
+      "items": [
+        "Verilog",
+        "SystemVerilog",
+        "VHDL"
+      ]
+    },
+    {
+      "group": "Digital Design",
+      "items": [
+        "Adders",
+        "counters",
+        "registers",
+        "ALU",
+        "memory",
+        "serial protocols (UART, SPI, I2C)"
+      ]
+    },
+    {
+      "group": "EDA & Simulation",
+      "items": [
+        "Xilinx Vivado",
+        "KiCad (circuit design, SPICE simulation, PCB layout)",
+        "Tinkercad",
+        "Wokwi"
+      ]
+    },
+    {
+      "group": "Programming",
+      "items": [
+        "C",
+        "Embedded C",
+        "C++",
+        "Python"
+      ]
+    },
+    {
+      "group": "Hardware & Microcontrollers",
+      "items": [
+        "ESP32",
+        "Arduino Nano",
+        "Arduino WROOM",
+        "servomotors",
+        "ultrasonic and medical/biometric sensors"
+      ]
+    },
+    {
+      "group": "Lab Skills",
+      "items": [
+        "Breadboarding",
+        "soldering",
+        "oscilloscope",
+        "multimeter",
+        "logic analyser"
+      ]
+    },
+    {
+      "group": "Other",
+      "items": [
+        "JavaScript",
+        "CSS",
+        "React",
+        "Node.js"
+      ]
+    }
+  ],
+  "projects": {
+    "fromGitHub": false,
+    "max": 6,
+    "extra": [
+      {
+        "name": "ALU Design and Verification",
+        "tech": "Verilog, Xilinx Vivado",
+        "bullets": [
+          "Designed and simulated an Arithmetic Logic Unit (ALU), the processor block that performs arithmetic and logic operations, in Verilog using Xilinx Vivado; verified its functionality using a testbench and simulation waveforms"
+        ]
+      },
+      {
+        "name": "Aether-Bot: Autonomous Medical Assistant Robot",
+        "tech": "ESP32, C/C++, Servomotors, Ultrasonic Sensors",
+        "bullets": [
+          "Designed and built an ESP32-based medical assistant robot in a team of 2–3, with multi-sensor integration for patient-care environments",
+          "Integrated ultrasonic sensors for autonomous obstacle avoidance and a dual-servo mechanical arm for physical tasks",
+          "Developed C/C++ firmware to read multiple sensors at the same time and drive synchronized LED status indicators"
+        ]
+      },
+      {
+        "name": "Analog Circuit Design and SPICE Simulation",
+        "tech": "KiCad, SPICE",
+        "bullets": [
+          "Designed and simulated amplifier (signal boosting), filter (frequency selection), and rectifier (AC-to-DC conversion) circuits using SPICE in KiCad"
+        ]
+      },
+      {
+        "name": "RouteVelo: Smart Transit Tracking Platform",
+        "tech": "Product Requirements, System Architecture",
+        "bullets": [
+          "Authored the Product Requirements Document and system architecture for a public transit tracking platform for Karnataka's transit network",
+          "Conducted market research and SWOT analysis to define user personas, feature roadmap, and scalability constraints"
+        ]
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "name": "Building Multi-Agent Systems with Strands Agents",
+      "issuer": "Amazon Web Services (AWS)",
+      "date": "Mar 2026"
+    },
+    {
+      "name": "AWS Machine Learning Learning Plan",
+      "issuer": "Amazon Web Services (AWS)",
+      "date": "Feb 2026"
+    },
+    {
+      "name": "Machine Translation in Language Learning and Teaching",
+      "issuer": "The Open University",
+      "date": "Feb 2026"
+    }
+  ],
+  "activities": {
+    "bullets": [
+      "Participated in a college-level hackathon"
+    ],
+    "lines": [
+      {
+        "label": "Spoken Languages",
+        "value": "English, Hindi, Urdu, Kannada"
+      },
+      {
+        "label": "Interests",
+        "value": "Embedded systems, medical robotics, circuit design and simulation"
+      }
+    ]
+  }
+}
