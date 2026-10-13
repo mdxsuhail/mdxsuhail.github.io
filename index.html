@@ -96,17 +96,30 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-o
   display: flex; align-items: center; justify-content: space-between;
   height: 60px; gap: 12px;
 }
-.bar nav {
+.brand-link {
+  display: none; align-items: center; gap: 8px; text-decoration: none;
+  font-family: var(--display); font-weight: 700; color: var(--ink); flex: none;
+}
+.brand-avatar {
+  width: 30px; height: 30px; border-radius: 8px; background: var(--acc);
+  color: var(--acc-ink); font: 800 .84rem var(--display);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 10px var(--glow); flex: none;
+}
+.brand-name { font-size: .95rem; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
+.brand-name span { color: var(--acc); }
+
+.bar nav.desktop-nav {
   display: flex; align-items: center;
   overflow-x: auto; white-space: nowrap; scrollbar-width: none; min-width: 0;
 }
-.bar nav::-webkit-scrollbar { display: none; }
-.bar nav a {
+.bar nav.desktop-nav::-webkit-scrollbar { display: none; }
+.bar nav.desktop-nav a {
   color: var(--mut); text-decoration: none; margin-right: 18px;
   font-weight: 500; font-size: .92rem; transition: color .2s;
 }
-.bar nav a:hover { color: var(--ink); }
-.bar nav a.on {
+.bar nav.desktop-nav a:hover { color: var(--ink); }
+.bar nav.desktop-nav a.on {
   color: var(--acc); font-weight: 600;
   border-bottom: 2px solid var(--acc); padding-bottom: 2px;
 }
@@ -118,6 +131,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-o
   display: inline-flex; align-items: center; gap: 6px; transition: all .2s;
 }
 .nav-btn:hover { border-color: var(--acc); color: var(--acc); }
+.nav-menu-toggle { display: none; padding: 5px 12px; font-size: 1rem; }
+.mobile-nav { display: none; }
 #progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--acc); transition: width .1s ease-out; }
 
 /* Hero Section */
@@ -602,11 +617,100 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 @keyframes pulse { to { opacity: .4; } }
 @media (max-width: 768px) {
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .two, .focus { grid-template-columns: 1fr; }
-  .bar nav a { margin-right: 12px; font-size: .85rem; }
-  .scope canvas { height: 160px; }
+  html { scroll-padding-top: 64px; }
+  .wrap { padding: 0 16px; }
+  
+  /* Header & Mobile Nav */
+  .bar .wrap { height: 56px; padding: 0 14px; }
+  .brand-link { display: inline-flex; }
+  .bar nav.desktop-nav { display: none; }
+  .nav-menu-toggle { display: inline-flex; }
+  .nav-actions { gap: 6px; }
   .nav-btn { padding: 4px 10px; font-size: .8rem; }
+  
+  .mobile-nav {
+    display: block; position: absolute; top: 100%; left: 0; right: 0;
+    background: color-mix(in srgb, var(--surface) 97%, var(--bg));
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+    padding: 12px 14px 16px;
+    z-index: 99;
+    animation: mNavIn .2s ease-out;
+  }
+  .mobile-nav[hidden] { display: none; }
+  @keyframes mNavIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .mobile-nav-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;
+  }
+  .mobile-nav a {
+    color: var(--ink); text-decoration: none; font-size: .86rem; font-weight: 600;
+    padding: 8px 10px; border-radius: 8px; background: color-mix(in srgb, var(--chip) 40%, transparent);
+    display: flex; align-items: center; gap: 7px; transition: all .15s;
+    border: 1px solid transparent;
+  }
+  .mobile-nav a.on {
+    color: var(--acc); border-color: var(--acc); background: color-mix(in srgb, var(--acc) 12%, transparent);
+  }
+  .mobile-nav a:hover, .mobile-nav a:active {
+    background: var(--acc); color: var(--acc-ink);
+  }
+  .m-nav-icon { font-size: .92rem; }
+
+  /* Hero Section */
+  .hero { padding: 32px 0 20px; }
+  .hero-main h1 { font-size: clamp(2.1rem, 8.5vw, 3.2rem); margin-bottom: 12px; }
+  .lead { font-size: 1.02rem; line-height: 1.5; margin-bottom: 8px; }
+  .where { font-size: .88rem; margin-bottom: 18px; }
+  .actions { gap: 8px; }
+  .actions a { padding: 8px 14px; font-size: .86rem; }
+  
+  /* Oscilloscope */
+  .scope { margin-top: 16px; }
+  .scope-header { font-size: .72rem; padding: 6px 10px; flex-wrap: wrap; gap: 4px; }
+  .scope canvas { height: 150px; }
+  .scope-hint { font-size: .7rem; bottom: 6px; right: 8px; }
+
+  /* 3D Badge & Lic Col */
+  .lic-col { margin-top: 8px; }
+  .badge-wrap { max-width: 100%; }
+  .badge { max-width: 100%; }
+
+  /* Bench & Stats */
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat { padding: 12px 14px; }
+  .stat b { font-size: 1.5rem; }
+  .two, .focus { grid-template-columns: 1fr; }
+
+  /* Circuit diagram & popup card */
+  .circuit-wrap { padding: 18px 12px 16px; }
+  .sk-popup-card { width: 280px; max-width: calc(100% - 16px); padding: 13px 14px; }
+  .sk-popup-title { font-size: .95rem; }
+  .sk-popup-body { font-size: .8rem; }
+  .sk-popup-icon { width: 32px; height: 32px; font-size: 1.3rem; }
+
+  /* Charts */
+  .chart { padding: 16px 14px; }
+  .heat { padding-bottom: 8px; -webkit-overflow-scrolling: touch; }
+
+  /* Contact & Footer */
+  .contact-layout { grid-template-columns: 1fr; gap: 18px; }
+  .contact-card { padding: 18px 16px; }
+  .social-dock { gap: 8px; }
+  .social-pill { padding: 10px 14px; font-size: .88rem; }
+  footer { margin-top: 40px; padding: 24px 0 40px; font-size: .82rem; }
+  footer .wrap { justify-content: center; text-align: center; flex-direction: column; gap: 6px; }
+}
+
+@media (max-width: 480px) {
+  #t-label { display: none; }
+  .brand-name { display: none; }
+  .mobile-nav-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
+  .badge { width: 280px; height: 420px; }
 }
 
   :root{--ec-bg:var(--bg);--ec-panel:var(--surface);--ec-fg:var(--ink);--ec-accent:var(--acc)}
@@ -809,7 +913,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <header class="bar">
   <div class="wrap">
-    <nav aria-label="Sections">
+    <a href="#hero" class="brand-link" aria-label="Mohammed Suhail - Top of page">
+      <span class="brand-avatar">MS</span>
+      <span class="brand-name">Mohammed <span>Suhail</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Sections">
       <a href="#projects">Projects</a>
       <a href="#hardware">Bench</a>
       <a href="#skills">Skills</a>
@@ -826,9 +934,26 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <button class="nav-btn" id="theme" type="button" aria-label="Toggle theme">
         <span id="t-icon">☀️</span> <span id="t-label">Theme</span>
       </button>
+      <button class="nav-btn nav-menu-toggle" id="menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span id="menu-icon">☰</span>
+      </button>
     </div>
   </div>
   <div id="progress"></div>
+  
+  <!-- Mobile Navigation Drawer -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation Menu" hidden>
+    <div class="mobile-nav-grid">
+      <a href="#projects"><span class="m-nav-icon">📁</span> Projects</a>
+      <a href="#hardware"><span class="m-nav-icon">🔬</span> Bench</a>
+      <a href="#skills"><span class="m-nav-icon">⚡</span> Skills &amp; Network</a>
+      <a href="#insights"><span class="m-nav-icon">📊</span> Analytics</a>
+      <a href="#milestones"><span class="m-nav-icon">⏱️</span> Timeline</a>
+      <a href="#license"><span class="m-nav-icon">🪪</span> License Card</a>
+      <a href="#about"><span class="m-nav-icon">👨‍💻</span> About</a>
+      <a href="#contact"><span class="m-nav-icon">✉️</span> Contact</a>
+    </div>
+  </nav>
 </header>
 
 <main class="wrap">
@@ -1348,6 +1473,36 @@ var io = new IntersectionObserver(function(es){
   });
 }, { rootMargin: "-30% 0px -60% 0px" });
 document.querySelectorAll("main section, .hero").forEach(function(s){ io.observe(s); });
+
+/* ---------- Mobile Navigation Drawer Logic ---------- */
+(function(){
+  var menuBtn = $("menu-btn"), mNav = $("mobile-nav"), mIcon = $("menu-icon");
+  if(!menuBtn || !mNav) return;
+
+  function toggleMobileMenu(){
+    var open = !mNav.hidden;
+    mNav.hidden = open;
+    menuBtn.setAttribute("aria-expanded", String(!open));
+    if(mIcon) mIcon.textContent = open ? "☰" : "✕";
+  }
+  menuBtn.addEventListener("click", toggleMobileMenu);
+
+  mNav.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){
+      mNav.hidden = true;
+      menuBtn.setAttribute("aria-expanded", "false");
+      if(mIcon) mIcon.textContent = "☰";
+    });
+  });
+
+  document.addEventListener("click", function(e){
+    if(!mNav.hidden && !mNav.contains(e.target) && !menuBtn.contains(e.target)){
+      mNav.hidden = true;
+      menuBtn.setAttribute("aria-expanded", "false");
+      if(mIcon) mIcon.textContent = "☰";
+    }
+  });
+})();
 
 /* ---------- Oscilloscope Timing Diagram ---------- */
 var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
