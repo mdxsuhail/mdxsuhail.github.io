@@ -1531,11 +1531,11 @@ function card(r){
   pv.addEventListener("click", function(e){ e.preventDefault(); openPreview(r); });
   ln.appendChild(pv);
 
-  var code = el("a", "", "Code &rarr;"); code.href = r.html_url; code.target = "_blank"; code.rel = "noopener";
+  var code = el("a", "", "Code"); code.href = r.html_url; code.target = "_blank"; code.rel = "noopener";
   ln.appendChild(code);
 
   if(r.homepage){
-    var d = el("a", "", "Live &nearr;"); d.href = r.homepage; d.target = "_blank"; d.rel = "noopener";
+    var d = el("a", "", "Live"); d.href = r.homepage; d.target = "_blank"; d.rel = "noopener";
     ln.appendChild(d);
   }
 
