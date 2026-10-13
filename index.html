@@ -2148,11 +2148,7 @@ if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.clos
 
     function toggleNodeCard(e){
       if(e) e.stopPropagation();
-      if(currentNode === nodeEl && card.classList.contains("visible")){
-        hideCard();
-      } else {
-        showCard(nodeEl, key);
-      }
+      showCard(nodeEl, key);
     }
 
     nodeEl.addEventListener("mouseenter", function(){ showCard(nodeEl, key); });
