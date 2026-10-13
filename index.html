@@ -532,17 +532,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .two, .focus { grid-template-columns: 1fr; }
   .bar nav a { margin-right: 12px; font-size: .85rem; }
   .scope canvas { height: 160px; }
+  .nav-btn { padding: 4px 10px; font-size: .8rem; }
 }
 
   :root{--ec-bg:var(--bg);--ec-panel:var(--surface);--ec-fg:var(--ink);--ec-accent:var(--acc)}
   [data-theme="light"]{--ec-bg:var(--bg);--ec-panel:var(--surface);--ec-fg:var(--ink);--ec-accent:var(--acc)}
   [data-theme="light"] #ec-bg{background:var(--bg)}
-
-  /* top bar: resume + theme toggle */
-  #ec-top{position:fixed;top:14px;right:14px;z-index:9000;display:flex;gap:10px;font-family:var(--body)}
-  #ec-top a,#ec-top button{background:var(--surface);color:var(--acc);border:1px solid var(--acc);
-    padding:7px 14px;border-radius:6px;cursor:pointer;font-size:13px;text-decoration:none;font-family:inherit;transition:all .2s}
-  #ec-top a:hover,#ec-top button:hover{background:var(--acc);color:var(--acc-ink);box-shadow:0 0 14px var(--glow)}
 
   /* flip cards */
   .ec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
@@ -738,13 +733,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </script>
 <!-- ===== END LOADING SCREEN v2 ===== -->
 
-<!-- Top bar -->
-<div id="ec-top">
-  <a href="resume.pdf" download>⬇ Resume</a>
-  <a href="license.html" target="_blank" title="View standalone License Card">🪪 License</a>
-  <button id="ec-theme" title="Toggle theme" type="button">☀ / ☾</button>
-</div>
-
 <header class="bar">
   <div class="wrap">
     <nav aria-label="Sections">
@@ -758,6 +746,9 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
+      <a class="nav-btn" href="resume.html" target="_blank" aria-label="Web Resume">
+        <span>📄</span> <span>Resume</span>
+      </a>
       <button class="nav-btn" id="theme" type="button" aria-label="Toggle theme">
         <span id="t-icon">☀️</span> <span id="t-label">Theme</span>
       </button>
@@ -781,8 +772,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <div class="actions">
           <a class="primary" href="#projects">See projects &darr;</a>
           <a id="gh-link" href="https://github.com/mdxsuhail" target="_blank" rel="noopener">GitHub &nearr;</a>
-          <a href="resume.html">Web Resume &rarr;</a>
-          <a href="resume.pdf" download>PDF Resume &darr;</a>
+          <a href="resume.html" target="_blank">Web Resume &nearr;</a>
           <a href="https://www.linkedin.com/in/mohammed-suhail03" target="_blank" rel="noopener">LinkedIn &nearr;</a>
         </div>
 
@@ -1145,20 +1135,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <span class="social-pill-action">@mdxsuhail &nearr;</span>
         </a>
 
-        <a class="social-pill" href="resume.html">
+        <a class="social-pill" href="resume.html" target="_blank">
           <div class="social-pill-left">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-            Interactive Web Resume
+            Web Resume
           </div>
-          <span class="social-pill-action">View &rarr;</span>
-        </a>
-
-        <a class="social-pill" href="resume.pdf" download>
-          <div class="social-pill-left">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-            Download Resume (PDF)
-          </div>
-          <span class="social-pill-action">PDF &darr;</span>
+          <span class="social-pill-action">View &nearr;</span>
         </a>
       </div>
     </div>
@@ -2041,19 +2023,7 @@ function showToast(msg){
     if(saved) root.setAttribute('data-theme', saved);
   } catch(e){}
 
-  var ecThemeBtn = document.getElementById('ec-theme');
-  if(ecThemeBtn){
-    ecThemeBtn.onclick = function(){
-      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', next);
-      try {
-        localStorage.setItem('ec-theme', next);
-        localStorage.setItem('theme', next);
-      } catch(e){}
-      if(typeof updateBtn === 'function') updateBtn();
-      if(typeof drawStatic === 'function') drawStatic();
-    };
-  }
+
 
   // ---- tap-to-flip on mobile & click ----
   document.querySelectorAll('.ec-card').forEach(function(c){
