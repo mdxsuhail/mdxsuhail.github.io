@@ -432,6 +432,9 @@ h2::after {
 .circuit-canvas-wrap {
   position: relative; width: 100%; max-width: 600px; margin: 0 auto;
 }
+.circuit-hint {
+  font-size: .78rem; color: var(--mut); margin: 12px 0 0; text-align: center;
+}
 #ec-skill-svg { width: 100%; max-width: 600px; display: block; margin: 0 auto; overflow: visible; }
 .sk-line {
   stroke: var(--acc); stroke-width: 1.5; opacity: .4; stroke-dasharray: 6 6;
@@ -689,12 +692,53 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .stat b { font-size: 1.5rem; }
   .two, .focus { grid-template-columns: 1fr; }
 
-  /* Circuit diagram & popup card */
-  .circuit-wrap { padding: 18px 12px 16px; }
-  .sk-popup-card { width: 280px; max-width: calc(100% - 16px); padding: 13px 14px; }
+  /* Circuit diagram & popup card (Mobile View) */
+  .circuit-wrap { padding: 18px 12px 18px; }
+  .circuit-canvas-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  #ec-skill-svg {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    touch-action: manipulation;
+  }
+  .sk-node {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .sk-node text { font-size: 13px; font-weight: 700; }
+  .sk-core text { font-size: 14.5px; font-weight: 800; }
+
+  /* Docked detail card on mobile */
+  .sk-popup-card {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin-top: 14px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    padding: 14px 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.28), 0 0 16px var(--glow);
+    border: 1.5px solid var(--acc);
+    box-sizing: border-box;
+  }
+  .sk-popup-close { display: none !important; }
   .sk-popup-title { font-size: .95rem; }
-  .sk-popup-body { font-size: .8rem; }
-  .sk-popup-icon { width: 32px; height: 32px; font-size: 1.3rem; }
+  .sk-popup-body { font-size: .8rem; margin-bottom: 8px; line-height: 1.45; }
+  .sk-popup-icon { width: 34px; height: 34px; font-size: 1.35rem; }
+  .sk-popup-tags { gap: 4px; }
+  .sk-popup-tag { font-size: .7rem; padding: 2px 6px; }
+
+  .circuit-hint { font-size: .75rem; margin: 10px 0 0; }
 
   /* Charts */
   .chart { padding: 16px 14px; }
@@ -1100,7 +1144,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <p class="cap">Interconnected branches across semiconductor design and embedded engineering.</p>
       
       <div class="circuit-canvas-wrap" id="circuit-canvas-wrap">
-        <svg id="ec-skill-svg" viewBox="0 0 640 440" role="img" aria-label="Interactive circuit diagram connecting engineering domains"></svg>
+        <svg id="ec-skill-svg" viewBox="70 0 500 440" role="img" aria-label="Interactive circuit diagram connecting engineering domains"></svg>
         
         <!-- Interactive Detail Hover Card Popup -->
         <div id="sk-popup-card" class="sk-popup-card" role="region" aria-live="polite" aria-hidden="true">
@@ -1120,7 +1164,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
       </div>
       
-      <p class="scope-hint" style="margin-top:10px">💡 Hover over or tap any node (especially <b>VLSI</b> &amp; <b>Embedded</b>) to inspect engineering details</p>
+      <p class="circuit-hint">💡 Tap or hover over any node (especially <b>VLSI</b> &amp; <b>Embedded</b>) to inspect engineering details</p>
     </div>
 
     <p class="cap" style="margin-top:24px">Additional Software &amp; Lab Equipment</p>
@@ -2261,6 +2305,13 @@ if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.clos
     card.classList.add("visible");
     card.setAttribute("aria-hidden", "false");
 
+    // Docked statically on mobile; skip absolute calculations
+    if (window.innerWidth <= 768) {
+      card.style.left = "";
+      card.style.top = "";
+      return;
+    }
+
     // Position dynamically near the node within canvasWrap
     var wrapRect = canvasWrap.getBoundingClientRect();
     var nodeRect = nodeEl.getBoundingClientRect();
@@ -2289,6 +2340,7 @@ if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.clos
   }
 
   function hideCard(){
+    if (window.innerWidth <= 768) return; // Keep active selection visible on mobile
     card.classList.remove("visible");
     card.setAttribute("aria-hidden", "true");
     svg.querySelectorAll(".sk-node").forEach(function(n){ n.classList.remove("active"); });
@@ -2297,6 +2349,7 @@ if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.clos
   }
 
   function scheduleHide(){
+    if (window.innerWidth <= 768) return;
     clearTimeout(hideTimer);
     hideTimer = setTimeout(hideCard, 220);
   }
@@ -2347,14 +2400,38 @@ if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.clos
     });
   }
 
-  // Dismiss on clicking outside
+  // Dismiss on clicking outside (desktop only)
   document.addEventListener("click", function(e){
+    if (window.innerWidth <= 768) return;
     if(!canvasWrap.contains(e.target)) hideCard();
   });
 
   // Dismiss on Escape key
   document.addEventListener("keydown", function(e){
     if(e.key === "Escape") hideCard();
+  });
+
+  // Initialize mobile state on load
+  function initMobileCircuit(){
+    if (window.innerWidth <= 768) {
+      var defaultNode = svg.querySelector('.sk-node[data-node="VLSI"]');
+      if (defaultNode) {
+        showCard(defaultNode, "VLSI");
+      }
+    }
+  }
+  initMobileCircuit();
+
+  window.addEventListener("resize", function(){
+    if (window.innerWidth <= 768) {
+      card.style.left = "";
+      card.style.top = "";
+      if (!currentNode) {
+        initMobileCircuit();
+      }
+    } else if (currentNode) {
+      showCard(currentNode, currentNode.getAttribute("data-node"));
+    }
   });
 })();
 
