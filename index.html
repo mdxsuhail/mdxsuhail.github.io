@@ -2146,25 +2146,44 @@ if(dlg) dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.clos
   svg.querySelectorAll(".sk-node").forEach(function(nodeEl){
     var key = nodeEl.getAttribute("data-node");
 
-    nodeEl.addEventListener("mouseenter", function(){ showCard(nodeEl, key); });
-    nodeEl.addEventListener("mouseleave", scheduleHide);
-
-    nodeEl.addEventListener("focus", function(){ showCard(nodeEl, key); });
-    nodeEl.addEventListener("blur", scheduleHide);
-
-    nodeEl.addEventListener("click", function(e){
-      e.stopPropagation();
+    function toggleNodeCard(e){
+      if(e) e.stopPropagation();
       if(currentNode === nodeEl && card.classList.contains("visible")){
         hideCard();
       } else {
         showCard(nodeEl, key);
       }
+    }
+
+    nodeEl.addEventListener("mouseenter", function(){ showCard(nodeEl, key); });
+    nodeEl.addEventListener("mouseleave", scheduleHide);
+
+    nodeEl.addEventListener("focus", function(){ showCard(nodeEl, key); });
+    nodeEl.addEventListener("blur", function(e){
+      if(!card.contains(e.relatedTarget)){
+        scheduleHide();
+      }
+    });
+
+    nodeEl.addEventListener("click", toggleNodeCard);
+
+    nodeEl.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " " || e.key === "Spacebar"){
+        e.preventDefault();
+        toggleNodeCard(e);
+      }
     });
   });
 
-  // Keep card open when hovering directly over the card
+  // Keep card open when hovering directly over the card or focused within it
   card.addEventListener("mouseenter", function(){ clearTimeout(hideTimer); });
   card.addEventListener("mouseleave", scheduleHide);
+  card.addEventListener("focusin", function(){ clearTimeout(hideTimer); });
+  card.addEventListener("focusout", function(e){
+    if(!card.contains(e.relatedTarget) && e.relatedTarget !== currentNode){
+      scheduleHide();
+    }
+  });
 
   if(closeBtn){
     closeBtn.addEventListener("click", function(e){
